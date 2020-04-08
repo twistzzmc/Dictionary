@@ -88,19 +88,30 @@ class DictLib:
         self.multi_segment = []
 
         words_map = {}
+        all_regulars = []
+        all_filters = []
+        all_multi_segments = []
+        all_multi_segments_words = []
+
         for i in range(len(file_paths)):
             if file_types[i] == 0:  # 0 - regular file
-                self.regulars = parse_regular_file(file_paths[i])
-                words_map = self.parse_regulars(self.regulars, words_map)
+                all_regulars += parse_regular_file(file_paths[i])
 
             if file_types[i] == 1:  # 1 - filter file
-                self.filters = parse_regular_file(file_paths[i])
-                words_map = self.parse_filters(self.filters, words_map)
+                all_filters += parse_regular_file(file_paths[i])
 
             if file_types[i] == 2:  # 2 - multi segment file
                 lines, words = parse_multi_segment_file(file_paths[i])
-                self.multi_segment = lines
-                self.parse_multi_segments(words, words_map)
+                all_multi_segments += lines
+                all_multi_segments_words += words
+
+        self.regulars = all_regulars
+        self.filters = all_filters
+        self.multi_segment = all_multi_segments
+
+        words_map = self.parse_regulars(self.regulars, words_map)
+        words_map = self.parse_filters(self.filters, words_map)
+        self.parse_multi_segments(all_multi_segments_words, words_map)
 
         bt = self.pack_multiple_nodes(list(words_map.keys()), list(words_map.values()))
         self.binary_trie = bt
