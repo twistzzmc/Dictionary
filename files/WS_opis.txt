@@ -1,0 +1,32 @@
+PROBKA SŁOWNIKA WYRAZÓW WIELOSGMENTOWYCH
+*********
+Słownik wielosegmentowych to plik tekstowy, ktorego dane są integrowane ze słownikiem fleksyjnym (jednosegmentowych)
+Objaśnienie symboli
+* odmienny człon wielosegmentowego - łączymy z jednostegmentowym, bo dostaniemy tam odmianę członu odmiennego
+- człon nieodmienny !!! człon nieodmienny nie jest lączony z jednostką CLP !!! bo np. jest zbić z pantałyku ale nie ma jednostki pantałyk
+			dodatkowo: znaczenie jednostki wielosegmentowej nie wynika ze znaczeń składników, por. panna młoda, dziadek do orzechów itp
+*ACAAAAA  - etkieta z gwiazdką rozstrzyga wieloznaczność członu zarejsetrowaną w słowniku fleksyjnym, np. akt | akt
+AA ...  AE etykieta fleksyna wielosegmentowca; gdzie
+						AA - rzeczownik męski osobowowy
+						AB - rzeczownik męski żywotny
+						AC - rzeczownik męski nieżywotny
+						AD - rzeczownik żeński itd
+						AF - rzeczownik nijaki
+						B czasownik
+						C przymiotnik
+						F przysłówek
+21 - oznacza możliwą inwersję szyku członów, np. wiekszość absolutna / absolutna większość
+$ - oznacza synonim wyrazu poprzedniego , np agencja towarzyska $ dom publiczny $ zamtuz
+& - oznacza wariant wyrazu poprzedniego, np argument siły & argument siłowy
+# - oznacza komentarz
+***********
+Problemy przy rozpoznaawaniu
+
+generał armii królewskiej wyglądał bardzo dostojnie
+	  generał armii
+		  armia królewska
+
+Jaś wyszedł z domu dziecka
+	z domu
+	z domu dziecka
+************

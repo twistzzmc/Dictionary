@@ -97,7 +97,10 @@ class DictLib:
                 self.filters = parse_regular_file(file_paths[i])
                 words_map = self.parse_filters(self.filters, words_map)
 
-            # TODO 2 - multi segment file
+            if file_types[i] == 2:  # 2 - multi segment file
+                lines, words = parse_multi_segment_file(file_paths[i])
+                self.multi_segment = lines
+                self.parse_multi_segments(words, words_map)
 
         bt = self.pack_multiple_nodes(list(words_map.keys()), list(words_map.values()))
         self.binary_trie = bt
@@ -124,11 +127,20 @@ class DictLib:
         for i in range(len(filters)):
             for j in range(len(filters[i])):
                 if filters[i][j] not in words_map:
-                    words_map[filters[i][j]] = WordNode(filters[i])
+                    words_map[filters[i][j]] = WordNode(filters=[i])
                 elif i not in words_map.get(filters[i][j]).filters:
                     words_map.get(filters[i][j]).filters.append(i)
 
         return words_map
+
+    @staticmethod
+    def parse_multi_segments(multi_segments, words_map):
+        for i in range(len(multi_segments)):
+            for j in range(len(multi_segments[i])):
+                if multi_segments[i][j] not in words_map:
+                    words_map[multi_segments[i][j]] = WordNode(multi_segment=[i])
+                elif i not in words_map.get(multi_segments[i][j]).multi_segment:
+                    words_map.get(multi_segments[i][j]).multi_segment.append(i)
 
     @staticmethod
     def pack_multiple_nodes(keys, nodes):

@@ -1,37 +1,4 @@
-PROBKA S£OWNIKA WYRAZÓW WIELOSGMENTOWYCH
-*********
-S³ownik wielosegmentowych to plik tekstowy, ktorego dane s¹ integrowane ze s³ownikiem fleksyjnym (jednosegmentowych)
-Objaœnienie symboli
-* odmienny cz³on wielosegmentowego - ³¹czymy z jednostegmentowym, bo dostaniemy tam odmianê cz³onu odmiennego
-- cz³on nieodmienny !!! cz³on nieodmienny nie jest l¹czony z jednostk¹ CLP !!! bo np. jest zbiæ z panta³yku ale nie ma jednostki panta³yk
-			dodatkowo: znaczenie jednostki wielosegmentowej nie wynika ze znaczeñ sk³adników, por. panna m³oda, dziadek do orzechów itp
-*ACAAAAA  - etkieta z gwiazdk¹ rozstrzyga wieloznacznoœæ cz³onu zarejsetrowan¹ w s³owniku fleksyjnym, np. akt | akt
-AA ...  AE etykieta fleksyna wielosegmentowca; gdzie
-						AA - rzeczownik mêski osobowowy
-						AB - rzeczownik mêski ¿ywotny
-						AC - rzeczownik mêski nie¿ywotny
-						AD - rzeczownik ¿eñski itd
-						AF - rzeczownik nijaki 
-						B czasownik
-						C przymiotnik
-						F przys³ówek
-21 - oznacza mo¿liw¹ inwersjê szyku cz³onów, np. wiekszoœæ absolutna / absolutna wiêkszoœæ
-$ - oznacza synonim wyrazu poprzedniego , np agencja towarzyska $ dom publiczny $ zamtuz
-& - oznacza wariant wyrazu poprzedniego, np argument si³y & argument si³owy
-# - oznacza komentarz
-***********
-Problemy przy rozpoznaawaniu
-
-genera³ armii królewskiej wygl¹da³ bardzo dostojnie
-	  genera³ armii
-		  armia królewska
-
-Jaœ wyszed³ z domu dziecka
-	z domu
-	z domu dziecka
-************
- 
-wiêkszoœæ absolutna ; ** ; AD  ; 21 ; 
+wiêkszoœæ absolutna ; ** ; AD  ; 21 ;
 dziadek do orzechów ; *--; AC ; ; 
 komputer osobisty ; ** ; AC ; ;
 dom dziecka ; AC ** ; AC ; ; 
