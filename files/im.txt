@@ -1,0 +1,23 @@
+jeść:BDD:jedząc:jedzący:jedzony:#
+pić:BAFB:pijąc:pijący:pity:#
+zjeść:BDD:#:#:zjedzony:zjadłszy
+wypić:BAFB:#:#:wypity:wypiwszy
+dopić:BAFB:#:#:dopity:dopiwszy
+napić się:BAFB:#:#:#:napiwszy
+brak:BFBA:#:#:#:#
+padać:BDA:padając:padający:#:#
+padać:BGA:#:#:#:#:
+grzmieć:BBBB:grzmiąc:grzmiący:#:#
+grzmieć:BGG:#:#:#:#
+abdykować:BAAA:abdykując:abdykujący:#:abdykowawszy:
+ślubować:BAAA:ślubując:ślubujący:ślubowany:ślubowawszy
+szczekać:BDA:szczekając:szczekający:#:#
+szczeknąć:BAEAA:#:#:#:szczeknąwszy
+myć:BAFB:myjąc:myjący:myty:#
+myć się:BAFB:myjąc:myjący:#:#
+dać:BDC:#:#:dany:dawszy
+dawać:BAAE:dając:dający:dawany:#
+brać:BAAFA:biorąc:biorący:brany:#
+wziąć:BAFCAC:#:#:wzięty:wziąwszy
+bielić:BBCA:bieląc:bielący:bielony:#:
+wolno:BFBA:#:#:#:#:

@@ -1,0 +1,3293 @@
+PROBKA S£OWNIKA WYRAZÓW WIELOSGMENTOWYCH
+*********
+S³ownik wielosegmentowych to plik tekstowy, ktorego dane s¹ integrowane ze s³ownikiem fleksyjnym (jednosegmentowych)
+Objaœnienie symboli
+* odmienny cz³on wielosegmentowego - ³¹czymy z jednostegmentowym, bo dostaniemy tam odmianê cz³onu odmiennego
+- cz³on nieodmienny !!! cz³on nieodmienny nie jest l¹czony z jednostk¹ CLP !!! bo np. jest zbiæ z panta³yku ale nie ma jednostki panta³yk
+			dodatkowo: znaczenie jednostki wielosegmentowej nie wynika ze znaczeñ sk³adników, por. panna m³oda, dziadek do orzechów itp
+*ACAAAAA  - etkieta z gwiazdk¹ rozstrzyga wieloznacznoœæ cz³onu zarejsetrowan¹ w s³owniku fleksyjnym, np. akt | akt
+AA ...  AE etykieta fleksyna wielosegmentowca; gdzie
+						AA - rzeczownik mêski osobowowy
+						AB - rzeczownik mêski ¿ywotny
+						AC - rzeczownik mêski nie¿ywotny
+						AD - rzeczownik ¿eñski itd
+						AF - rzeczownik nijaki 
+						B czasownik
+						C przymiotnik
+						F przys³ówek
+21 - oznacza mo¿liw¹ inwersjê szyku cz³onów, np. wiekszoœæ absolutna / absolutna wiêkszoœæ
+$ - oznacza synonim wyrazu poprzedniego , np agencja towarzyska $ dom publiczny $ zamtuz
+& - oznacza wariant wyrazu poprzedniego, np argument si³y & argument si³owy
+# - oznacza komentarz
+***********
+Problemy przy rozpoznaawaniu
+
+genera³ armii królewskiej wygl¹da³ bardzo dostojnie
+	  genera³ armii
+		  armia królewska
+
+Jaœ wyszed³ z domu dziecka
+	z domu
+	z domu dziecka
+************
+ 
+wiêkszoœæ absolutna ; ** ; AD  ; 21 ; 
+dziadek do orzechów ; *--; AC ; ; 
+komputer osobisty ; ** ; AC ; ;
+dom dziecka ; AC ** ; AC ; ; 
+z domu ; F ; ; 		# z domu Potocka
+z polska ; F ; ;	# nosi³ siê z polska
+po polsku ; F ; ;	
+na ty ;-- ; F ; ;
+per ty ; --;  F ; ; 
+zbiæ z panta³yku ; *-- ; B ; ;
+adres pocztowy ; ** ; AC ; ;
+adres zwrotny ; ** ; AC ; ; 
+adwokat diab³a ; *- ; AA ; ;  
+agencja prasowa ; ** ; AD ; ; 
+agencja reklamowa ; ** ; AD ; ; 
+agencja towarzyska ; ** ; AD ; ;  
+$ dom  publiczny ; ** ; AC ;  ; 
+$ dom  rozpusty ; *- ; AC ;  ; 
+$ burdel ; AC			 # powi¹zanie z jednosegmentowym ? (wulg.), RAPORT, gdy brak w CLP, zostanie dogenerowany
+$ zamtuz ; AC			 #? powi¹zanie z jednosegmentowym ?(arch.)
+agent ubezpieczeniowy ; ** ; AA ;  ; 
+akademicka dyskusja ; ** ; AD ; ; 
+kwadrans akademicki ; ** ; AC ; 21 ;
+# aksamitny g³os ; ** ; AC ; ;  nie WS bo mo¿liwa substytucja szorstki g³os, cichy g³os itd
+akt *ACAAAAA mi³osierdzia ; *- ; AC ; ;
+akt *ACAAAAA odwagi ; *- ; AC ; ; 
+akt *ACAAAAA pokory  ; *- ; AC ; ;
+akt *ACAAAAA pokuty  ; *- ; AC ; ;
+akt *ACAAAAA rozpaczy ; *- ; AC ; ;
+akt *ACAAAAA skruchy ; *- ; AC ; ;
+akt *ACAAAAA urodzenia ; *- ; AC ;  ; 
+akt *ACAAAAA woli ; *- ; AC ; ; 
+akt *ACAAAAA zgonu ; *- ; AC ;  ; 
+aktor charakterystyczny ; ** ; AA ;  ;
+aktorka charakterystyczna ; ** ; AD ; ; 
+aktor komiczny ; ** ; AA ;  ;
+aktorka komiczna ; ** ; AD ; ; 
+akwen wodny ; ** ; AC ; ;
+alarm bojowy ; ** ; AC ;  ; 
+alarm powodziowy ; ** ; AC ;  ; 
+album rodzinny ; ** ; AC ;  ; 
+alfa i omega ; *-* ; AD ;  ; 
+alfabet arabski ; ** ; AC ; 21 ;
+alfabet grecki ; ** ; AC ; 21 ;
+alfabet hebrajski ; ** ; AC ; 21 ; 
+alfabet ³aciñski ; ** ; AC ; 21 ;
+amant filmowy ; ** ; AA ; ;
+amator kwaœnych jab³ek *AGDAA ; *-- ; AA ;  ; 
+amerykañskie tempo ; ** ; AE ;  ; 
+aneks kuchenny ; ** ; AC ; ;
+angielska flegma ; ** ; AD ;  ; 
+anielska cierpliwoœæ ; ** ; AD ;  ;  
+anielska dobroæ ; ** ; AD ;  ; 
+anielska postaæ ; ** ; AD ; ;
+anielska rozkosz ; ** ; AD ;  ; 
+anielski spokój ; ** ; AC ;  ; 
+anio³ *AAACAAB pokoju ; *- ; AA ;  ; 
+anio³ *AAACAAB stró¿ ; ** ; AA ;  ; 
+anio³ *AAACAAB œmierci ; *- ; AA ;  ; 
+anio³ *AAACAAB nie cz³owiek ; --- ; AA ;  ; #czm &w 
+anio³ *AAACAAB nie kobieta ; --- ; AD ;  ; #czm &w
+aparat badawczy ; ** ; AC ;  ; 
+aparat fotograficzny ; ** ; AC ;  ;
+aparat telefoniczny ; ** ; AC ;  ;
+aparat tlenowy ; ** ; AC ; ;  
+aparat w³adzy ; *- ; AC ;  ;
+apokaliptyczna wizja ; ** ; AD ;  ; #wsg? + &
+arena polityczna ; ** ; AD ; 21 ; 
+areszt domowy ; ** ; AC ;  ; 
+argument si³y ; *- ; AC ;  ;
+& argument si³owy ; ** ; AC ; 21;  
+arkusz kalkulacyjny ; ** ; AC ;  ; 
+arteria  komunikacyjna ; ** ; AD ;  ; 
+arteria  wodna ; ** ; AD ; ; 
+artyku³y gospodarstwa domowego ; *-- ; AC ; AGD ; 
+artysta dramatyczny ; ** ; AA ;  ; 
+artystka dramatyczna ; ** ; AD ;  ; 
+artystyczna dusza ; ** ; AD ; 21 ;  
+artystyczny  nie³ad ; ** ; AC ; 21 ; 
+as *AAACAAAB kontrwywiadu ; *- ; AA ;  ; 
+as *AAACAAAB wywiadu ; *- ; AA ;  ; 
+astronomiczna  cena ; ** ; AD ;  ; 
+astronomiczna  suma *ADAAA ; ** ; AD ;  ; #wariant? 
+atak frontalny ; ** ; AC ; 21 ; 
+atlas geograficzny ; ** ; AC ;  ; 
+atmosfera  ziemska ; ** ; AD ; 21 ; 
+atrament  sympatyczny ; ** ; AC ;  ; 
+austriackie  gadanie ; ** ; AE ;  ; 
+autorytet  moralny ; ** ; AA ; 21 ; 
+awans  spo³eczny ; ** ; AC ; 21 ; 
+awantura  arabska ; ** ; AD ; 21 ; 
+azyl  polityczny ; ** ; AC ; ; 
+babka  dro¿d¿owa ; ** ; AD ; 21 ; 
+babka  wielkanocna ; ** ; AD ; 21 ; 
+babka  z piasku ; *-- ; AD ;  ; 
+babskie  gadanie ; ** ; AE ;  ; 
+$ austryjackie gadanie ; AE ; ;
+# babska *CBA sprawa ; ** ; AD ;  ; #babskie sprawy - inny wsg? &-
+badawczy  wzrok ; ** ; AC ;  ;  
+sokoli wzrok ; ** ; AC ; ;
+baga¿  doœwiadczeñ ; *- ; AC ;  ; 
+baga¿  rêczny ; ** ; AC ; 21 ; 
+bagno  moralne ; ** ; AE ; 21 ; 
+bajoñskie  pieni¹dze ; ** ; AG ;  ; 
+bajoñskie  sumy *ADAAA ; ** ; AG ;  ; #wariant &-
+bal *ACACACB karnawa³owy ; ** ; AC ;  ;
+bal *ACACACB maskowy ; ** ; AC ;  ; 
+bal *ACACACB maturalny ; ** ; AC ; komers ; 
+bal *ACACACB sylwestrowy ; ** ; AC ;  ; 
+ba³wan *ABABAAA morski ; ** ; AC ;  ; 
+bank  krwi ; *- ; AC ;  ; 
+bankrut  ¿yciowy ; ** ; AA ; 21 ; 
+bañka  mydlana ; ** ; A ; 21 ; 
+bar *ACAAAAA  mleczny ; ** ; AC ; ; 
+baranek  wielkanocny ; ** ; AB ;  ; 
+barania  g³owa ; ** ; AD ;  ; 
+bariera  celna ; ** ; AD ;  ; 
+bariera  dŸwiêku ; *- ; AD ;  ; 
+barszcz  bia³y ; ** ; AC ; 21 ; 
+barszcz  czerwony ; ** ; AC ; 21 ; 
+barwy  narodowe ; ** ; AG;  ; 
+$ kolory *AGAB narodowe ; ** ; AG ;  ; #lp? &-
+barwy  ochronne ; ** ; AG ; 21 ; 
+bateria  butelek ; *- ; AD ;  ; #wsg? +&
+bazyliszkowe  spojrzenie ; ** ; AE ;  ; 
+bazyliszkowy  wzrok ; ** ; AC ;  ; # wariant? Wzrok bazyliszka, spojrzenie bazyliszka +&
+beczka  œmiechu ; *- ; AD ;  ; 
+befsztyk  tatarski ; ** ; AC ; tatar ; 
+benedyktyñska  cierpliwoœæ ; ** ; AD ;  ; 
+benedyktyñska  praca ; ** ; AD ;  ; 
+benedyktyñska  wytrwa³oœæ ; ** ; AD ;  ; 
+bez *GBBAA atu ; -- ; AE ;  ; czm &
+sytuacja bez *GBBAA wyjœcia ; *-- ; AD ;  ; #wlzn &w
+bezkrwawe  ³owy ; ** ; AG ;  ; 
+# bezludna  wyspa ; ** ; AD ; 21 ; 
+# bezpañski  pies ; ** ; AB ;  ; 
+bezwarunkowa  kapitulacja ; ** ; AD ;  ; # ? &
+bia³a  broñ *ADCAAA ; ** ; AD ;  ; #ew. 21
+bia³a  flota ; ** ; AD ;  ; 
+bia³a  gor¹czka ; ** ; AD ;  ; 
+bia³a  noc ; ** ; AD ;  ; 
+bia³a  œmieræ ; ** ; AD ;  ; 
+bia³e  cia³ka krwi ; **- ; AG ; 12 ; 
+bia³e  szaleñstwo ; ** ; AE ;  ; 
+bia³e  wino *AEAAAB ; ** ; AE ; ; #ew. 21
+bia³y  chleb ; ** ; AC ;  ; #wariant: chleb pszenny?
+bia³y  cz³owiek ; ** ; AA ;  ; 
+bia³y  kruk ; ** ; AC ;  ; #AB?
+# bia³y  murzyn ; ** ; AA ;  ; 
+bia³y  ser ; ** ; AC ; 21 ; 
+bia³y  walc ; ** ; AC ;  ; 
+bia³y  wiersz ; ** ; AC ; 21 ; 
+bicz  bo¿y ; ** ; AA ; ; #czm & ??
+bicze  wodne ; ** ; AG ;  ; #czm + &
+bieda z nêdz¹ ; *-- ; AD ;  ; 
+bieg  maratoñski ; ** ; AC ;  ; 
+$ maraton 
+bieg  przez p³otki *ACABBA ; *-- ; AC ;  ; 
+bieg  rzeki ; *- ; AC ; ; # ? &
+bieg  wsteczny ; ** ; AC ; 21 ; 
+bierny  opór ; ** ; AC ;  ; 
+bie¿¹ca  woda ; ** ; AD ;  ; 
+bie¿¹ce  potrzeby ; ** ; AG ;  ; #lp? ? 
+bie¿¹cy  dzieñ ; ** ; AC ;  ; obecny ~ 
+bie¿¹cy  miesi¹c ; ** ; AC ;  ; # jw
+bie¿¹cy  rok ; ** ; AC ;  ; # jw
+bilet  miesiêczny ; ** ; AC ;  ; 
+bilet  wizytowy ; ** ; AC ;  ; 
+bita  droga *ADAB ; ** ; AD ;  ; 
+biuro  matrymonialne ; ** ; AE ;  ; 
+blacha  falista ; ** ; AD ;  ; 
+blada  twarz ; ** ; AD ;  ; # &w
+$ bia³y cz³owiek ; ** ; AA ;
+$ bia³y 
+blaski i cienie ; *-* ; AG ; 321 ; 
+# bliski  krewny ; ** ; AA ;  ; #wsg? + &
+# b³¹d  maszynowy ; ** ; AC ;  ; 
+# b³¹d  w rozumowaniu ; *-- ; AC ;  ; #wsg? - & wrb: ok 
+b³êdna  owca ; ** ; AD ;  ; 
+b³êdny  ognik ; ** ; AC ;  ; 
+b³êdny  rycerz ; ** ; AA ;  ; 
+b³êkitna  krew *ADCAAA ; ** ; AD ;  ; 
+b³êkitne  he³my ; ** ; AG ;  ; 
+# b³ogi  sen ; ** ; AC ;  ; #wsg? - & w
+# b³ogi  spokój ; ** ; AC ;  ; #wsg? - & w
+b³ona  dziewicza ; ** ; AD ;  ; 
+boa dusiciel *ABAABA ; -* ; AB ;  ;
+$ w¹¿ boa ; *-; AB ; ;  
+bogactwa  naturalne ; ** ; AG ; 21 ; 
+bogactwo  narodowe ; ** ; AE ; 21 ; 
+bohater  narodowy ; ** ; AA ; 21 ; 
+bohater  tytu³owy ; ** ; AA ; 21 ; 
+bojaŸñ  bo¿a ; ** ; AD ;  ; 
+bomba g³êbinowa ; ** ; AD ;  ; 
+bon *ACAAAAA  ton *ACAAAAA ; -* ; AC ;  ; 
+boski  nektar ; ** ; AC ; ambrozja ; 
+bo¿a  krówka ; ** ; AB ; biedronka ; 
+bóstwo  opiekuñcze ; ** ; AE ; 21 ; 
+bractwo  kurkowe ; ** ; AE ;  ; 
+brat  cioteczny ; ** ; AA ; 21 ; 
+brat  mleczny ; ** ; AA ; 21 ; 
+brat  stryjeczny ; ** ; AA ; 21 ; 
+braterstwo  krwi ; *- ; AE ;  ; 
+bratnia  d³oñ ; ** ; AD ;  ; 
+bratnia  dusza ; ** ; AD ;  ; 
+bratnia  pomoc ; ** ; AD ;  ; 
+br¹zowy  medal ; ** ; AC ;  ; 
+broñ *ADCAAA  konwencjonalna ; ** ; AD ;  ; 
+broñ  *ADCAAA krótka ; ** ; AD ;  ; 
+broñ *ADCAAA  masowego ra¿enia ; *-- ; AD ;  ; 
+broñ *ADCAAA  palna ; ** ; AD ;  ; 
+broñ *ADCAAA  rêczna ; ** ; AD ;  ; #+inne bronie
+brudne  pieni¹dze ; ** ; AG ;  ; 
+brudne  sprawki ; ** ; AG ;  ; 
+brylantowe  gody ; ** ; AG ;  ; 
+$ brylantowe  wesele ; ** ; AE ;  ; 
+brzydkie  wyrazy ; ** ; AG ; wulgaryzm, przekleñstwo ;
+$ brzydkie  s³owo ; ** ; AE ;  ; #warianty?
+$ niecenzuralne  s³owo ; ** ; AE ; 21 ; 
+$ nieparlamentarny  wyraz ; ** ; AC ;  ; 
+$ nieparlamentarne s³owo ; ** ; AE ; ; &
+brzydkie  kacz¹tko ; ** ; AB ;  ; 
+bujda  na resorach ; *-- ; Ad ;  ; #czm &W 
+bukiet  jarzyn ; *- ; AC ;  ; 
+bu³awa  hetmañska ; ** ; AD ;  ; #21?
+bu³awa  marsza³kowska ; ** ; AD ;  ; #21?
+bu³ka  paryska ; ** ; AD ;  ; 
+bu³ka  tarta ; ** ; AD ; 21 ; 
+bu³ka  z *GBBAA mas³em ; *-- ; AD ;  ; 
+burak  cukrowy ; ** ; AC ; 21 ; 
+burza  mózgów ; *- ; AD ;  ; 
+burza  oklasków ; *- ; AD ;  ; 
+burza  w szklance wody ; *--- ; AD ;  ; 
+burza  w³osów ; *- ; AD ;  ; 
+buty *AGAB  na s³oninie ; *-- ; AG ;  ; 
+buty zimowe ; ** ; AC ; ; & !
+buty *ACAABAA narciarskie ; ** ; AC ;  ; #etykiety but-buty & !
+buzia  w ciup ; *-- ; AD ;  ; 
+bydlêca  skóra ; ** ; AD ; 21 ; #termin + &
+byd³o  domowe ; ** ; AE ;  ; #21?
+byd³o  rogate ; ** ; AE ;  ; 
+byd³o  rzeŸne ; ** ; AE ;  ; 
+bystra  rzeka ; ** ; AD ;  ;  # ? &
+bystre  oko ; ** ; AE ;  ; #wsg? czm! wrb: ok, czêœæ mowy ??
+bystre  spojrzenie ; ** ; AE ;  ; & +
+bystry  dowcip ; ** ; AC ;  ; & archaiczne - &w
+byt  absolutny ; ** ; AC ;  ; 
+byt  materialny ; ** ; AC ;  ; 
+carskie  wrota ; ** ; AG ;  ; 
+cecha  charakterystyczna ; ** ; AC ;  ; & +
+cecha  charakteru ; *- ; AD ;  ; 
+cecha  dziedziczna ; ** ; AD ;  ; 
+ceg³a  dziurawka ; ** ; AD ;  ; 
+ceg³a  szamotowa ; ** ; AD ;  ; 
+celny  strza³ *ACAAAAA ; ** ; AC ;  ; 
+niecelny strza³ *ACAAAAA ; ** ; AC ; ;
+chybiony strza³ *ACAAAAA ; ** ; AC ; ;
+cena brutto ; *- ; AD ; ;
+cena  detaliczna ; ** ; AD ;  ; 
+cena  hurtowa ; ** ; AD ;  ; 
+cena  netto ; *- ; AD ;  ; 
+cena  umowna ; ** ; AD ; 21 ; 
+centralne  ogrzewanie ; ** ; AE ; CO ; 
+cenzura  prewencyjna ; ** ; AD ;  ; 
+ceremonia³  dworski ; ** ; AC ;  ; #21?
+cesarskie  ciêcie ; ** ; AE ; 21 ; 
+cewka  moczowa ; ** ; AD ;  ; 
+charakter  pisma ; *- ; AC ;  ; # ? &
+chemia  fizyczna ; ** ; AD ;  ; #wariant: fizykochemia? (mocno specjalistyczne s³owo)
+chemia  nieorganiczna ; ** ; AD ;  ; 
+chemia  organiczna ; ** ; AD ;  ; 
+chleb  powszedni ; ** ; AC ;  ; 
+ch³odne  przyjêcie ; ** ; AE ;  ; 
+ch³op *AAACAAAD jak *EK d¹b ; --- ; AA ;  ; 
+ch³opiec  do bicia ; *-- ; AA ;  ; 
+ch³opiec  okrêtowy ; ** ; AA ;  ; 
+ch³opski  filozof ; ** ; AA ;  ; 
+ch³opski  rozum ; ** ; AC ;  ; 
+ch³opski  upór ; ** ; AC ;  ; 
+chmura  burzowa ; ** ; AD ; 21 ; 
+chmura  gradowa ; ** ; AD ; 21 ; 
+chochlik  drukarski ; ** ; AC ;  ; 
+chodliwy  towar ; ** ; AC ;  ; 
+chodz¹ca  cnota ; ** ; AD ;  ; # ? &w (i nizej)
+chodz¹ca  dobroæ ; ** ; AD ;  ; 
+chodz¹ca  doskona³oœæ ; ** ; AD ;  ; 
+chodz¹ca  encyklopedia ; ** ; AD ;  ; 
+chodz¹ca  powaga ; ** ; AD ;  ; 
+chodz¹ca  uczciwoœæ ; ** ; AD ;  ; 
+choroba  dyplomatyczna ; ** ; AD ;  ; 
+choroba  dziedziczna ; ** ; AD ; 21 ;  # ? &
+choroba  kesonowa ; ** ; AD ;  ; 
+choroba  lokomocyjna ; ** ; AD ;  ; 
+choroba  morska ; ** ; AD ; 21 ; 
+choroba  spo³eczna ; ** ; AD ;  ; 
+choroba  zawodowa ; ** ; AD ;  ; 
+chora³  gregoriañski ; ** ; AC ;  ; 
+chóry anielskie ; ** ; AC ; 21 ; 
+chór serafinów ; *- ; AC ;  ; 
+chrzest  bojowy ; ** ; AC ; 21 ; 
+chrzeœcijañska  demokracja ; ** ; AD ; ; 
+chudy  ser ; ** ; AC ;  ; # + &
+chytra  sztuka ; ** ; AD ;  ; 
+cia³o  niebieskie ; ** ; AE ;  ; 
+cia³o  obce ; ** ; AE ;  ; 
+cia³o  pedagogiczne ; ** ; AE ;  ; 
+cia³o  ustawodawcze ; ** ; AE ;  ; 
+ci¹g dalszy ; ** ; AC ;  ; 
+cicha  nadzieja ; ** ; AD ;  ; 
+cicha  spó³ka ; ** ; AD ;  ; 
+cicha  woda ; ** ; AD ;  ; 
+ciche  dni ; ** ; AG ;  ; 
+cichy  adorator ; ** ; AA ;  ; 
+cichy  wielbiciel ; ** ; AA ;  ; #ew. wariant? - &
+cichy  wspólnik ; ** ; AA ;  ; 
+cielêcy wzrok ; ** ; AC ; ;
+cielêcy  zachwyt ; ** ; AC ;  ; #ew. warianty? 
+ciemny *CAB si³y ; ** ; AD ;  ; 
+ciemne  sprawy ; ** ; AG ;  ; #'ciemna sprawa'? 
+ciemnoœci  egipskie ; ** ; AG ; 21 ; 
+ciemny  lud *ACAAAAA ; ** ; AC ;  ; # ? &
+ciemny  typ *AAACAAAB ; ** ; AA ;  ; 
+$ typ *AAACAAAB spod ciemnej gwiazdy ; *--- ; AA ; ; 
+cienie  elizejskie ; ** ; AG ; 21 ; 
+ciep³e  kluchy ; ** ; AF ;  ; #czm &
+$ ciep³e  kluski *AGBA ; ** ; AF ;  ; 
+ciep³e  s³owo ; ** ; AE ;  ; ? &w
+ciête  pióro ; ** ; AE ;  ; 
+ciê¿ar  atomowy ; ** ; AC ;  ; 
+ciê¿ar  gatunkowy ; ** ; AC ; 21 ; 
+ciê¿ka  artyleria ; ** ; AD ;  ; #wlzn - wojskowo i metaf.
+ciê¿ka  atmosfera ; ** ; AD ;  ; # ? &w
+ciê¿ka  forsa ; ** ; AD ;  ; 
+ciê¿ka  rêka ; ** ; AD ;  ;
+ciê¿ka noga ; ** ; AD ; ;
+ciê¿ka  woda ; ** ; AD ;  ; 
+ciê¿ki  chleb ; ** ; AC ; ; #1
+ciê¿ki  grosz ; ** ; AC ;  ; 
+ciê¿ki  kaliber ; ** ; AC ;  ; 
+ciê¿ki  sen ; ** ; AC ;  ; 
+ciê¿ki  wodór ; ** ; AC ; deuter ; 
+ciê¿kie  chwile ; ** ; AG ;  ; 
+ciê¿kie  czasy ; ** ; AG ;  ; 
+ciê¿kie  pieni¹dze ; ** ; AG ;  ; 
+ciê¿kie  powietrze ; ** ; AG ;  ; #duszno
+ciê¿kie  roboty *ADAAA ; ** ; AG ;  ; 
+cios *ACAAAAA  w plecy ; *-- ; AC ;  ; 
+cisza  nocna ; ** ; AD ;  ; 
+ciœnienie  atmosferyczne ; ** ; AE ;  ; 
+$ ciœnienie  powietrza ; *- ; AE ;  ; 
+ciœnienie  krwi ; *- ; AE ;  ; 
+c³o  zaporowe ; ** ; AE ;  ; 
+ogieñ zaporowy ; ** ; AC ; ;
+cena zaporowa ; ** ; AD ; ;
+cnoty  biblijne ; ** ; AG ; 21 ;
+$ cnoty  chrzeœcijañskie ; ** ; AG ; 21 ; 
+cnoty  kardynalne ; ** ; AD ;  ; 
+szczyt  doskona³oœci ; *- ; AC ;  ; 
+cud *ACAAAAA techniki ; *- ; AC ;  ; 
+cuda *ACAD wianki ; -- ; AG ;  ; # ? &
+cudowne  dziecko ; ** ; AE ;  ; 
+cukier  gronowy ; ** ; AC ;  ; 
+cukier  kryszta³ ; ** ; AC ;  ; 
+cukier  puder ; ** ; AC ;  ; 
+cukier  w kostkach ; *-- ; AC ;  ; 
+cyfra  arabska ; ** ; AD ;  ; 
+cyfra  rzymska ; ** ; AD ;  ; 
+cygañskie  ¿ycie *AEBAA ; ** ; AE ;  ; 
+cykl  s³oneczny ; ** ; AC ;  ; 
+cywil  banda ; *- ; AD ;  ; 
+cywilne  ubranie ; ** ; AE ; 21 ; 
+czarna  dziura ; ** ; AD ;  ; 
+czarna  godzina ; ** ; AD ;  ; 
+czarna  jagoda ; ** ; AD ;  ; 
+czarna  kawa ; ** ; AD ;  ; 
+czarna  ksiêga ; ** ; AD ;  ; 
+czarna  lista ; ** ; AD ;  ; 
+czarna  magia ; ** ; AD ;  ; 
+czarna  msza ; ** ; AD ;  ; 
+czarna  niewdziêcznoœæ ; ** ; AD ;  ; 
+czarna  ospa ; ** ; AD ;  ; 
+czarna  owca ; ** ; AD ;  ; 
+czarna  per³a ; ** ; AD ;  ; 
+czarna  polewka ; ** ; AD ;  ; 
+czarna  porzeczka ; ** ; AD ;  ; 
+czarna  robota ; ** ; AD ;  ; #? &w
+czarna  rozpacz ; ** ; AD ;  ; # ? &w
+czarna  skrzynka ; ** ; AD ;  ; 
+czarne  myœli *ADCCA ; ** ; AD ;  ; 
+czarne  podniebienie ; ** ; AE ;  ; 
+czarny  bez *ACAAAAA ; ** ; AC ;  ; 
+czarny  charakter ; ** ; AC ;  ; 
+czarny  chleb ; ** ; AC ;  ; 
+czarny  diament ; ** ; AC ;  ; 
+czarny  humor ; ** ; AC ;  ; 
+czarny  l¹d ; ** ; AC ; Afryka ; 
+$ czarny kontynent ; ** ; AC ; ; 
+czarny  koñ *ABAABB ; ** ; AB ;  ; #etykieta?
+czarny  rynek *ACABA ; ** ; AC ;  ; 
+czarodziejska  ró¿d¿ka ; ** ; AD ; 21 ; 
+czas  letni ; ** ; AC ;  ; 
+czas  s³oneczny ; ** ; AC ;  ; 
+czas  teraŸniejszy ; ** ; AC ;  ; 
+czas  zimowy ; ** ; AC ;  ; 
+czcza  gadanina ; ** ; AD ;  ; 
+$ czcze  s³owa ; ** ; AG ;  ; 
+czek  bez *GBBAA pokrycia ; *-- ; AC ;  ; 
+czekolada  mleczna ; ** ; AD ; 21 ; 
+czerwona  bur¿uazja ; ** ; AD ;  ; 
+czerwona  kapusta ; ** ; AD ;  ; 
+p³achta  na byka *ABAC ; *-- ; AD ;  ; 
+czerwona  porzeczka ; ** ; AD ;  ; 
+czerwone  cia³ka  krwi ; **- ; AG ;  ; # ? &
+czerwony  kur *ABABAAA ; ** ; AB ; po¿ar ; 
+czeski  b³¹d ; ** ; AC ;  ; 
+czeski  film ; ** ; AC ;  ; 
+czeskie  szk³o ; ** ; AE ;  ; 
+czêœæ  mowy ; *- ; AD ;  ; 
+cz³onek *AAAAB honorowy ; ** ; AA ;  ; # ? & (prezes h. itp.)
+cz³onek *ACABBA mêski ; ** ; AC ; 21 ; 
+cz³onek  *AAAAB rzeczywisty ; ** ; AA ;  ; 
+cz³owiek *AAHA czynu ; *- ; AA ;  ; 
+cz³owiek *AAHA honoru ; *- ; AA ;  ; 
+cz³owiek *AAHA interesu ; *- ; AA ;  ; 
+cz³owiek *AAHA jaskiniowy ; ** ; AA ;  ; 
+cz³owiek *AAHA kopalny ; ** ; AA ;  ; 
+cz³owiek *AAHA  neandertalski ; ** ; AA ; neandertalczyk ; 
+go³êbie serce ; ** ; AE ;  ; 
+z³a reputacja ; ** ; AD ;  ; # ?
+$ kiepska reputacja ; ** ; AD ; ; 
+$ w¹tpliwa reputacja ; ** ; AD ; ;
+$ podejrzana reputacja ; ** ; AD ; ;
+cz³owiek *AAHA pierwotny ; ** ; AA ;  ; 
+cz³owiek *AAHA pióra *AEAAAB ; *- ; AA ; pisarz ; 
+cz³owiek *AAHA pracy ; *- ; AA ;  ; #? &w
+cz³owiek *AAHA wielkiego formatu ; *-- ; AA ;  ; 
+cz³owiek *AAHA z *GBBAA marginesu ; *-- ; AA ;  ; # ? &
+czo³o  kolumny ; *- ; AE ;  ; # ? &
+czterolistna  koniczyna ; ** ; AD ;  ; 
+cztery *DBAB deski ; ** ; AG ; trumna ; 
+cztery *DBAB kó³ka ; ** ; AG ; samochód ; 
+cztery *DBAB litery ; ** ; AG ; dupa ; 
+cztery *DBAB œciany ; ** ; AG ; dom ; 
+czujny  sen ; ** ; AC ;  ; 
+czu³e  serce ; ** ; AE ;  ; # ? &
+czu³e  s³ówka ; ** ; AG ;  ; 
+czwarty  bieg ; ** ; AC ;  ; 
+czyn  spo³eczny ; ** ; AC ;  ; 
+czynna  s³u¿ba ; ** ; AD ;  ; #21?
+czynna  zniewaga ; ** ; AD ;  ; 
+czynny  wulkan ; ** ; AC ;  ; # ? &
+czystka  etniczna ; ** ; AD ;  ; 
+czysty  przypadek ; ** ; AC ;  ; 
+czysty  zysk ; ** ; AC ;  ; 
+dama  dworu ; *- ; AD ;  ; 
+dama  kameliowa ; ** ; AD ;  ; 
+dama  karowa ; ** ; AD ; 21 ; 
+$ dama karo ; *- ; AD ; ;
+dama  kierowa ; ** ;  AD ; 21 ; 
+$ dama kier ; *- ; AD ; ;
+dama  pikowa ; ** ; AD ; 21 ; 
+$ dama pik ; *- ; AD ; ;
+dama  treflowa ; ** ; AD ; 21 ; 
+$ dama trefl ; *- ; AD ; ;
+dama  do towarzystwa ; *-- ;  AD ;  ; 
+danie *AEBAA  barowe ; ** ; AE ; ; 
+danie *AEBAA dnia ; *- ; AE ; ; 
+danie *AEBAA  firmowe ; ** ; AE ;  ; 
+dar bo¿y ; ** ; AC ; 21 ; 
+dar s³owa ; *- ; AC ;  ; 
+dar natury ; *- ; AC ;  ; 
+dar  nieba ; *- ; AC ;  ; 
+dawne  czasy ; ** ; AG ;  ; # ?? &w
+d¹b  korkowy ; ** ; AC ;  ;
+deficyt  bud¿etowy ; ** ; AC ;  ; 
+delikatna  materia ; ** ; AD ;  ; 
+demokracja  ludowa ; ** ; AD ;  ; 
+demokracja  parlamentarna ; ** ; AD ;  ; 
+demonstracja  si³y *ADAAA ; *- ; AD ;  ; 
+deski *AGBA  sceniczne ; ** ; AG ;  ; 
+diabelska  sprawa ; ** ; AD ; 21 ; 
+diabelski  m³yn ; ** ; AC ;  ; 
+diabelskie  nasienie ; ** ; AE  ; ;
+$ czartowskie nasienie ; ** ; AE ; ; 
+diabelska  sztuczka ; ** ; AD ; 21 ; 
+diabe³ *ABABAB  morski ; ** ; AB ;  ; 
+dieta  mleczna ; ** ; AD  ;  ; # &
+d³ug  honorowy ; ** ; AC ;  ; 
+d³ug  karciany ; ** ; AC ;  ; 
+d³ug  wdziêcznoœci ; *- ; AC ;  ; 
+d³ugoœæ  geograficzna ; ** ; AD ;  ; 
+dzieñ *ACABBB roboczy ; ** ; AC ;  ; #podwojny wzorzec
+dno *AEAAAB  spo³eczne ; ** ; AE ; 21 ; 
+koniec œwiata ; --- ; AC ;  ; 
+dobór  naturalny ; ** ; AC ;  ; 
+dobrane  towarzystwo ; ** ; AE ;  ; 
+dobro  ogólne ; ** ; AE ;  ; #wsg?
+dobroczynny  wp³yw ; ** ; AC ;  ; 
+dobry numer ; -- ; AC ;  ; 
+dobry omen ; -- ; AC ;  ; 
+dochód  brutto ; *- ; AC ;  ; 
+dochód  narodowy ; ** ; AC ;  ; 
+dochód  netto ; *- ; AC ;  ; 
+doczesna  wêdrówka ; ** ; AD ; 21 ; #wariant: ¿ycie?
+dodatek  rodzinny ; ** ; AC ;  ; 
+dodatni  biegun ; ** ; AC ; 21 ; 
+doktorat  honorowy ; ** ; AC ;  ; 
+$ doktorat honoris causa ; *-- ; AC ; ;
+dolina  erozyjna ; ** ; AD ;  ; 
+dolina  krasowa ; ** ; AD ;  ; 
+dolina  lodowcowa ; ** ; AD ;  ; 
+dolina  rzeczna ; ** ; AD ;  ; 
+dolina  tektoniczna ; ** ; AD ;  ; 
+dolna  powieka ; ** ; AD ;  ; 
+dolna  warga ; ** ; AD ;  ; 
+do³ek  startowy ; ** ; AC ;  ; 
+do³y  spo³eczne ; ** ; AG ;  ; 
+dom  akademicki ; ** ; AC ; akademik ; 
+dom  bo¿y ; ** ; AC ; koœció³, œwi¹tynia ; 
+dom  dziecka ; *- ; AC ;  ; 
+dom  jednorodzinny ; ** ; AC ;  ; 
+dom  kultury ; *- ; AC ;  ; 
+dom  mieszkalny ; ** ; AC ;  ; 
+dom  otwarty ; ** ; AC ;  ; 
+dom  parterowy ; ** ; AC ;  ; 
+dom  piêtrowy ; ** ; AC ;  ; 
+dom  rodzinny ; ** ; AC ; 21 ; 
+dom  schadzek ; *- ; AC ;  ; # powi¹zania z domem publicznym?
+dom  towarowy ; ** ; AC ;  ; 
+dom  uciech ; *- ; AC ; ; #jw.
+dom  wczasowy ; ** ; AC ;  ; 
+domek  fiñski ; ** ; AC ; 21 ; 
+domek  kempingowy ; ** ; AC ;  ; 
+domek  z *GBBAA kart *AGAAA ; *-- ; AC ;  ; 
+domowe  pielesze ; ** ; AG ;  ; #21?
+dorobek  artystyczny ; ** ; AC ; 21 ; 
+dorobek  kulturalny ; ** ; AC ;  ; #21?
+dowód  mi³oœci ; *- ; AC ;  ; 
+dowód  osobisty ; ** ; AC ;  ;
+$ dowód to¿samoœci ; *- ; AC ; ; 
+dowód  rzeczowy ; ** ; AC ;  ; 
+dozór  policyjny ; ** ; AC ;  ; #21?
+drabina  spo³eczna ; ** ; AD ; 21 ; 
+drakoñskie  prawo ; ** ; AE ;  ; 
+$ drakoñskie  przepisy ; ** ; AG ;  ; 
+dramat  historyczny ; ** ; AC ;  ; 
+dramat  obyczajowy ; ** ; AC ;  ; 
+dramat  rodzinny ; ** ; AC ;  ; 
+drapacz  chmur ; *- ; AC ;  ; 
+dreszcz  grozy ; *- ; AC ;  ; 
+dreszcz  rozkoszy ; *- ; AC ;  ; 
+drobna  szlachta ; ** ; AD ;  ; #wariant: szlachta zaœciankowa (zagrodowa)?
+drobny  kupiec ; ** ; AA ;  ; 
+drobny  przemys³ ; ** ; AC ;  ; 
+drobny  rzemieœlnik ; ** ; AA ;  ; 
+droga *ADAB  administracyjna ; ** ; AD ;  ; 
+droga *ADAB l¹dowa ; ** ; AD ;  ; 
+droga *ADAB morska ; ** ; AD ;  ; 
+droga *ADAB powietrzna ; ** ; AD ;  ; 
+droga *ADAB prawna ; ** ; AD ;  ; 
+droga *ADAB publiczna ; ** ; AD ;  ; #21?
+droga *ADAB s³u¿bowa ; ** ; AD ;  ; 
+droga *ADAB urzêdowa ; ** ; AD ;  ; 
+droga *ADAB wodna ; ** ; AD ;  ; 
+drogie  kamienie ; ** ; AG ;  ; 
+druga  klasa ; ** ; AD ; ; #21?
+druga  m³odoœæ ; ** ; AD ;  ; 
+druga  ojczyzna ; ** ; AD ;  ; 
+druga  osoba ; ** ; AD ;  ; 
+druga  strona  medalu ; **- ; AD ;  ; 
+$ odwrotna strona medalu ; **- ; AD ; ; 
+druga  zmiana ; ** ; AD ;  ; #wsg?
+drugi  bieg ; ** ; AC ;  ; 
+drugi  g³os ; ** ; AC ;  ; 
+drugie  danie *AEBAA ; ** ; AE ;  ; #podwójny wpis w clp
+drugie  imiê ; ** ; AE ;  ; 
+drugie  œniadanie ; ** ; AE ;  ; 
+drut  elektryczny ; ** ; AC ;  ; 
+drut  kolczasty ; ** ; AC ;  ; 
+druty  wysokiego napiêcia ; *-- ; AG ;  ; #ew. lp?
+$ linia wysokiego napiêcia ; *-- ; AD ; ;
+dru¿yna  harcerska ; ** ; AD ;  ; 
+dru¿yna  sportowa ; ** ; AD ;  ; 
+drzewo  figowe ; ** ; AE ;  ; 
+drzewo  genealogiczne ; ** ; AE ;  ; 
+drzewo  kamforowe ; ** ; AE ;  ; 
+drzewo  owocowe ; ** ; AE ;  ; 
+dubeltowy  dureñ *AAABAB ; ** ; AA ;  ; #dwa wzorce odmiany!
+$ dubeltowy  osio³ *AAACAAAB ; ** ; AA ;  ; 
+duby smalone ; -- ; AG ;  ; 
+duch  czasu ; *- ; AB ;  ; 
+duch  epoki ; *- ; AB ;  ; 
+duch  narodowy ; ** ; AB ;  ; 
+duch  nieczysty ; ** ; AB ;  ;
+dumka  kozacka ; ** ; AD ;  ; 
+$ dumka  ukraiñska ; ** ; AD ;  ; 
+dupa  wo³owa ; ** ; AD ;  ; 
+dusza  pokutuj¹ca ; ** ; AD ; 21 ; 
+du¿e  pieni¹dze ; ** ; AG ;  ; 
+dworzec  autobusowy ; ** ; AC ;  ; 
+dworzec  kolejowy ; ** ; AC ;  ; 
+dworzec  towarowy ; ** ; AC ;  ; 
+dwór  królewski ; ** ; AC ; 21 ; 
+dwór  szlachecki ; ** ; AC ; 21 ; #+dwór ksi¹¿êcy
+dwuznaczna  sytuacja ; ** ; AD ;  ; 
+dwuznaczny  uœmiech ; ** ; AC ;  ; 
+dyktatura  proletariatu ; *- ; AD ;  ; 
+dyktatura  wojskowa ; ** ; AD ;  ; 
+dyrektor  administracyjny ; ** ; AA ;  ; 
+dyrektor  techniczny ; ** ; AA ;  ; 
+dyscyplina  naukowa ; ** ; AD ;  ; 
+dyscyplina  partyjna ; ** ; AD ; 21 ; 
+dyscyplina  pracy ; *- ; AD ;  ; 
+dyscyplina  sportowa ; ** ; AD ;  ; 
+dyscyplina  wewnêtrzna ; ** ; AD ; 21 ; 
+dyscyplina  wojskowa ; ** ; AD ; 21 ; 
+dysertacja  doktorska ; ** ; AD ;  ; 
+dziadowski  bicz ; ** ; AC ;  ; 
+dzia³anie  arytmetyczne ; ** ; AE ;  ; 
+dzia³anie  uboczne ; ** ; AE ;  ; 
+dzieci kwiaty ; ** ; AG ; hipisi ; #ew. lp?
+dziecinna  igraszka ; ** ; AD ;  ; 
+dziecko  szczêœcia ; *- ; AE ;  ; 
+dziecko z *GBBAA nieprawego ³o¿a ; *--- ; AE ; ; #warianty: bêkart (wulg.), bastard (nie do koñca synonimiczne)? 
+dzie³o  sztuki ; *- ; AE ;  ; 
+dziennik  podawczy ; ** ; AC ;  ; 
+dziennik  pok³adowy ; ** ; AC ;  ; 
+dziennik  telewizyjny ; ** ; AC ;  ; 
+dzieñ *ACABBB powszedni ; ** ; AC ;  ; 
+dzieñ *ACABBB pracy ; *- ; AC ;  ; 
+dzieñ *ACABBB œwi¹teczny ; ** ; AC ;  ; 
+dzieñ *ACABBB targowy ; ** ; AC ;  ; 
+dziewczyna  spod latarni *ADACBAA ; *-- ; AA ; prostytutka ; 
+dzika *CBA kaczka ; ** ; AB ;  ; 
+dzikie  miêso ; ** ; AE ;  ; 
+dziurawa  kieszeñ ; ** ; AD ;  ; 
+dziurawe  rêce ; ** ; AG ;  ; 
+dziwy *AGAB nad dziwami *AGAB ; *-- ; AG ;  ; 
+dŸwig  towarowy ; ** ; AC ;  ; 
+efekty  specjalne ; ** ; AG ;  ; 
+egzamin  dojrza³oœci ; *- ; AC ; matura ; 
+egzamin  komisyjny ; ** ; AC ;  ; 
+egzamin  magisterski ; ** ; AC ;  ; 
+egzemplarz  autorski ; ** ; AC ; 21 ; 
+ekonomia  polityczna ; ** ; AD ;  ; 
+eliksir  m³odoœci ; *- ; AC ;  ; #+mi³oœci 
+emigracja  polityczna ; ** ; AD ;  ; 
+energia  atomowa ; ** ; AD ;  ; 
+energia  cieplna ; ** ; AD ;  ; 
+energia  elektryczna ; ** ; AD ;  ; #wariant: pr¹d?
+energia  kinetyczna ; ** ; AD ;  ; 
+energia  potencjalna ; ** ; AD ;  ; 
+energia  s³oneczna ; ** ; AD ;  ; 
+enklawa  ciszy ; *- ; AD ;  ;
+epokowy  wynalazek ; ** ; AC ;  ; 
+etyka *ADAB lekarska ; ** ; AD ;  ; 
+etyka *ADAB zawodowa ; ** ; AD ;  ; 
+fabryka  snów ; *- ; AD ; Hollywood ; 
+fachowa  rêka ; ** ; AD ;  ; 
+fachowe  oko *AEACA ; ** ; AE ;  ; #dwa wzorce odmiany!
+fala  upa³ów ; *- ; AD ;  ; 
+fala  akustyczna ; ** ; AD ;  ; 
+$ fala  dŸwiêkowa ; ** ; AD ;  ; 
+fale *ADACBABA  d³ugie ; ** ; AD ;  ; 
+fale *ADACBABA  eteru ; *- ; AG ;  ; 
+fala  g³osowa ; ** ; AD ;  ; #wariant fali akustycznej?
+fale *ADACBABA krótkie ; ** ; AD ;  ; 
+fale *ADACBABA ultrakrótkie ; ** ; AD ;  ; #lp?
+fa³d *ACAAAAA skórny ; ** ; AC ;  ; 
+fa³szywa  moneta ; ** ; AD ;  ; 
+fa³szywa  skromnoœæ ; ** ; AD ;  ; 
+fa³szywy  alarm ; ** ; AC ;  ; 
+fa³szywy  prorok ; ** ; AA ;  ; 
+fasola  per³owa ; ** ; AD ;  ; 
+fenomen *ACAAAAA natury ; *- ; AC ;  ; #wariant: wybryk? 
+ferie  œwi¹teczne ; ** ; AG ;  ; #wariant: przerwa?
+ferie  wielkanocne ; ** ; AG ; ;  #jw
+ferie  zimowe ; ** ; AG ;  ;
+figura  geometryczna ; ** ; AD ;  ; 
+figura  retoryczna ; ** ; AD ; ; 
+figura  stylistyczna ; ** ; AD ; 21 ; 
+fikcja  literacka ; ** ; AD ;  ; 
+filologia  klasyczna ; ** ; AD ;  ; #+ filologie
+filozofia  materialistyczna ; ** ; AD ;  ; #21?
+filozofia  ¿yciowa ; ** ; AD ; 21 ; 
+fio³ek  alpejski ; ** ; AC ;  ; 
+fizyka *ADAB doœwiadczalna ; ** ; AD ;  ; 
+formacja  geologiczna ; ** ; AD ;  ; #21?
+formacja  spo³eczna ; ** ; AD ;  ; 
+formu³a  grzecznoœciowa ; ** ; AD ; 21 ; 
+$ formu³ka grzecznoœciowa ; ** ; AD ; 21 ; 
+formu³a  prawna ; ** ; AD ;  ; 
+fotel  dentystyczny ; ** ; AC ;  ; 
+fundusz  powierniczy ; ** ; AC ;  ; 
+fundusz  reprezentacyjny ; ** ; AC ;  ; 
+fundusz  socjalny ; ** ; AC ;  ; 
+gabinet  figur woskowych ; *-- ; AC ;  ; 
+gabinet  kosmetyczny ; ** ; AC ;  ; 
+gabinet  lekarski ; ** ; AC ;  ; 
+gabinet  osobliwoœci ; *- ; AC ;  ; 
+galanteria  skórzana ; ** ; AD ;  ; 
+gama  kolorów *AGAB ; *- ; AD ;  ; 
+gard³owa  sprawa ; ** ; AD ;  ; 
+gaz *ACAAAAA bojowy ; ** ; AC ;  ; 
+gaz *ACAAAAA ziemny ; ** ; AC ;  ; 
+gaza  higroskopijna ; ** ; AD ;  ; 
+genera³ *AAAAAA armii ; *- ; AA ;  ; 
+genera³ *AAAAAA brygady ; *- ; AA ;  ; 
+genera³ *AAAAAA dywizji ; *- ; AA ;  ; #+inne stopnie
+geografia  fizyczna ; ** ; AD ;  ; 
+gêsia  skórka ; ** ; AD ;  ; 
+gêœ  gêgawa ; ** ; AD ;  ; #termin?
+gêœ  siod³ata ; ** ; AD ;  ; #termin?
+giez  bydlêcy ; ** ; AB ;  ; #termin? 
+g³¹b *AAACAAAB kapuœciany ; ** ; AA ; 21 ; 
+$ g³odne kawa³ki ; ** ; AG ; ; 
+g³os  protestu ; *- ; AC ;  ; 
+g³os  rozs¹dku ; *- ; AC ;  ; 
+g³os  serca ; *- ; AC ;  ; 
+g³os  wo³aj¹cego na puszczy ; *--- ; AC ;  ; 
+g³oska  bezdŸwiêczna ; ** ; AD ;  ; 
+g³oska  dŸwiêczna ; ** ; AD ;  ; 
+g³owa  do poz³oty ; *-- ; AD ;  ; 
+g³owa  koœcio³a ; *- ; AD ;  ; #wariant: papie¿? - w przypadku koœcio³a lokalnego mo¿e byc to biskup...
+g³owa  rodu *ACAAAAA 1076102 ; *- ; AD ;  ; #ród, rod - takie same etykiety
+g³ód  pieniêdzy ; *- ; AC ;  ; 
+g³ód  wiedzy ; *- ; AC ;  ; 
+g³ód  ziemi ; *- ; AC ;  ; 
+g³ówna  rola ; ** ; AD ;  ; 
+g³ucha  cisza ; ** ; AD ;  ; 
+gniazdo  rodzinne ; ** ; AE ; 21 ; 
+godzina  policyjna ; ** ; AD ;  ; 
+godzina  zemsty ; *- ; AD ;  ; 
+godziny  nadliczbowe ; ** ; AD ;  ; 
+go³¹b  pocztowy ; ** ; AB ;  ; 
+go³¹b  pokoju ; *- ; AB ;  ; 
+$ go³¹bek *ABAC pokoju ; *- ; AB ;  ; 
+gor¹ce  oklaski ; ** ; AG ;  ; #wariant: 'burzliwe oklaski'?
+gor¹cy  okres ; ** ; AC ;  ; 
+gorsza sprawa ; -- ; AD ;  ; #nieodmienna?
+gorzka  ironia ; ** ; AD ;  ; 
+gorzka  prawda ; ** ; AD ;  ; 
+gorzki  chleb ; ** ; AC ;  ; 
+gorzki  kielich ; ** ; AC ;  ; 
+$ kielich goryczy ; *- ; AC ; ;
+$ czara goryczy ; *- ; AD ; ;
+gorzkie  doœwiadczenie ; ** ; AE ;  ; 
+gorzkie  ¿ale ; ** ; AG ;  ; 
+gospodarka  dwupolowa ; ** ; AD ; dwupolówka ; #+trójpolówka
+gospodarka  narodowa ; ** ; AD ;  ; 
+gospodarstwo  domowe ; ** ; AE ;  ; #21?
+gospodarstwo  rolne ; ** ; AE ;  ; 
+goœcinne  progi ; ** ; AG ;  ; 
+goœcinny  wystêp ; ** ; AC ; 21 ; 
+gra *ADAAA s³ów ; *- ; AD ;  ; 
+gra *ADAAA w berka ; *-- ; AD ; berek ; 
+gra *ADAAA w ciuciubabkê ; *-- ; AD ; ciuciubabka ; 
+graj¹ca  szafa ; ** ; AD ; 21 ; 
+granatowy  policjant ; ** ; AA ;  ; 
+grecki  obrz¹dek ; ** ; AC ;  ; 
+grobowa  cisza ; ** ; AD ; 21 ; 
+grobowe  milczenie ; ** ; AE ;  ; 
+grobowy  g³os ; ** ; AC ;  ; 
+groch z kapust¹ ; *-- ; AC ;  ; 
+grono  rodzinne ; ** ; AE ; 21 ; 
+grosz  wdowi ; ** ; AC ; 21 ; 
+groszek *ACABA konserwowy ; ** ; AC ;  ; 
+groszek *ACABA ptysiowy ; ** ; AC ;  ; 
+grób  rodzinny ; ** ; AC ; 21 ; #wariant: grobowiec rodzinny?
+gruba  forsa ; ** ; AD ;  ; 
+gruba  ryba ; ** ; AD ;  ; 
+gruby  nietakt ; ** ; AC ;  ; 
+gruczo³  ch³onny ; ** ; AC ;  ; 
+gruczo³  dokrewny ; ** ; AC ;  ;
+gruczo³  jadowy ; ** ; AC ;  ; 
+gruczo³  p³ciowy ; ** ; AC ;  ;
+grupa  atomowa ; ** ; AD ;  ;
+grupa  krwi ; *- ; AD ;  ; 
+grupa  spo³eczna ; ** ; AD ;  ; 
+grzbiet  górski ; ** ; AC ; 21 ; 
+grzech  œmiertelny ; ** ; AC ; 21 ;
+$ grzech ciê¿ki ; ** ; AC ; 21 ; 
+grzechy  m³odoœci ; *- ; AG ;  ; #lp?
+grzeszna  myœl *ADCCA ; ** ; AD ;  ; 
+grzeszny  œwiat ; ** ; AC ;  ; #21?
+grzyb  jadalny ; ** ; AC ; 21 ; 
+grzybki *ACABBA marynowane ; ** ; AG ;  ; #lp?
+grzyby  suszone ; ** ; AG ;  ; #lp?
+guma  arabska ; ** ; AD ;  ; 
+guma  do ¿ucia ; *-- ; AD ;  ; 
+gwiazda  filmowa ; ** ; AD ; 21 ; 
+gwiazda  piêcioramienna ; ** ; AD ; pentagram ; #ka¿da gp to pentagram?
+gwiazdor  filmowy ; ** ; AA ; 21 ; 
+gwóŸdŸ *ACACBAA do trumny ; *-- ; AC ;  ; 
+gwóŸdŸ *ACACBAA programu ; *- ; AC ;  ; 
+hala sportowa ; ** ; AD ;  ; #21?
+hala  targowa ; ** ; AD ;  ; 
+hamulec  bezpieczeñstwa ; *- ; AC ;  ; 
+hamulec  rêczny ; ** ; AC ;  ; 
+handel  detaliczny ; ** ; AC ;  ; 
+handel  zagraniczny ; ** ; AC ;  ; 
+hart  ducha ; *- ; AC ;  ; 
+hetman *AAADAA polny ; ** ; AA ; ;  
+hetman  *AAADAA wielki ; ** ; AA ; ; 
+hiena  cmentarna ; ** ; AD ;  ; 
+hierarchia  spo³eczna ; ** ; AD ; 21 ; 
+higiena  intymna ; ** ; AD ;  ; 
+higiena  osobista ; ** ; AD ; 21 ; 
+higiena  pracy ; *- ; AD ;  ; 
+histeria  zbiorowa ; ** ; AD ; 21 ; 
+historia  choroby ; *- ; AD ;  ; 
+historia  nowo¿ytna ; ** ; AD ;  ; #21?
+historia  powszechna ; ** ; AD ;  ; 
+historia  staro¿ytna ; ** ; AD ;  ; 
+hiszpañska  bródka ; ** ; AD ;  ; #21?
+hokej  na lodzie *ACAAAAA ; *-- ; AC ;  ; 
+hokej  na trawie ; *-- ; AC ;  ; 
+ho³d  lenny ; ** ; AC ;  ; 
+honorowy  dawca  krwi ; **- ; AA ;  ; #ew. 'dawca krwi'?
+honorowy  obywatel ; ** ; AA ; 21 ; 
+honory *AGAB wojskowe ; ** ; AG ;  ; 
+horyzont  myœlowy ; ** ; AC ; 21 ; 
+hotel  robotniczy ; ** ; AC ;  ;  
+huk  roboty *ADAAA ; *- ; AC ;  ; 
+hymn  narodowy ; ** ; AC ; 21 ; 
+idea  przewodnia ; ** ; AD ; 21 ; 
+idealizm  historyczny ; ** ; AC ;  ; 
+igrzyska  olimpijskie ; ** ; AG ; olimpiada ; 
+ikarowe  loty ; ** ; AG ;  ; 
+immunitet  dyplomatyczny ; ** ; AC ;  ; #21?
+immunitet  poselski ; ** ; AC ;  ; #21?
+imperatyw  kategoryczny ; ** ; AC ;  ; #termin?
+instrument  dêty ; ** ; AC ;  ; 
+instrument  szarpany ; ** ; AC ;  ; #+i. uderzany
+instynkt  macierzyñski ; ** ; AC ;  ; 
+instytut  badawczy ; ** ; AC ;  ; 
+instytut  naukowy ; ** ; AC ;  ; 
+instytut  wydawniczy ; ** ; AC ;  ; 
+insygnia  koronne ; ** ; AG ;  ; 
+insygnia  królewskie ; ** ; AG ;  ; #wariant? +insygnia w³adzy
+inteligencja  techniczna ; ** ; AD ; 21 ; 
+interpelacja  poselska ; ** ; AD ;  ; #21?
+interwencja  zbrojna ; ** ; AD ; 21 ; 
+inwalida  wojenny ; ** ; AA ; ; 
+inwentarz  domowy ; ** ; AC ;  ; 
+in¿ynier  elektryk *AAACBA ; ** ; AA ;  ; #wsg?
+in¿ynier  mechanik *AAACBA ; ** ; AA ;  ; #wsg?
+ironia  losu ; *- ; AD ;  ; 
+iskra  bo¿a ; ** ; AD ; 21 ; 
+iskra  elektryczna ; ** ; AD ;  ; 
+iskra  nadziei ; *- ; AD ;  ; 
+istota  ludzka ; ** ; AD ; 21 ; 
+istota  nadprzyrodzona ; ** ; AD ; 21 ; 
+istota  rozumna ; ** ; AD ; 21 ; 
+istota  rzeczy ; *- ; AD ; ; 
+izba  porodowa ; ** ; AD ;  ; 
+izba  poselska ; ** ; AD ;  ; 
+izba  przyjêæ ; *- ; AD ;  ; 
+izba  wytrzeŸwieñ ; *- ; AD ;  ; 
+izba  zatrzymañ ; *- ; AD ;  ; 
+jab³ko  niezgody ; *- ; AE ;  ; 
+jad  kie³basiany ; ** ; AC ;  ; 
+jadowite  spojrzenie ; ** ; AE ;  ; 
+jadowity  uœmiech ; ** ; AC ;  ; 
+jajko na miêkko ; *-- ; AE ;  ; #wsg: 'na miêkko'?
+jajko na twardo ; *-- ; AE ;  ; #wsg: 'na twardo'?
+ja³owa  dyskusja ; ** ; AD ;  ; 
+ja³owa  ziemia ; ** ; AD ; 21 ; 
+ja³owy  opatrunek ; ** ; AC ; 21 ; 
+jama  brzuszna ; ** ; AD ;  ; 
+jarzmo  ma³¿eñskie ; ** ; AE ;  ; 
+jaskinia  gry ; *- ; AD ;  ; 
+jaskinia  grzechu ; *- ; AD ;  ; 
+jaskinia  zbójców ; *- ; AD ;  ; 
+jaskó³cze  ziele ; ** ; AE ;  ; 
+jaskó³czy  ogon ; ** ; AC ;  ; 
+jednostka  czasu ; *- ; AD ;  ; 
+jednostka  miary ; *- ; AD ;  ; 
+jednostka  wagi ; *- ; AD ;  ; #jednostki innych wielkoœci
+jednostka  wojskowa ; ** ; AD ;  ; 
+jednoœæ  czasu ; *- ; AD ;  ; 
+jedwabne  ¿ycie *AEBAA ; ** ; AE ;  ; 
+jeniec  wojenny ; ** ; AA ;  ; 
+jesieñ  kalendarzowa ; ** ; AD ;  ; 
+jesieñ  ¿ycia ; *- ; AD ;  ; 
+jeŸdziec *AAACAAAA Apokalipsy ; *- ; AA ;  ; #3wo
+jêzyczek  u wagi ; *-- ; AC ;  ; 
+jêzyk  literacki ; ** ; AC ;  ; 
+jêzyk  migowy ; ** ; AC ;  ; 
+jêzyk  ojczysty ; ** ; AC ;  ; 
+jêzyk  potoczny ; ** ; AC ;  ; 
+jon  dodatni ; ** ; AC ;  ; #+jon ujemny
+judaszowe  pieni¹dze ; ** ; AG ;  ; 
+$ judaszowe  srebrniki ; ** ; AG ;  ; 
+kaczka  dziennikarska ; ** ; AD ;  ; 
+kaczka  dziwaczka ; ** ; AD ;  ; 
+kaczy  chód ; ** ; AC ;  ; 
+kaczy  kuper ; ** ; AC ;  ; 
+kadra  narodowa ; ** ; AD ; 21 ; 
+kaftan  bezpieczeñstwa ; *- ; AC ;  ; 
+kalectwo  ¿yciowe ; ** ; AE ;  ; 
+kalendarz  gregoriañski ; ** ; AC ;  ; 
+kalendarz  juliañski ; ** ; AC ;  ; 
+kalendarz  kieszonkowy ; ** ; AC ;  ; 
+kalendarz  ksiê¿ycowy ; ** ; AC ;  ; 
+kalendarz  s³oneczny ; ** ; AC ;  ; 
+kalendarz  wyborczy ; ** ; AC ;  ; #21?
+kalendarzyk  ma³¿eñski ; ** ; AC ;  ; #21?
+kalka  techniczna ; ** ; AD ;  ; 
+kamieñ  szlachetny ; ** ; AC ;  ; 
+kamienne  serce ; ** ; AE ;  ; 
+$ serce z kamienia ; *-- ; AE ; ;
+kamienny  sen ; ** ; AC ;  ; 
+kamienny  spokój ; ** ; AC ;  ; 
+kamieñ  filozoficzny ; ** ; AC ;  ; 
+kamieñ  milowy ; ** ; AC ;  ; 
+kamieñ  m³yñski ; ** ; AC ; 21 ; 
+kamieñ  obrazy *ADAAA ; *- ; AC ;  ; 
+kamieñ  pó³szlachetny ; ** ; AC ;  ; 
+kamieñ  wêgielny ; ** ; AC ;  ; #21?
+kamizelka  ratunkowa ; ** ; AD ;  ; 
+kampania  wyborcza ; ** ; AD ;  ; 
+kana³  burzowy ; ** ; AC ;  ; 
+kapitalny  remont ; ** ; AC ;  ; 
+kapita³ *ACAAAAA bankowy ; ** ; AC ;  ; 
+kapita³ *ACAAAAA zak³adowy ; ** ; AC ;  ; 
+kaprys  losu ; *- ; AC ;  ; 
+kaprysy  pogody ; *- ; AG ;  ; 
+kapusta  kiszona ; ** ; AD ; 21 ; 
+kapuœciana  g³owa ; ** ; AD ;  ; 
+karabin  maszynowy ; ** ; AC ;  ; 
+karczemna  awantura ; ** ; AD ;  ; 
+kardynalny  b³¹d ; ** ; AC ;  ; 
+karetka  pogotowia ; *- ; AD ;  ; 
+karta *ADAAA chorobowa ; ** ; AD ;  ; 
+kartofle w mundurkach ; *-- ; AG ;  ; 
+$ ziemniaki w mundurkach ; *-- ; AG ; ;
+kasa  pancerna ; ** ; AD ;  ; #21? wariant: sejf?
+kaskada  œmiechu ; *- ; AD ;  ; 
+kasza  gryczana ; ** ; AD ;  ; 
+kasza  jaglana ; ** ; AD ;  ; 
+kasza  jêczmienna ; ** ; AD ;  ; 
+kasza  krakowska ; ** ; AD ;  ; 
+kasza  kukurydziana ; ** ; AD ;  ; 
+kasza  manna ; ** ; AD ;  ; 
+kasza  per³owa ; ** ; AD ;  ; 
+kaszka  na mleku ; *-- ; AD ;  ; 
+kaszka z *GBBAA mlekiem ; *-- ; AD ;  ; 
+katar *ACAAAAA kiszek ; *- ; AC ;  ; 
+$ katar *ACAAAAA  ¿o³¹dka ; *- ; A ;  ; 
+katar *ACAAAAA sienny ; ** ; AC ;  ; 
+kawa  zbo¿owa ; ** ; AD ;  ; 
+kawalerska  fantazja ; ** ; AD ;  ; 
+$ u³añska fantazja ; ** ; AD ; ;
+kawa³ ch³opa ; -- ; AC ;  ; #odmiana?
+kawa³ drania ; -- ; AC ;  ; 
+kawa³ ³obuza ; -- ; AC ;  ; #wariant do drania
+kawa³ roboty *ADAAA ; -- ; AC ;  ; 
+kawa³ œwiata ; -- ; AC ;  ; 
+kawa³ ¿ycia ; -- ; AC ;  ; 
+k¹piel  s³oneczna ; ** ; AD ;  ; 
+k¹t  dodatni ; ** ; AC ;  ; 
+k¹t  odbicia ; *- ; AC ;  ; 
+k¹t  ostry ; ** ; AC ;  ; 
+k¹t  padania ; *- ; AC ;  ; 
+k¹t  pe³ny ; ** ; AC ;  ; 
+k¹t  prosty ; ** ; AC ;  ; #inne k¹ty
+k¹t  widzenia ; *- ; AC ; ; 
+k¹t  za³amania ; *- ; AC ;  ; 
+kie³basa  wyborcza ; ** ; AD ;  ; 
+kie³bie we ³bie ; *-- ; AG ;  ; 
+kierownik  artystyczny ; ** ; AA ;  ; 
+kierownik  literacki ; ** ; AA ;  ; 
+kierunek  studiów *AGDB ; *- ; AC ;  ; 
+kit *ACAAAAA pszczeli ; ** ; AC ; ; #21?
+klatka  piersiowa ; ** ; AD ;  ; 
+klatka  schodowa ; ** ; AD ;  ; 
+klejnot  herbowy ; ** ; AC ;  ; 
+klejnoty  koronne ; ** ; AG ;  ; 
+klêska  g³odu ; *- ; AD ;  ; 
+klub  dyskusyjny ; ** ; AC ;  ; 
+klub  poselski ; ** ; AC ;  ; 
+kluczowe  zagadnienie ; ** ; AE ;  ; 
+kluczowy  problem ; ** ; AC ;  ; 
+kluski *AGBA lane ; ** ; AG ; 21 ; 
+kluski *AGBA na parze *ADAAA ; *-- ; AG ;  ; 
+k³êbek  nerwów ; *- ; AC ;  ; 
+k³êbowisko  ¿mij ; *- ; AE ;  ; 
+kobieta  lekkich obyczajów ; *-- ; AD ; prostytutka ; 
+kocia  mama ; ** ; AD ;  ; 
+kocia  muzyka *ADAB ; ** ; AD ;  ; 
+kod *ACAAAAA genetyczny ; ** ; AC ; 21 ; 
+kod *ACAAAAA pocztowy ; ** ; AC ;  ; 
+kodeks  cywilny ; ** ; AC ;  ; 
+kodeks  dyplomatyczny ; ** ; AC ;  ; 
+kodeks  honorowy ; ** ; AC ;  ; 
+kodeks  rodzinny ; ** ; AC ;  ; 
+kokosowy  interes ; ** ; AC ;  ; 
+kolebka  kultury ; *- ; AD ;  ; 
+kolega  po fachu ; *-- ; AA ;  ; 
+kolega  po piórze ; *-- ; AA ;  ; 
+kolej  rzeczy ; *- ; AD ;  ; 
+kolej  ¿elazna ; ** ; AD ; 21 ; 
+koleje *AGCC  losu ; *- ; AG ;  ; 
+koloryt lokalny ; ** ; AC ;  ; 
+kolos  na glinianych nogach ; *--- ; AA ;  ; 
+kombinacja  klasyczna ; ** ; AD ;  ; 
+komisja  dyscyplinarna ; ** ; AD ;  ; 
+komisja  lekarska ; ** ; AD ;  ; 
+komisja  rewizyjna ; ** ; AD ;  ; 
+komora  celna ; ** ; AD ;  ; 
+komora  gazowa ; ** ; AD ;  ; 
+komórka  partyjna ; ** ; AD ;  ; #21?
+komórki do wynajêcia ; --- ; AG ;  ; 
+kompania  honorowa ; ** ; AD ;  ; 
+kompleks  ni¿szoœci ; *- ; AC ;  ; 
+kompletne  zero ; ** ; AE ;  ; 
+koncert  kameralny ; ** ; AC ;  ; 
+konferencja  prasowa ; ** ; AD ;  ; 
+konflikt  serologiczny ; ** ; AC ;  ; 
+koñ *ABAABB mechaniczny ; ** ; AB ;  ; 
+konik *ABAC morski ; ** ; AB ;  ; 
+konik *ABAC polny ; ** ; AB ;  ; 
+konkurencja  sportowa ; ** ; AD ;  ; 
+konkurs  otwarty ; ** ; AC ;  ; 
+konwent  seniorów ; *- ; AC ;  ; 
+koñ *ABAABB huculski ; ** ; AB ;  ; 
+koñ *ABAABB na biegunach ; *-- ; AB ;  ; 
+$ konik *ABAC na biegunach ; *-- ; AB ; ;
+koñ *ABAABB pe³nej krwi ; *-- ; AB ;  ; 
+koñ *ABAABB poci¹gowy ; ** ; AB ;  ; 
+koñ *ABAABB pod wierzch ; *-- ; AB ;  ; 
+koñ *ABAABB trojañski ; ** ; AB ;  ; 
+koñ *ABAABB wyœcigowy ; ** ; AB ;  ; 
+koñska  dawka ; ** ; AD ;  ; 
+koñski  ogon ; ** ; AC ;  ; 
+koñskie  zdrowie ; ** ; AE ;  ; 
+kopalnia  wiadomoœci ; *- ; AD ;  ; 
+kora  mózgowa ; ** ; AD ;  ; 
+kordon  bezpieczeñstwa ; *- ; AC ;  ; 
+korona  cierniowa ; ** ; AD ; 21 ; 
+korona  s³oneczna ; ** ; AD ; 21 ; 
+koronki  brabanckie ; ** ; AG ;  ; #lp? +inne koronki
+koronkowa  robota *ADAAA ; ** ; AD ;  ; 
+koronny  œwiadek ; ** ; AA ; 21 ; 
+koronowana  g³owa ; ** ; AD ;  ; #wariant: król, królowa?
+korpus  dyplomatyczny ; ** ; AC ;  ; 
+korytarz  powietrzny ; ** ; AC ; ; 
+koryto  rzeki ; *- ; AE ;  ; 
+kostka  cukru ; *- ; AD ;  ; 
+kosza³ki-opa³ki ; -- ; AG ;  ; 
+koszty  reprezentacyjne ; ** ; AG ;  ; 
+koszty  w³asne ; ** ; AG ;  ; 
+koszula  nocna ; ** ; AD ;  ; 
+koœció³  anglikañski ; ** ; AC ;  ; 
+koœció³  ewangelicki ; ** ; AC ;  ; 
+koœció³  katolicki ; ** ; AC ;  ; #+inne koœcio³y
+koœæ *ADCCA jarzmowa ; ** ; AD ;  ; #2wo
+koœæ *ADCCA niezgody ; *- ; AD ;  ; #jw
+koœæ *ADCCA s³oniowa ; ** ; AD ;  ; #jw
+kozia  bródka ; ** ; AD ;  ; 
+kozio³ *ABABAAA ofiarny ; ** ; AB ;  ; 
+kraina  mlekiem i miodem  p³yn¹ca ; *---* ; AD ;  ; 
+kr¹¿ownik  szos ; *- ; AC ;  ; 
+krecia  robota *ADAAA ; ** ; AD ;  ; 
+kredyt  bankowy ; ** ; AC ; 21 ; 
+kredyt  hipoteczny ; ** ; AC ;  ; 
+kredyt  zaufania ; *- ; AC ;  ; 
+krew *ADCAAA z *GBBAA mlekiem ; --- ; AD ;  ; 
+krêta  droga *ADAB ; ** ; AD ;  ; 
+krok wstecz ; -- ; AC ;  ; 
+krokodylowe  ³zy ; ** ; AG ; 21 ; 
+kronika  filmowa ; ** ; AD ;  ; 
+kropla  w morzu ; *-- ; AD ;  ; 
+kropla w morzu ; *-- ; AD ;  ; 
+król *ABAABA  karowy ; ** ; AB ;  ; 
+$ król *ABAABA  karo ; ** ; AB ;  ;
+król *ABAABA kierowy ; ** ; AB ;  ;
+$ król *ABAABA  kier ; ** ; AB ;  ;
+król *AAAAB kurkowy ; ** ; AA ;  ; 
+król *ABAABA pikowy ; ** ; AB ;  ; 
+$ król *ABAABA  pik ; ** ; AB ;  ;
+król *ABAABA treflowy ; ** ; AB ;  ; 
+$ król *ABAABA  trefl ; ** ; AB ;  ;
+król *ABAABA  zwierz¹t ; *- ; AB ; lew ; 
+królestwo *AEAAAB niebieskie ; ** ; AE ;  ; 
+królik *ABAC doœwiadczalny ; ** ; AB ; 21 ; 
+królowa  balu *ACACACB ; *- ; AD ;  ; 
+królowa  matka ; ** ; AD ;  ; 
+królowa  nocy ; *- ; AD ;  ; 
+królowa  serca ; *- ; AD ;  ; 
+krótka  ko³dra ; ** ; AD ;  ; 
+krótkie  spiêcie ; ** ; AE ;  ; 
+kruche  ciasto ; ** ; AE ;  ; 
+kruczek *ACABBA prawny ; ** ; AC ;  ; 
+krwawa  jatka ; ** ; AD ;  ; 
+kryszta³  górski ; ** ; AC ; 21 ; 
+kryszta³owe  powietrze ; ** ; AE ;  ; 
+kryszta³owy  charakter ; ** ; AC ;  ; 
+kryszta³owy  cz³owiek ; ** ; AA ;  ; 
+krzak  gorej¹cy ; ** ; AC ;  ; 
+krzes³o  elektryczne ; ** ; AE ; 21 ; 
+krzyk  mody ; *- ; AC ;  ; 
+krzy¿  grecki ; ** ; AC ; 21 ; 
+krzy¿  ³aciñski ; ** ; AC ; 21 ; 
+krzy¿  maltañski ; ** ; AC ;  ; 
+krzy¿  walecznych ; *- ; AC ;  ; 
+krzy¿  zas³ugi ; *- ; AC ;  ; 
+krzy¿ pañski ; ** ; AC ;  ; 
+krzy¿owy  ogieñ ; ** ; AC ;  ; 
+ksi¹¿ê  ciemnoœci ; *- ; AA ;  ; #wariant: szatan, diabe³, Lucyfer?
+ksi¹¿ka  kucharska ; ** ; AD ;  ; 
+ksi¹¿ka  telefoniczna ; ** ; AD ;  ; 
+ksiêga  rachunkowa ; ** ; AD ;  ; 
+kubki  smakowe ; ** ; AG ;  ; #lp?
+kuchnia  polowa ; ** ; AD ;  ; 
+kuku³cze  jajo ; ** ; AE ;  ; 
+kult  jednostki ; *- ; AC ;  ; 
+kult  pieni¹dza ; *- ; AC ;  ; 
+kult  przesz³oœci ; *- ; AC ;  ; 
+kultura  fizyczna ; ** ; AD ;  ; 
+kultura  materialna ; ** ; AD ; 21 ; 
+kultura  s³owa ; *- ; AD ;  ; 
+kura *ADAAA  domowa ; ** ; AD ;  ; 
+kuracja  wstrz¹sowa ; ** ; AD ;  ; 
+terapia wstrz¹sowa ; ** ; AD ; ;
+kurek *ABAC na dachu ; *-- ; AB ;  ;
+kurier *AAACAAAB dyplomatyczny ; ** ; AA ;  ; 
+kurna  chata ; ** ; AD ;  ; 
+kurza  pamiêæ ; ** ; AD ;  ; 
+kurza  œlepota ; ** ; AD ;  ; 
+kuter  rybacki ; ** ; AC ; 21 ; 
+kwadratura  ko³a ; *- ; AD ;  ; 
+kwas  chlebowy ; ** ; AC ;  ; 
+kwas  pruski ; ** ; AC ; cyjanowodór ; 
+kwasek  cytrynowy ; ** ; AC ;  ; 
+kwaœna  mina ; ** ; AD ;  ; 
+kwaœne  mleko ; ** ; AE ;  ; 
+zsiad³e mleko ; ** ; AE ; ;
+kwaœny  deszcz ; ** ; AC ;  ; 
+kwatera  g³ówna ; ** ; AD ; 21 ; 
+kwestia otwarta ; ** ; AD ; 21 ; 
+kwiat  lotosu ; *- ; AC ;  ; 
+kwiat  m³odzie¿y ; *- ; AC ;  ; 
+kwiat  paproci ; *- ; AC ;  ; 
+kwiatek do ko¿ucha ; --- ; AC ;  ; #odm?
+kwiecieñ plecieñ ; -- ; AC ;  ; #odm?
+lampa  naftowa ; ** ; AD ;  ; 
+lampka  oliwna ; ** ; AD ;  ; 
+lampka  wina *AEAAAB ; *- ; AD ;  ; 
+lanie *AEBAA wody ; *- ; AE ;  ; 
+lary i penaty ; --- ; AG ;  ; #odm?
+las  iglasty ; ** ; AC ; 21 ; #+las liœciasty
+las  r¹k ; *- ; AC ;  ; 
+laska  marsza³kowska ; ** ; AD ;  ; 
+lataj¹cy *CAA talerz ; ** ; AC ; UFO ; 
+latarnia *ADACBABA morska ; ** ; AD ; 21 ; #2wo
+lato  kalendarzowe ; ** ; AE ; 21 ; 
+legia  cudzoziemska ; ** ; AD ;  ; 
+legia  honorowa ; ** ; AD ;  ; 
+lekka atletyka *ADAB ; ** ; AD ;  ; 
+lekka  jazda ; ** ; AD ;  ; #+ciê¿ka jazda
+lekki  chleb ; ** ; AC ;  ; 
+$ lekki  kawa³ek chleba ; **- ; AC ;  ; 
+lektura  szkolna ; ** ; AD ; 21 ; 
+lew *ABABAB morski ; ** ; AB ; uchatka ; 
+lew *ABABAB salonowy ; ** ; AB ;  ; 
+lewe  papiery *AGAB ; ** ; AG ;  ;
+lêk  przestrzeni ; *- ; AC ;  ; 
+licencja  poetycka ; ** ; AD ; ; 
+liceum  ekonomiczne ; ** ; AE ;  ; 
+liceum  ogólnokszta³c¹ce ; ** ; AE ; LO ; 
+liceum  zawodowe ; ** ; AE ;  ; 
+liczba  bezwzglêdna ; ** ; AD ;  ; 
+liczba  ca³kowita ; ** ; AD ;  ; 
+liczba  dodatnia ; ** ; AD ;  ; 
+liczba  dziesiêtna ; ** ; AD ;  ; 
+liczba  mnoga ; ** ; AD ;  ; 
+liczba  naturalna ; ** ; AD ;  ; 
+liczba  pojedyncza ; ** ; AD ;  ; 
+liczba  ujemna ; ** ; AD ;  ; 
+liczby  kardynalna ; ** ; AD ;  ; #+inne liczby
+lilia  wodna ; ** ; AD ; ; #21?
+linia  demarkacyjna ; ** ; AD ;  ; 
+linia  frontu ; *- ; AD ;  ; 
+linia  polityczna ; ** ; AD ;  ; 
+linia  ¿ycia ; *- ; AD ;  ; 
+linie *ADACBAA lotnicze ; ** ; AG ;  ; #lp?
+linie *ADACBAA papilarne ; ** ; AG ;  ; 
+lisi *CBB ogon ; ** ; AC ; 21 ; 
+$ lisia kita ; ** ; AD ; ;
+lisia  czapa ; ** ; AD ;  ; 
+list *ACAAAAA duszpasterski ; ** ; AC ;  ; 
+list *ACAAAAA goñczy ; ** ; AC ;  ; 
+list *ACAAAAA kaperski ; ** ; AC ;  ; 
+list *ACAAAAA otwarty ; ** ; AC ;  ; 
+list *ACAAAAA ¿elazny ; ** ; AC ; ; #21?
+lista  p³ac ; *- ; AD ;  ;
+listek  bobkowy ; ** ; AC ;  ; 
+$ listek laurowy ; ** ; AC ; ;
+listek  figowy ; ** ; AC ;  ; 
+listy *ACAAAAA uwierzytelniaj¹ce ; ** ; AG ; 21 ; #lp?
+liœæ  bobkowy ; ** ; AC ;  ; #po³¹czyæ z listkiem
+$ liœæ  laurowy ; ** ; AC ;  ; 
+literatura  faktu ; *- ; AD ;  ; 
+literatura  jarmarczna ; ** ; AD ; 21 ; 
+literatura  klasyczna ; ** ; AD ;  ; 
+lodowate  spojrzenie ; ** ; AE ;  ; 
+lotna  brygada ; ** ; AD ;  ; 
+lotne  piaski *AGBB ; ** ; AG ;  ; 
+lotny  umys³ ; ** ; AC ;  ; 
+lo¿a  honorowa ; ** ; AD ;  ; 
+lo¿a  masoñska ; ** ; AD ;  ; 
+$ lo¿a  wolnomularska ; ** ; AD ; ; 
+ludzka  rzecz ; ** ; AD ; 21 ; 
+ludzkie  gadanie ; ** ; AE ;  ; 
+lustro  wody ; *- ; AE ;  ; 
+lustrzane  odbicie ; ** ; AE ;  ; 
+lwi  pazur ; ** ; AC ;  ; 
+lwia  czêœæ ; ** ; AD ;  ; 
+³acina  kuchenna ; ** ; AD ; 21 ; 
+³adunek  elektryczny ; ** ; AC ;  ; 
+³akomy  k¹sek ; ** ; AC ;  ; 
+³askawa pani ; ** ; AD ;  ; #tytu³
+³askawy  chleb ; ** ; AC ;  ; 
+³askawy pan ; ** ; AA ;  ; #tytu³
+³atwa  kobieta ; ** ; AD ;  ; #wariant: kobieta lekkich obyczajów?
+³atwy  chleb ; ** ; AC ;  ; 
+³awa  przysiêg³ych ; ** ; AD ;  ; 
+³aŸnia  rzymska ; ** ; AD ;  ; #wariant: terma/termy
+³owca  posagów ; *- ; AA ;  ; 
+³o¿e  boleœci *ADCCA ; *- ; AE ;  ; 
+³o¿e  ma³¿eñskie ; ** ; AE ; 21 ; 
+³ódŸ  podwodna ; ** ; AD ;  ; 
+$ okrêt podwodny ; ** ; AC ; ;
+³ódŸ  ratunkowa ; ** ; AD ;  ; 
+³ó¿ko  polowe ; ** ; AE ;  ; 
+³uk  brwiowy ; ** ; AC ;  ; 
+³ut szczêœcia ; *- ; AC ;  ; 
+³y¿ka  do butów *AGAB ; *-- ; AD ;  ; 
+³za  szczêœcia ; *- ; AD ;  ; 
+macica  per³owa ; ** ; AD ;  ; 
+macosza  rêka ; ** ; AD ;  ; 
+madejowe  ³o¿e ; ** ; AE ; 21 ; 
+maj¹tek  narodowy ; ** ; AC ;  ; 
+maj¹tek  ziemski ; ** ; AC ;  ; 
+majowy  robotnik ; ** ; AA ; 21 ; 
+majster  klepka ; ** ; AA ;  ; 
+malowana  lala ; ** ; AD ;  ; 
+ma³pia  mi³oœæ ; ** ; AD ;  ; 
+ma³pia  z³oœliwoœæ ; ** ; AD ;  ;
+ma³y  ekran ; ** ; AC ; telewizja ; 
+ma³y  kapral ; ** ; AA ; Napoleon ; #nazwa 
+ma³y  palec ; ** ; AC ; 21 ; #termin?
+ma³¿eñstwo  z *GBBAA rozs¹dku ; *-- ; AE ;  ; 
+mamucia  skocznia ; ** ; AD ; 21 ; 
+mandat  poselski ; ** ; AC ;  ; 
+mania  przeœladowcza ; ** ; AD ;  ; 
+mania  wielkoœci ; *- ; AD ; megalomania ; 
+manifest  lipcowy ; ** ; AC ;  ; 
+manifestacja  pierwszomajowa ; ** ; AD ;  ; 
+manna  z *GBBAA nieba ; *-- ;  AD ;  ; 
+mapa  fizyczna ; ** ; AD ;  ; 
+mapa  gospodarcza ; ** ; AD ;  ; 
+marcowa  pogoda ; ** ; AD ;  ; 
+marcowy  kawaler ; ** ; AD ;  ; 
+margines  b³êdu ; *- ; AC ;  ; 
+margines  spo³eczny ; ** ; AC ;  ; 
+marksizm-leninizm ; ** ; AC ;  ; #dywiz
+marny  grosz ; ** ; AC ;  ; 
+marne  s³owo ; ** ; AE ;  ; 
+marne szanse ; ** ; AG ;  ; 
+marne widoki ; ** ; AG ;  ; 
+marny  koniec ; ** ; AC ;  ; 
+marsz *ABAAAB weselny ; ** ; AB ;  ; #wg odmiany
+marsza³ek  sejmu ; *- ; AA ;  ; 
+martwa  dusza ; ** ; AD ;  ; 
+martwa  fala ; ** ; AD ;  ; 
+martwa  formu³a ; ** ; AD ;  ; 
+martwa  litera ; ** ; AD ;  ; 
+martwa  natura ; ** ; AD ;  ; 
+marynarka  dwurzêdowa ; ** ; AD ; 21 ; 
+marzenie œciêtej g³owy ; *-- ; AE ;  ; 
+masa  atomowa ; ** ; AD ;  ; 
+masa  cz¹steczkowa ; ** ; AD ;  ; 
+masa  spadkowa ; ** ; AD ;  ; 
+masa  upad³oœciowa ; ** ; AD ;  ; 
+mas³o  maœlane ; ** ; AE ;  ; #ew. G?
+mas³o  roœlinne ; ** ; AE ;  ; 
+masy *AGAAA pracuj¹ce ; ** ; AG ;  ; 
+maszyna do pisania ; *-- ; AD ;  ; 
+maszyna  do szycia ; *-- ; AD ;  ; 
+maœlane  oczy *AEACA ; ** ; AG ;  ; #dwa wzorce
+materializm  dialektyczny ; ** ; AC ;  ; 
+materia³  dowodowy ; ** ; AC ;  ; 
+matka  natura ; ** ; AD ; 2 ; #nazwa?
+matka  ziemia ; ** ; AD ; 2 ; #nazwa?
+m¹dra  g³owa ; ** ; AD ;  ; 
+m¹droœæ  salomonowa ; ** ; AD ; 21 ; 
+m¹droœæ  ¿yciowa ; ** ; AD ; 21 ; 
+m¹ka  jêczmienna ; ** ; AD ;  ; 
+m¹ka  kukurydziana ; ** ; AD ;  ; 
+m¹ka  pszenna ; ** ; AD ;  ; 
+m¹ka  razowa ; ** ; AD ;  ; 
+m¹ka  ziemniaczana ; ** ; AD ;  ; 
+m¹¿  opatrznoœciowy ; ** ; AA ;  ; 
+m¹¿  stanu ; *- ; AA ;  ; 
+m¹¿  zaufania ; *- ; AA ;  ; 
+meble  gdañskie ; ** ; AG ;  ; #21?
+meble  kalwaryjskie ; ** ; AG ;  ; #21?
+mechanik *AAACBA samochodowy ; ** ; AA ;  ; 
+medal  olimpijski ; ** ; AC ; 21 ; 
+melodia  przysz³oœci ; *- ; AD ;  ; 
+pieœñ przysz³oœci ; *- ; AD ; ;
+menisk  wypuk³y ; ** ; AC ;  ; #wklês³y?
+meritum sprawy ; -- ; AE ;  ; 
+metal  pó³szlachetny ; ** ; AC ;  ; 
+metal  szlachetny ; ** ; AC ;  ; 
+metale  kolorowe ; ** ; AG ;  ; #lp?
+metr *ACAABAA bie¿¹cy ; ** ; AC ;  ; 
+metr *ACAABAA krawiecki ; ** ; AC ;  ; #wariant: metr?
+metr *ACAABAA kwadratowy ; ** ; AC ;  ; #wariant: m2?
+metr *ACAABAA szeœcienny ; ** ; AC ;  ; 
+mêki *AGBA piekielne ; ** ; AG ;  ; #lp?
+mêt spo³eczny ; ** ; AC ;  ; #blp?
+mia¿d¿¹ca  krytyka *ADAB ; ** ; AD ;  ; 
+mia¿d¿¹ca  przewaga ; ** ; AD ;  ; 
+midasowe  uszy *AEACA ; ** ; AG ;  ; 
+miecz  katowski ; ** ; AC ; 21 ; 
+miecz  sprawiedliwoœci ; *- ; AC ;  ; 
+miedŸ  koryncka ; ** ; AD ; 21 ; 
+mielizna  intelektualna ; ** ; AD ; 21 ; 
+mienie  spo³eczne ; ** ; AE ;  ; #21?
+miesi¹c  kalendarzowy ; ** ; AC ;  ; 
+mieszane  uczucia ; ** ; AG ;  ; 
+mieszanka  piorunuj¹ca ; ** ; AD ; 21 ; 
+miêkka  woda ; ** ; AD ; 21 ; 
+miêkki  charakter ; ** ; AC ;  ; 
+miêkki  cz³owiek ; ** ; AA ;  ; 
+miêkkie  l¹dowanie ; ** ; AE ;  ; 
+miêkkie  serce ; ** ; AE ;  ; 
+miêsieñ  sercowy ; ** ; AC ;  ; 
+miêso  armatnie ; ** ; AE ;  ; 
+milcz¹ca  zgoda ; ** ; AD ;  ; 
+milczenie  dyplomatyczne ; ** ; AE ; 21 ; 
+milowy  krok ; ** ; AC ; 21 ; 
+mi³oœæ  bliŸniego ; *- ; AD ;  ; 
+mi³oœæ  w³asna ; ** ; AD ;  ; 
+mina  niewini¹tka ; *- ; AD ;  ; 
+minister  bez *GBBAA teki ; *-- ; AA ;  ; 
+minorowy  ton *ACAAAAA ; ** ; AC ;  ; #21?
+miodowy  miesi¹c ; ** ; AC ; 21 ; 
+miotacz *ACACBBA ognia ; *- ; AC ;  ; 
+miód  pitny ; ** ; AC ; 21 ; 
+misterna  intryga ; ** ; AD ;  ; 
+mistrz  ceremonii ; *- ; AA ;  ; 
+mistrz  œwiata ; *- ; AA ;  ; 
+mistrzowska  rêka ; ** ; AD ;  ; 
+mleczko  kokosowe ; ** ; AE ;  ; 
+mleczko  kosmetyczne ; ** ; AE ;  ; 
+mleczko  pszczele ; ** ; AE ; 21 ; 
+mleczny z¹b *ACAABAA ; ** ; AC ;  ; 
+m³odzieñczy  zapa³ ; ** ; AC ; 21 ; 
+moce  piekielne ; ** ; AG ; 21 ; #lp?
+moce  tajemne ; ** ; AG ; 21 ; #lp?
+mocna  strona ; ** ; AD ;  ; 
+mocne  s³owa ; ** ; AG ;  ; 
+mocny  ³eb ; ** ; AC ;  ;
+$ mocna g³owa ; ** ; AD ; ; 
+mocny punkt ; ** ; AC ;  ; 
+mokra  robota *ADAAA ; ** ; AD ;  ; 
+moment  pêdu ; *- ; AC ;  ; 
+moment  si³y ; *- ; AC ;  ; 
+monizm  idealistyczny ; ** ; AC ;  ; #termin?
+monolog  wewnêtrzny ; ** ; AC ; 21 ; 
+mordercze  tempo ; ** ; AE ;  ; 
+morowe  powietrze ; ** ; AE ; 21 ; 
+most  pontonowy ; ** ; AC ;  ; #21?
+mowa ojczysta ; ** ; AD ; 21 ; 
+mowa  oskar¿ycielska ; ** ; AD ;  ; 
+mowa  wi¹zana ; ** ; AD ; ; #wariant: wiersz, poezja?
+mól  ksi¹¿kowy ; ** ; AB ; 21 ; 
+mózg  elektronowy ; ** ; AC ;  ; 
+mroki  œredniowiecza ; *- ; AG ;  ; 
+mrówcza  praca ; ** ; AD ;  ; 
+mrówka  faraona ; *- ; AB ;  ; 
+msza  gregoriañska ; ** ; AD ;  ; 
+mucha  koñska ; ** ; AD ; giez ; 
+mur  przes¹dów ; *- ; AC ;  ; 
+muzyka *ADAB kameralna ; ** ; AD ;  ; 
+muzyka *ADAB klasyczna ; ** ; AD ;  ; 
+mysi  ogonek ; ** ; AC ;  ; 
+myœl¹ca  trzcina ; ** ; AD ; 21 ; 
+naczynie  krwionoœne ; ** ; AE ;  ; 
+naczynia *AGDAA po³¹czone ; ** ; AG ;  ; 
+nadêta  mina ; ** ; AD ;  ; 
+naga  prawda ; ** ; AD ;  ; 
+nagie  fakty ; ** ; AG ;  ; 
+naga  œciana ; ** ; AD ;  ; 
+$ go³a œciana ; ** ; AD ; ;
+nag³a krew *ADCAAA ; -- ; AD ;  ; 
+nagroda  pocieszenia ; *- ; AD ;  ; 
+najwy¿szy czas ; -- ; AC ; 21 ; 
+nakaz  chwili ; *- ; AC ;  ; 
+nakrycie *AEBAA g³owy ; *- ; AE ;  ; #2wo 
+nalana  twarz ; ** ; AD ;  ; 
+nalot  dywanowy ; ** ; AC ;  ; 
+naoczny  œwiadek ; ** ; AA ; 21 ; 
+napad  gniewu ; *- ; AC ;  ; 
+napad  histerii ; *- ; AC ;  ; 
+napad  sza³u ; *- ; AC ;  ; 
+napad  œmiechu ; *- ; AC ;  ; #+napad agresji, inne?
+napój *ACACACB ch³odz¹cy ; ** ; AC ;  ; 
+napój *ACACACB wyskokowy ; ** ; AC ;  ; #wariant: alkohol?
+narodowy  socjalizm ; ** ; AC ;  ; 
+narzêdzie  zbrodni ; *- ; AE ;  ; 
+nastêpca  tronu ; *- ; AA ;  ; 
+natura  rzeczy ; *- ; AD ;  ; 
+nauka œcis³a ; ** ; AD ;  ; 
+nawa  pañstwowa ; ** ; AD ; pañstwo ; 
+nawis  skalny ; ** ; AC ; 21 ; 
+nawóz  sztuczny ; ** ; AC ; 21 ; 
+nawóz  naturalny ; ** ; AC ; ; #21?
+nêdzna  kreatura ; ** ; AD ;  ; 
+nêdzny  k³amca ; ** ; AA ;  ; 
+niæ  porozumienia ; *- ; AD ;  ; 
+niæ  sympatii ; *- ; AD ;  ; 
+niæ  ¿ywota ; *- ; AD ;  ; 
+niebieski  ptak ; ** ; AB ;  ; 
+niebo w gêbie ; *-- ; AE ;  ; 
+$ niebo w ustach ; *-- ; AE ;  ; 
+nieczyste  moce ; ** ; AG ; 21 ; 
+nieczysty  interes ; ** ; AC ;  ; 
+niedziela  palmowa ; ** ; AD ;  ; #nazwa
+niedzielny  kierowca ; ** ; AA ;  ; 
+niedŸwiedŸ  jaskiniowy ; ** ; AB ;  ; 
+niema  proœba ; ** ; AD ;  ; 
+niemy  œwiadek ; ** ; AA ;  ; 
+niepisana  umowa ; ** ; AD ;  ; 
+niepisane  prawo ; ** ; AE ;  ; 
+nieprawe  dziecko ; ** ; AE ;  ; 
+nieprawy  syn ; ** ; AA ;  ; 
+nieprzemakalny  cz³owiek ; ** ; AA ;  ; 
+niesmaczny  ¿art ; ** ; AC ;  ; 
+nieœmiertelna  s³awa ; ** ; AD ;  ; 
+nietakt  towarzyski ; ** ; AC ; 21 ; 
+niewola  egipska ; ** ; AD ;  ; 
+niez³y numer ; ** ; AC ; ;
+niskie  progi ; ** ; A ;  ; # tylko liczba mnoga - niski próg - co innego 
+noc  polarna ; ** ; AD ; 21 ; 
+noc  poœlubna ; ** ; AD ;  ; 
+noc  œwiêtojañska ; ** ; AD ;  ; 
+nocna  zmiana ; ** ; AD ; 21 ; 
+nocny  lokal ; ** ; AC ; 21 ; 
+nocny  marek *ACABBA ; ** ; AC ;  ;  
+nota  dostateczna ; ** ; AD ; ; #warianty: dostateczny, trzy, trója, trójka?
+nowa  twarz ; ** ; AD ;  ; 
+nowy  œwiat ; ** ; AC ; Ameryka ; #powinna byæ wielka litera
+nó¿  fiñski ; ** ; AC ; 21, finka ; 
+nudy na pudy ; --- ; AG ;  ; 
+numer  inwentarzowy ; ** ; AC ;  ; 
+numer  kierunkowy ; ** ; AC ;  ; 
+obca  twarz ; ** ; AD ;  ; 
+oberwanie *AEBAA chmury ; *- ; AE ;  ; #wlzn?
+obfite  kszta³ty *AGAB ; ** ; AG ;  ; 
+obóz  harcerski ; ** ; AC ;  ; 
+obóz  koncentracyjny ; ** ; AC ;  ; 
+obóz  œmierci ; *- ; AC ;  ; 
+$ obóz  zag³ady ; *- ; AC ;  ;
+obraz *ACAAAAA  nêdzy i rozpaczy ; *--- ; AC ;  ; 
+obrona  konieczna ; ** ; AD ;  ; 
+obrót  bezgotówkowy ; ** ; AC ;  ; 
+obrz¹dek  ³aciñski ; ** ; AC ;  ; #ew. wariant: katolicyzm?
+obuwie  robocze ; ** ; AE ;  ; 
+obywatel  œwiata ; *- ; AA ;  ; 
+oczy *AEACA œwiata ; *- ; AG ;  ; #2wo
+odcisk  palca ; *- ; AC ;  ; 
+odpowiedzialnoœæ  cywilna ; ** ; AD ;  ; 
+odpowiedzialnoœæ  karna ; ** ; AD ;  ; 
+odprawa  celna ; ** ; AD ;  ; 
+odruch  bezwarunkowy ; ** ; AC ;  ; 
+odruch  warunkowy ; ** ; AC ;  ; 
+odwaga  cywilna ; ** ; AD ; 21 ; 
+ofiara  losu ; *- ; AD ;  ; 
+oficer  rezerwy ; *- ; AA ;  ; 
+ognisko  domowe ; ** ; AE ; 21 ; 
+$ ognisko  rodzinne ; ** ; AE ; 21 ; 
+ogród  botaniczny ; ** ; AC ;  ; 
+ogród  zoologiczny ; ** ; AC ; zoo ; 
+ogród jordanowski ; ** ; AC ;  ; 
+ojcowie  miasta ; *- ; AG ;  ; #lp?
+okaz  zdrowia ; *- ; AC ;  ; 
+okno  na œwiat ; *-- ; AE ;  ; 
+okno  weneckie ; ** ; AE ;  ; 
+oko *AEAAAA cyklonu ; *- ; AE ;  ; 
+okolicznoœæ  ³agodz¹ca ; ** ; AD ;  ; #21?
+okr¹g³a  suma *ADAAA ; ** ; AD ;  ; 
+$ okr¹g³a  sumka ; ** ; AD ;  ; 
+okr¹g³y  miesi¹c ; ** ; AC ;  ; 
+okr¹g³y  rok ; ** ; AC ;  ; 
+okr¹g³y  stó³ ; ** ; AC ;  ; 
+okrêt  dwurzêdowy ; ** ; AC ; dwurzêdowiec ; 
+okrêt  liniowy ; ** ; AC ; liniowiec ; 
+okruchy  z *GBBAA pañskiego sto³u ; *--- ; AG ;  ; 
+olimpijski  spokój ; ** ; AC ; 21 ; 
+o³ówek  kopiowy ; ** ; AC ;  ; 
+opad szczêki *ADAB ; *- ; AC ;  ; 
+opatrznoœæ  boska ; ** ; AD ; 21 ; 
+opcja  zerowa ; ** ; AD ;  ; 
+opera  komiczna ; ** ; AD ;  ; 
+opera  mydlana ; ** ; AD ;  ; 
+operacja  plastyczna ; ** ; AD ;  ; 
+opiekuñcza  rêka ; ** ; AD ;  ; 
+opiekuñcze  skrzyd³a ; ** ; AG ;  ; 
+opinia  publiczna ; ** ; AD ;  ; 
+orka  na ugorze ; *-- ; AD ;  ; 
+orkiestra  dêta ; ** ; AD ; 21 ; 
+orkiestra  kameralna ; ** ; AD ;  ; 
+orkiestra  symfoniczna ; ** ; AD ;  ; 
+orli  nos ; ** ; AC ;  ; 
+orzech *ACAABB laskowy ; ** ; AC ;  ; #+w³oski
+orze³ *ABABAB bia³y ; ** ; AB ;  ; #2wo?
+osio³ *AAACAAAB dardanelski ; ** ; AA ; 21 ; 
+oskar¿enie *AEBAA publiczne ; ** ; AE ;  ; #21? wlzn?
+oskar¿yciel  publiczny ; ** ; AA ;  ; 
+osoba  fizyczna ; ** ; AD ;  ; 
+osoba  prawna ; ** ; AD ;  ; 
+osoba  trzecia ; ** ; AD ;  ; 
+ospa  wietrzna ; ** ; AD ;  ; 
+ostatni  ba³wan *AAACAAAB ; ** ; AA ;  ; 
+$ ostatni  cymba³ *AAACAAAB ; ** ; AA ;  ; 
+$ ostatni  dureñ *AAABAB ; ** ; AA ;  ; #dwa wzorce odmiany
+$ ostatni  g³upek ; ** ;  AA ;  ;
+$ ostatni  osio³ *AAACAAAB  ; ** ; AA ;  ;
+$ ostatni  g³upiec ; ** ; AA ;  ;  
+ostatni  drañ ; ** ; AA ;  ; 
+$ ostatni  ³ajdak ; ** ; AA ;  ; 
+$ ostatni  ³otr ; ** ; AA ;  ; 
+ostatni  dzwonek *ACABBA ; ** ; AC ;  ; 
+ostatni  grosz ; ** ; AC ;  ; 
+ostatni  sakrament ; ** ; AC ; wiatyk ; 
+$ ostatnie  namaszczenie ; ** ; AE ;  ; 
+ostatni  szelma *AABCBAA ; ** ; AA ;  ;  #wariant do ³otra?
+ostatnia  godzina ; ** ; AD ;  ; 
+ostatnia  wieczerza ; ** ; AD ;  ; #nazwa
+ostatnie  podrygi ; ** ; AG ;  ; 
+ostatnie  s³owo ; ** ; AE ;  ; 
+ostra  amunicja ; ** ; AD ;  ; 
+ostre  s³owo ; ** ; AE ;  ; 
+ostry  dowcip ; ** ; AC ;  ; 
+ostry  dy¿ur ; ** ; AC ;  ; 
+ostry  jêzyk ; ** ; AC ;  ; 
+ostry  nabój ; ** ; AC ;  ; 
+ostrze  krytyki ; *- ; AE ;  ; 
+ostrze  satyry *ADAAA ; *- ; AE ;  ; 
+oœ  rzêdnych ; *- ; AD ;  ; #wariant: oœ Y?
+oœla  g³owa ; ** ; AD ;  ; 
+oœla  ³awa ; ** ; AD ;  ; 
+$ oœla  ³awka ; ** ; AD ;  ; 
+oœla  ³¹czka ; ** ; AD ;  ; 
+oœla  œcie¿ka ; ** ; AD ;  ; 
+oœli  trud ; ** ; AC ;  ; 
+otwarta  gra *ADAAA ; ** ; AD ;  ; 
+otwarta  ksiêga ; ** ; AD ;  ; 
+otwarte  morze *AEBAA ; ** ; AE ; 21 ; 
+owczarek  podhalañski ; ** ; AB ;  ; #+niemiecki
+owczy  pêd ; ** ; AC ;  ; 
+ósmy  cud *ACAAAAA œwiata ; **- ; AC ;  ; 
+pajêcza  sieæ ; ** ; AD ; 21 ; 
+pakt  o nieagresji ; *-- ; AC ;  ; 
+palec  bo¿y ; ** ; AC ; 21 ; 
+palec  serdeczny ; ** ; AC ; 21 ; 
+palma  kokosowa ; ** ; AD ;  ; 
+palma  pierwszeñstwa ; *- ; AD ;  ; 
+pan  domu ; *- ; AA ;  ; 
+pan  ¿ycia i œmierci ; *--- ; AA ;  ; 
+pan i w³adca ; *-* ; AA ;  ; 
+pani domu ; *- ; AD ;  ; 
+pani  serca ; *- ; AD ;  ; 
+panna  do wziêcia ; *-- ; AD ;  ; 
+$ panna  na wydaniu ; *-- ; AD ;  ; 
+panna m³oda ; ** ; AD ; ;
+panna respektowa ; ** ; AD ; ;
+pañski  gest ; ** ; AC ;  ; 
+pañstwo *AEAAAB papieskie ; ** ; AE ;  ; 
+pañstwo *AEAAAB policyjne ; ** ; AE ;  ; 
+pañstwo *AEAAAB w pañstwie ; *-- ; AE ;  ; 
+papier  drzewny ; ** ; AC ;  ; #21?
+papier  kancelaryjny ; ** ; AC ;  ; 
+papier  kredowy ; ** ; AC ;  ; 
+papier  milimetrowy ; ** ; AC ;  ; 
+papierek  lakmusowy ; ** ; AC ; 21 ; 
+papierkowa  robota *ADAAA ; ** ; AD; 21 ; 
+papierowy  bohater ; ** ; AA ;  ; 
+papiery *AGAB wartoœciowe ; ** ; AG ;  ; 
+parafialna  g¹ska ; ** ; AD ; ; 
+$ parafialna  gêœ ; ** ; AD ;  ; 
+parali¿  postêpowy ; ** ; AC ;  ; 
+park  narodowy ; ** ; AC ;  ; 
+park  sztywnych ; *- ; AC ;  ; 
+parszywa  owca ; ** ; AD ;  ; 
+parszywe  ¿ycie ; ** ; AE ;  ; 
+parszywy  interes ; ** ; AE ;  ; 
+pas *ACAABAA bezpieczeñstwa ; *- ; AC ;  ; #podwójny wzorzec
+pas *ACAABAA  cnoty ; *- ; AC ;  ; #jw
+pasmo  cierpieñ ; *- ; AE ;  ; 
+pasmo  klêsk ; *- ; AE ;  ; 
+pasmo  k³opotów ; *- ; AE ;  ; 
+pasmo  nieszczêœæ ; *- ; AE ;  ; 
+pasmo  sukcesów ; *- ; AE ;  ; 
+pastuch  elektryczny ; ** ; AC ;  ;
+paŸ  królowej ; *- ; AC ;  ; 
+pe³ne  mleko ; ** ; AE ;  ; 
+pe³ne  morze *AEBAA ; ** ; AE ;  ; 
+perlisty  pot ; ** ; AC ;  ; 
+perlisty  œmiech ; ** ; AC ;  ; 
+perski  dywan ; ** ; AC ; 21 ; 
+perskie  oko *AEAAAA ; ** ; AE ;  ; #perskie oka/oczy?
+pewna  rêka ; ** ; AD ;  ; 
+pewnoœæ  siebie ; *- ; AD ;  ; 
+pewny siebie ; *- ; AD ;  ; 
+pêpek  œwiata ; *- ; AC ;  ; 
+pi¹ta  kolumna ; ** ; AD ;  ; 
+pi¹ta woda po kisielu ; **-- ; AD ;  ; 
+pi¹ty  bieg ; ** ; AC ;  ; 
+pic na wodê ; *-- ; AC ;  ; 
+piechota  morska ; ** ; AD ; 21 ; 
+piekielna  awantura ; ** ; AD ;  ; 
+pielêgniarka  dyplomowana ; ** ; AD ; 21 ; 
+pieprzny  kawa³ ; ** ; AC ;  ; 
+pierogi *ACABBA leniwe ; ** ; AG ;  ; #clp: nie ma AG
+pierwszy  bieg ; ** ; AC ;  ; 
+pierwszy  mechanik *AAACBA ; ** ; AA ;  ; 
+pierwszy  oficer ; ** ; AA ;  ; 
+pierwszy  sekretarz ; ** ; AA ;  ; 
+pies  goñczy ; ** ; AB ;  ; 
+pies  ³añcuchowy ; ** ; AB ;  ; 
+pies  morski ; ** ; AB ; foka ; 
+pies  myœliwski ; ** ; AB ;  ; 
+pies  ogrodnika ; *- ; AB ;  ; 
+pies  podwórzowy ; ** ; AB ; ; 
+pies  z *GBBAA kulaw¹ nog¹ ; *--- ; AB ;  ; 
+piesek salonowy ; ** ; AB ; 21 ; 
+pieskie nasienie ; ** ; AC ;  ; 
+pieskie ¿ycie *AEBAA ; ** ; AE ;  ; 
+piêkne s³ówka ; ** ; AG ;  ; 
+piêta achillesowa ; ** ; AD ;  ; 
+pilot *ACAABAA automatyczny ; ** ; AC ; 21 ; 
+pi³ka koszykowa ; ** ; AD ; koszykówka ; 
+pi³ka no¿na ; ** ; AD ; ; #wariant: football, futbal, noga?
+pi³ka rêczna ; ** ; AD ;  ; 
+pi³ka  siatkowa ; ** ; AD ; siatkówka ; 
+pi³ka  wodna ; ** ; AD ;  ; 
+piorun  kulisty ; ** ; AC ;  ; 
+piorunuj¹ce  wra¿enie ; ** ; AE ;  ; 
+pióro  kulkowe ; ** ; AE ;  ; 
+piramidalne  g³upstwo ; ** ; AE ;  ; 
+piramidalne  k³amstwo ; ** ; AE ;  ; 
+pyrrusowe  zwyciêstwo ; ** ; AE ;  ; 
+pismo  gotyckie ; ** ; AE ; 21 ; 
+pismo  klinowe ; ** ; AE ;  ; #21?
+pismo  obrazkowe ; ** ; AE ;  ; #21?
+pismo  techniczne ; ** ; AE ; 21 ; 
+plac  bitwy ; *- ; AC ;  ; 
+$ plac  boju ; *- ; AC ;  ; 
+plagi  egipskie ; ** ; AG ; 21 ; #lp?
+plejada  gwiazd ; *- ; AD ;  ; 
+plusy *ACAAAAA i minusy ; *-* ; AG ;  ; 
+pluton  egzekucyjny ; ** ; AC ;  ; 
+p³aszczyzna  porozumienia ; *- ; AD ;  ; 
+p³atki  mydlane ; ** ; AG ;  ; 
+p³eæ *ADCAAA  brzydka ; ** ; AD ;  ; #2wo
+p³eæ *ADCAAA s³aba ; ** ; AD ; 21 ; #jw
+$ p³eæ *ADCAAA s³absza ; ** ; AD ; 21 ; #jw
+p³eæ *ADCAAA piêkna ; ** ; AD ; ; #jw
+p³etwa  grzbietowa ; ** ; AD ;  ; 
+p³ody  rolne ; ** ; AG ;  ; 
+p³omienne  uczucie ; ** ; AE ;  ; 
+p³omienny  wzrok ; ** ; AC ;  ; 
+p³omyk  nadziei ; *- ; AC ;  ; 
+p³ycizna  intelektualna ; ** ; AD ; 21 ; 
+p³ynna  gotówka ; ** ; AD ;  ; 
+p³ynna  granica ; ** ; AD ;  ; 
+pobo¿ne  ¿yczenie ; ** ; AG ;  ; 
+poca³unek  judaszowy ; ** ; AC ; 21 ; 
+poca³unek  pokoju ; *- ; AC ;  ; 
+poci¹g  towarowy ; ** ; AC ;  ; 
+poczciwoœci cz³owiek ; -* ; AA ;  ; 
+poczta  g³osowa ; ** ; AD ; ; 
+poczta  lotnicza ; ** ; AD ; 21 ; 
+poczta  pantoflowa ; ** ; AD ; 21 ; 
+poczucie *AEBAA humoru ; *- ; AE ;  ; 
+poczucie *AEBAA obowi¹zku ; *- ; AE ;  ; 
+poczucie *AEBAA rytmu ; *- ; AE ;  ; 
+poczucie *AEBAA smaku ; *- ; AE ;  ; 
+poczucie *AEBAA sprawiedliwoœci ; *- ; AE ;  ; 
+podatek  dochodowy ; ** ; AC ;  ; 
+podatek  gruntowy ; ** ; AC ;  ; 
+podchwytliwe  pytanie ; ** ; AE ;  ; 
+podniebienie  miêkkie ; ** ; AE ;  ; 
+podniebienie  twarde ; ** ; AE ;  ; 
+podpis  odrêczny ; ** ; AC ; 21 ; 
+poduszka  elektryczna ; ** ; AD ;  ; 
+poduszka  powietrzna ; ** ; AD ;  ; 
+podwójna  gra *ADAAA ; ** ; AD ;  ; 
+podwójna  moralnoœæ ; ** ; AD ;  ; 
+podwójne  ¿ycie *AEBAA ; ** ; AE ;  ; 
+podwójny  nelson ; ** ; AC ;  ; 
+poemat  homerycki ; ** ; AC ;  ; 
+poganiacz  byd³a ; *- ; AA ;  ; 
+pogoda  barowa ; ** ; AD ; 21 ; 
+pogoda  pod psem ; *-- ; AD ;  ; 
+pogotowie  ratunkowe ; ** ; AE ;  ; 
+pogromca  serc ; *- ; AA ;  ; 
+pojazd  dwuœladowy ; ** ; AC ;  ; 
+pojazd  jednoœladowy ; ** ; AC ;  ; 
+pokerowa  zagrywka ; ** ; AD ;  ; 
+pokrewna  dusza ; ** ; AD ;  ; 
+pola  elizejskie ; ** ; AG ;  ; #nazwa
+pole *AEBAA bitwy ; *- ; AE ;  ; #+boju
+$ pole *AEBAA walki ; *- ; AE ;  ; 
+pole *AEBAA bramkowe ; ** ; AE ;  ; 
+pole *AEBAA  chwa³y ; *- ; AE ;  ; 
+pole *AEBAA do dzia³ania *AEBAA ; *-- ; AE ;  ; 
+pole *AEBAA do popisu ; *-- ; AE ;  ; 
+pole *AEBAA dzia³ania *AEBAA ; *- ; AE ;  ; 
+pole *AEBAA elektromagnetyczne ; ** ; AE ;  ; 
+pole *AEBAA elektryczne ; ** ; AE ;  ; 
+pole *AEBAA magnetyczne ; ** ; AE ;  ; #+elektromagnetyczne
+pole *AEBAA minowe ; ** ; AE ;  ; 
+pole *AEBAA ra¿enia ; *- ; AE ;  ; 
+pole *AEBAA widzenia ; *- ; AE ;  ; 
+polityka *ADAB gospodarcza ; ** ; AD ;  ; 
+polityka *ADAB rolna ; ** ; AD ;  ; 
+polna droga *ADAB ; ** ; AD ;  ; 
+polowanie  na czarownice ; *-- ; AE ;  ; 
+po³udniowy  temperament ; ** ; AC ;  ; 
+po³ykacz  ognia ; *- ; AA ;  ; 
+pomieszanie *AEBAA z *GBBAA popl¹taniem ; --- ; AE ;  ; 
+pomieszanie *AEBAA zmys³ów ; *- ; AE ;  ; 
+pomieszanie *AEBAA z *GBBAA popl¹taniem ; --- ; AE ;  ; 
+pomnik  przyrody ; *- ; AC ;  ; 
+pomoc  domowa ; ** ; AD ;  ; 
+pomoc  spo³eczna ; ** ; AD ;  ; 
+pomocna  d³oñ ; ** ; AD ;  ; 
+pomyœlne  wiatry ; ** ; AG ;  ; 
+popisowy  numer ; ** ; AC ; 21 ; 
+port *ACAAAAA lotniczy ; ** ; AC ;  ; 
+port *ACAAAAA rybacki ; ** ; AC ;  ; 
+porz¹dek  naturalny ; ** ; AC ; 21 ; 
+porz¹dek  obrad ; *- ; AC ;  ; 
+porz¹dek  rzeczy ; *- ; AC ;  ; 
+pose³ na sejm ; *-- ; AA ;  ; 
+pospolite  ruszenie ; ** ; AE ;  ; 
+postawa  obywatelska ; ** ; AD ; 21 ; 
+postêp  arytmetyczny ; ** ; AC ;  ; 
+postêp  geometryczny ; ** ; AC ;  ; 
+postêpowanie  cywilne ; ** ; AE ;  ; 
+postêpowanie  egzekucyjne ; ** ; AE ;  ; 
+potencja³  gospodarczy ; ** ; AC ;  ; 
+potyczka  s³owna ; ** ; AD ; 21 ; 
+pozdrowienie *AEBAA anielskie ; ** ; AE ;  ;
+$ anio³ *AAACAAB pañski ; ** ; AC ; ; #clp?
+praca  domowa ; ** ; AD ;  ; 
+praca  fizyczna ; ** ; AD ;  ; 
+praca  magisterska ; ** ; AD ;  ; 
+praca  organiczna ; ** ; AD ;  ; 
+praca  siedz¹ca ; ** ; AD ;  ; #21?
+prace  rêczne ; ** ; AG ; ; #21?
+pranie *AEBAA mózgu ; *- ; AE ;  ; 
+prawo  cywilne ; ** ; AE ;  ; 
+prawo  doraŸne ; ** ; AE ;  ; 
+prawo  d¿ungli ; *- ; AE ;  ; 
+prawo  handlowe ; ** ; AE ;  ; 
+prawo  jazdy ; *- ; AE ;  ; 
+prawo  kanoniczne ; ** ; AE ;  ; 
+prawo  lokalowe ; ** ; AE ;  ; 
+prawo  ³aski ; *- ; AE ;  ; 
+prawo  magdeburskie ; ** ; AE ;  ; 
+prawo  moj¿eszowe ; ** ; AE ;  ; 
+prawo  piêœci ; *- ; AE ;  ; 
+prawo  serii ; *- ; AE ;  ; #+inne prawa
+prawy  prosty ; ** ; AC ;  ; 
+prawy  sierpowy ; ** ; AC ;  ; 
+pr¹d  elektryczny ; ** ; AC ;  ; 
+proces  rewizyjny ; ** ; AC ;  ; 
+produkt  uboczny ; ** ; AC ; 21 ; 
+profesor  nadzwyczajny ; ** ; AA ;  ; 
+profesor  zwyczajny ; ** ; AA ;  ; 
+proszona  herbatka ; ** ; AD ;  ; 
+protokó³  dyplomatyczny ; ** ; AC ;  ; 
+próba  generalna ; ** ; AD ;  ; 
+próba  ognia ; *- ; AD ;  ; 
+próba  ogniowa ; ** ; AD ; 21 ; 
+próba  si³ *AGAAA ; *- ; AD ;  ; 
+prywatna  inicjatywa ; ** ; AD ;  ; #21?
+przemiana  materii ; *- ; AD ;  ; 
+przemys³  ciê¿ki ; ** ; AC ; ; #21?
+przemys³  cukrowniczy ; ** ; AC ; ; 
+przemys³  drzewny ; ** ; AC ;  ; #21?
+przemys³  lekki ; ** ; AC ;  ; #21?
+przerwa  obiadowa ; ** ; AD ;  ; 
+przestrzeñ  kosmiczna ; ** ; AD ;  ; 
+przestrzeñ  ¿yciowa ; ** ; AD ; 21 ; 
+przybrana  córka ; ** ; AD ;  ; 
+przybrana  matka ; ** ; AD ;  ; 
+przybrane  dziecko ; ** ; AE ;  ; 
+przybrane  nazwisko ; ** ; AE ;  ; 
+przybrany *CAB ojciec ; ** ; AA ;  ; 
+przybrany *CAB syn ; ** ; AA ;  ; 
+przyjaciel  domu ; *- ; AA ;  ; 
+przyjazna  dusza ; ** ; AD ;  ; 
+przyprawa  korzenna ; ** ; AD ; 21 ; 
+przyroda  nieo¿ywiona ; ** ; AD ; ; 
+przyrost  naturalny ; ** ; AC ;  ; 
+przystanek  na ¿¹danie ; *-- ; AC ;  ; 
+psi  grosz ; ** ; AC ;  ; 
+psi  grzyb ; ** ; AC ;  ; 
+psi  obowi¹zek ; ** ; AC ;  ; 
+psia  s³u¿ba ; ** ; AD ;  ; 
+psychologia  doœwiadczalna ; ** ; AD ; 21 ; 
+ptak  drapie¿ny ; ** ; AB ;  ; 
+ptasi  mó¿d¿ek ; ** ; AC ;  ; 
+ptasie  mleczko ; ** ; AE ;  ; 
+$ ptasie  mleko ; ** ; AE ;  ; 
+puchar  przechodni ; ** ; AC ;  ; #21?
+pu³apka  ofsajdowa ; ** ; AD ;  ; 
+punkt  ciê¿koœci ; *- ; AC ;  ; 
+punkt  honoru ; *- ; AC ;  ; 
+punkt  kulminacyjny ; ** ; AC ;  ; 
+punkt  obserwacyjny ; ** ; AC ;  ; 
+punkt  odniesienia ; *- ; AC ;  ; 
+punkt  oparcia ; *- ; AC ;  ; 
+punkt  skupu ; *- ; AC ;  ; 
+punkt  widzenia ; *- ; AC ;  ; 
+punkt  wyjœcia ; *- ; AC ;  ; 
+punkt  zaczepienia ; *- ; AC ;  ; 
+punkt  zwrotny ; ** ; AC ;  ; 
+pusta  g³owa ; ** ; AD ;  ; 
+puste s³owa ; ** ; AG;  ; 
+pusty  dŸwiêk ; ** ; AC ;  ; 
+pusty  œmiech ; ** ; AC ;  ; 
+pyrrusowe  zwyciêstwo ; ** ; AE ;  ; 
+pytanie *AEBAA retoryczne ; ** ; AE ; 21 ; 
+rachunek  sumienia ; *- ; AC ;  ; 
+racja  bytu ; *- ; AD ;  ; 
+racja  stanu ; *- ; AD ;  ; 
+racja  ¿ywnoœciowa ; ** ; AD ;  ; 
+rafa  koralowa ; ** ; AD ;  ; 
+rajska  jab³oñ ; ** ; AD ;  ; 
+rajski  ogród ; ** ; AC ; 21 ; 
+rajski  ptak ; ** ; AB ;  ; 
+rajskie  jab³ko ; ** ; AE ; ; 
+$ rajskie  jab³uszko ; ** ; AE ;  ; 
+rakieta  tenisowa ; ** ; AD ;  ; 
+rana *ADAAA szarpana ; ** ; AD ;  ; #+inne rany 
+reakcja  ³añcuchowa ; ** ; AD ; 21 ; 
+realizm  krytyczny ; ** ; AC ;  ; 
+reforma gregoriañska ; ** ; AD ;  ; 
+regu³a  zakonna ; ** ; AD ;  ; 
+regu³y  gry ; *- ; AG ;  ; 
+rekord  œwiata ; *- ; AC ;  ; 
+rekord  ¿yciowy ; ** ; AC ; 21 ; 
+relikwia  narodowa ; ** ; AD ; 21 ; 
+renta  inwalidzka ; ** ; AD ;  ; 
+reparacje  wojenne ; ** ; AG ;  ; #lp?
+reprezentacja  narodowa ; ** ; AD ; 21 ; 
+rewia  mody ; *- ; AD ; ; 
+rewizja  nadzwyczajna ; ** ; AD ;  ; 
+rewizja  osobista ; ** ; AD ;  ; 
+rewolucja  kulturalna ; ** ; AD ;  ; 
+rewolucja  robotnicza ; ** ; AD ;  ; 
+rezerwy  gospodarcze ; ** ; AG ;  ; 
+rêka *ADACBABB opatrznoœci ; *- ; AD ;  ; 
+robaczek  œwiêtojañski ; ** ; AB ; œwietlik ; 
+roboty *ADAAA  przymusowe ; ** ; AG ;  ; 
+robótka  rêczna ; ** ; AD ; 21 ; 
+rodzaj  gramatyczny ; ** ; AC ; ; 
+rodzaj  ludzki ; ** ; AC ; 21 ; 
+rodzaj  mêski ; ** ; AC ;  ; 
+rodzaj  nijaki ; ** ; AC ;  ; 
+rodzaj  ¿eñski ; ** ; AC ;  ; 
+rodzina  wielodzietna ; ** ; AD ; 21 ; 
+rodzinne  pielesze ; ** ; AG ; 21 ; 
+rodzinne  progi ; ** ; AG ; 21 ; 
+rodzinne  strony ; ** ; AG ; 21 ; 
+rodzona  córka ; ** ; AD ; ; #21?
+rodzona  matka ; ** ; AD ; ; #21?
+rodzona  siostra ; ** ; AD ; ; #21?
+rogata  dusza ; ** ; AD ; 21 ; 
+rok *ACEA akademicki ; ** ; AC ;  ; 
+rok *ACEA bie¿¹cy ; ** ; AC ; 21 ; 
+rok *ACEA kalendarzowy ; ** ; AC ;  ; 
+rok *ACEA s³oneczny ; ** ; AC ;  ; 
+rok *ACEA szkolny ; ** ;AC ;  ; 
+rok *ACEA pañski ; ** ; AC ;  ;
+$ anno domini ; -- ; AC ; ; 
+rola  kobieca ; ** ; AD ;  ; 
+rola  mêska ; ** ; AD ;  ; 
+rola  tytu³owa ; ** ; AD ; 21 ; 
+romans *ACACACA historyczny ; ** ; AC ;  ; 
+romans *ACACACA rycerski ; ** ; AC ;  ; 
+ropa  naftowa ; ** ; AD ;  ; 
+rosyjska  ruletka ; ** ; AD ;  ; 
+rozbicie *AEBAA dzielnicowe ; ** ; AE ; 21 ; 
+rozbiór  gramatyczny ; ** ; AC ; ; 
+rozbiór  zdania ; *- ; AC ;  ; 
+rozbój  na równej drodze ; *--- ; AC ;  ; 
+$ rozbój  w bia³y dzieñ ; *--- ; AC ;  ; 
+rozdwojenie *AEBAA jaŸni ; *- ; AE ;  ; 
+rozg³oœnia  radiowa ; ** ; AD ;  ; 
+rozgrywki  sportowe ; ** ; AG ; 21 ; 
+rozjazd  kolejowy ; ** ; AC ;  ; 
+rozjazd  tramwajowy ; ** ; AC ;  ; 
+rozkaz  dzienny ; ** ; AC ;  ; 
+rozk³ad  jazdy ; *- ; AC ;  ; 
+rozk³ad  moralny ; ** ; AC ; ; 
+rozkosze  sto³u ; *- ; AG ;  ; 
+rozkwit  ekonomiczny ; ** ; AC ;  ; 
+rozlew  krwi ; *- ; AC ;  ; 
+rozmna¿anie *AEBAA bezp³ciowe ; ** ; AE ;  ; 
+rozmna¿anie *AEBAA p³ciowe ; ** ; AE ;  ; 
+rozmna¿anie *AEBAA wegetatywne ; ** ; AE ;  ; 
+rozmowa  w cztery *DBAB oczy *AEACA ; *--- ; AD ;  ;  # wsg: w cztery oczy
+rozporz¹dzenie *AEBAA  ministerialne ; ** ; AE ; 21 ; 
+rozporz¹dzenie *AEBAA rz¹dowe ; ** ; AE ; 21 ; 
+rozporz¹dzenie *AEBAA wewnêtrzne ; ** ; AE ; 21 ; 
+rozporz¹dzenie *AEBAA wykonawcze ; ** ; AE ; 21 ; #termin?
+rozprawa  apelacyjna ; ** ; AD ;  ; 
+rozprawa  doktorska ; ** ; AD ;  ; 
+rozprawa  naukowa ; ** ; AD ;  ; 
+rozterka  duchowa ; ** ; AD ; 21 ; 
+rozwarstwienie *AEBAA klasowe ; ** ; AE ;  ; #wsg?
+rozwarstwienie *AEBAA spo³eczne ; ** ; AE ;  ; 
+rozwa¿ania  naukowe ; ** ; AG ; 21 ; 
+ród ludzki ; ** ; AC ; 21 ; 
+róg  obfitoœci ; *- ; AC ;  ; 
+równia  pochy³a ; ** ; AD ;  ; 
+równy ch³op ; ** ; AA ;  ; 
+równy  cz³owiek ; ** ; AA ;  ; 
+ró¿a  wiatrów ; *- ; AD ;  ; 
+ró¿a  pustyni ; *- ; AD ;  ; 
+ró¿ne  ró¿noœci ; ** ; AG ;  ; 
+ró¿owa  przysz³oœæ ; ** ; AD ;  ; 
+ró¿owe  okulary ; ** ; AG ;  ; 
+ruch  ch³opski ; ** ; AC ;  ; 
+ruch  jednokierunkowy ; ** ; AC ;  ; 
+ruch  jednostajny ; ** ; AC ;  ; 
+ruch  ko³owy ; ** ; AC ;  ; 
+ruch  ludowy ; ** ; AC ;  ; 
+ruch  oporu ; *- ; AC ;  ; 
+ruch  uliczny ; ** ; AC ;  ; 
+ruch  w interesie ; *-- ; AC ;  ; 
+ruch  wolnoœciowy ; ** ; AC ;  ; 
+ruch  wyzwoleñczy ; ** ; AC ;  ; 
+ruchome  piaski ; ** ; AG ;  ; 
+ruchy  tektoniczne ; ** ; AG ;  ; 
+ruina  ekonomiczna ; ** ; AD ;  ; 
+ruina  gospodarcza ; ** ; AD ;  ; 
+ruina  moralna ; ** ; AD ; 21 ; 
+runda  honorowa ; ** ; AD ;  ; 
+rura  wydechowa ; ** ; AD ;  ; 
+ruski  miesi¹c ; ** ; AC ;  ; 
+ruski  rok ; ** ; AC ;  ; 
+rwa  kulszowa ; ** ; AD ;  ; 
+ryba  s³odkowodna ; ** ; AD ;  ; 
+rydwan  wojenny ; ** ; AC ; 21 ; 
+rygor  szkolny ; ** ; AC ; 21 ; 
+rygor  wiêzienny ; ** ; AC ; 21 ; 
+rym  mêski ; ** ; AC ;  ; 
+rym  czêstochowski ; ** ; AC ; 21 ; 
+rynek *ACABA krajowy ; ** ; AC ;  ; 
+rynek *ACABA zbytu ; *- ; AC ;  ; 
+rysunek  odrêczny ; ** ; AC ;  ; 
+rysunek  techniczny ; ** ; AC ;  ; 
+rysy *ACAAAAA twarzy ; *- ; AG ;  ; 
+rz¹d *ACAAAAA dusz ; *- ; AC ;  ; 
+rz¹d *ACAAAAA marionetkowy ; ** ; AC ;  ; 
+rz¹dy  silnej rêki ; *-- ; AG ;  ; 
+$ rz¹dy  twardej rêki ; *-- ; AG ;  ; 
+rzecz przypadku ; -- ; AD ;  ; 
+rzeczy  osobiste ; ** ; AG ;  ; #lp?
+rzeŸ  niewini¹tek ; *- ; AD ;  ; 
+rzeŸba  terenu ; *- ; AD ;  ; 
+rzêsa  wodna ; ** ; AD ;  ; 
+rzêsiste  brawa ; ** ; AG ;  ; 
+rzut  dyskiem ; *- ; AC ;  ; 
+rzut  m³otem *ACAABAA ; *- ; AC ;  ; 
+rzut  oka *AEACA ; *- ; AC ;  ; 
+rzut  oszczepem ; *- ; AC ;  ; 
+sakrament  chrztu ; *- ; AC ;  ; 
+sakrament  ma³¿eñstwa ; *- ; AC ;  ; 
+sakramentalne  pytanie ; ** ; AE ;  ; 
+salomonowa  m¹droœæ ; ** ; AD ;  ; 
+salon  artystyczny ; ** ; AC ;  ; 
+salon  fryzjerski ; ** ; AC ;  ; 
+salon  gry ; *- ; AC ;  ; 
+salon  literacki ; ** ; AC ;  ; 
+salon  samochodowy ; ** ; AC ;  ; 
+salonowe  maniery *AGAAA ; ** ; AG ; 21 ; 
+salwa  honorowa ; ** ; AD ;  ; 
+samobójcza  bramka ; ** ; AD ; 21 ; 
+samochód  ma³olitra¿owy ; ** ; AC ;  ; 
+samopomoc  ch³opska ; ** ; AD ;  ; 
+samorz¹d  gminny ; ** ; AC ;  ; 
+samorz¹d  miejski ; ** ; AC ;  ; 
+samorz¹d  szkolny ; ** ; AC ;  ; 
+samorz¹d  terytorialny ; ** ; AC ;  ; 
+satyra *ADAAA obyczajowa ; ** ; AD ;  ; 
+satyra *ADAAA polityczna ; ** ; AD ;  ; 
+s¹d  apelacyjny ; ** ; AC ;  ; 
+s¹d  bo¿y ; ** ; AC ;  ; #wariant: ordalia?
+s¹d  cywilny ; ** ; AC ;  ; 
+s¹d  doraŸny ; ** ; AC ;  ; 
+s¹d  honorowy ; ** ; AC ;  ; 
+s¹d  kaperski ; ** ; AC ;  ; 
+s¹d  kapturowy ; ** ; AC ;  ; 
+s¹d  kasacyjny ; ** ; AC ;  ; 
+s¹d  kole¿eñski ; ** ; AC ;  ; 
+s¹d  nadzwyczajny ; ** ; AC ;  ; 
+s¹d  ostateczny ; ** ; AC ;  ; 
+s¹d  pracy ; *- ; AC ;  ; 
+s¹d  rewizyjny ; ** ; AC ;  ; 
+s¹d  skorupkowy ; ** ; AC ;  ; 
+s¹d  wojewódzki ; ** ; AC ;  ; 
+s¹dny  dzieñ ; ** ; AC ;  ; 
+scena  fina³owa ; ** ; AD ;  ; 
+scena  kameralna ; ** ; AD ;  ; 
+scena  ma³¿eñska ; ** ; AD ;  ; 
+scena  polityczna ; ** ; AD ;  ; 
+scena  teatralna ; ** ; AD ;  ; 
+sceny  dantejskie ; ** ; AG ; 21 ; 
+schody  ruchome ; ** ; AG ; 21 ; 
+seans  filmowy ; ** ; AC ;  ; 
+seans  spirytystyczny ; ** ; AC ;  ; 
+sedno  rzeczy ; *- ; AE ;  ; 
+$ sedno  sprawy ; *- ; AE ;  ; 
+segregacja  rasowa ; ** ; AD ;  ; 
+sejm  czteroletni ; ** ; AC ;  ; #nazwa
+sejm  elekcyjny ; ** ; AC ;  ; 
+sejm  ustawodawczy ; ** ; AC ;  ; 
+sekcja  zw³ok *AGBA ; *- ; AD ;  ; 
+sekretarz  generalny ; ** ; AC ;  ; 
+sekretarz  naukowy ; ** ; AC ;  ; 
+seminarium  duchowne ; ** ; AE ;  ; 
+seminarium  magisterskie ; ** ; AE ;  ; 
+sen  somnambuliczny ; ** ; AC ; 21 ; 
+sen  zimowy ; ** ; AC ;  ; 
+senat  akademicki ; ** ; AC ;  ; 
+senat  rzymski ; ** ; AC ;  ; #21?
+senna  mara ; ** ; AD ; 21 ; 
+senne  majaki *AGBB ; ** ; AG ; 21 ; #lp?
+senne  marzenia ; ** ; AG ;  ; 
+sennik  egipski ; ** ; AC ;  ; #21?
+sens  ¿ycia ; *- ; AC ;  ; 
+ser  holenderski ; ** ; AC ;  ; 
+ser  owczy ; ** ; AC ;  ; #warianty?
+serce jak *EK dzwon ; *-- ; AE ;  ; 
+serdeczna  krew *ADCAAA ; ** ; AD ; 21 ; 
+sezon  jesienny ; ** ; AC ; 21 ; 
+sezon  letni ; ** ; AC ; 21 ; 
+sezon  ogórkowy ; ** ; AC ;  ; 
+sezon  wiosenny ; ** ; AC ; 21 ; 
+sezon  zimowy ; ** ; AC ; 21 ; 
+sêdzia *AABAA pokoju ; *- ; AA ;  ; #2wo
+sêdzia *AABAA sportowy ; ** ; AA ;  ; #jw
+sfera  niebieska ; ** ; AD ;  ; 
+siarczyste  przekleñstwo ; ** ; AE ;  ; 
+siarczysty  mróz ; ** ; AC ;  ; 
+siatka  dyfrakcyjna ; ** ; AD ;  ; 
+siatka  geograficzna ; ** ; AD ;  ; 
+sieæ  autobusowa ; ** ; AD ;  ; 
+sieæ  kolejowa ; ** ; AD ;  ; 
+sieæ  komunikacyjna ; ** ; AD ;  ; 
+sieæ  radiowa ; ** ; AD ;  ; 
+sieæ  tramwajowa ; ** ; AD ;  ; 
+sieæ  wodna ; ** ; AD ;  ; 
+sieæ  wodoci¹gowa ; ** ; AD ;  ; 
+siedem *DBBB cudów *ACAAAAA œwiata ; **- ; AG ;  ; #cudy (?)
+siedem *DBBB grzechów g³ównych ; *** ; AG ;  ; 
+siedlisko  chorób ; *- ; AE ;  ; 
+siedmiomilowe  buty *AGAB ; ** ; AG ; 21 ; 
+siemiê  lniane ; ** ; AE ;  ; 
+sierp i m³ot *ACAABAA ; *-* ; AC ;  ; 
+siewnik  dwurzêdowy ; ** ; AC ;  ; #termin?
+silna  indywidualnoœæ ; ** ; AD ;  ; 
+silna  rêka ; ** ; AD ;  ; 
+silnik  dwusuwowy ; ** ; AC ;  ; #21?
+silnik  elektryczny ; ** ; AC ; 21 ; 
+silnik  na dotarciu ; *-- ; AC ;  ; 
+silnik  odrzutowy ; ** ; AC ; 21 ; 
+silnik  spalinowy ; ** ; AC ; 21 ; 
+si³a  ci¹¿enia ; *- ; AD ; grawitacja ; 
+$ si³a  ciê¿koœci ; *- ; AD ;  ; #dopisaæ wariant ?
+si³a  doœrodkowa ; ** ; AD ; ; #21?
+si³a  fizyczna ; ** ; AD ;  ; 
+si³a  herkulesowa ; ** ; AD ; 21 ; 
+si³a  nadprzyrodzona ; ** ; AD ; 21 ; 
+si³a  napêdowa ; ** ; AD ;  ; 
+si³a  natury ; *- ; AD ;  ; 
+si³a  nawyku ; *- ; AD ;  ; 
+si³a  nieczysta ; ** ; AD ; 21 ; 
+si³a  odœrodkowa ; ** ; AD ;  ; #21?
+si³a  robocza ; ** ; AD ;  ; 
+si³a  rozpêdu ; *- ; AD ;  ; 
+si³a  wy¿sza ; ** ; AD ; 21 ; 
+si³a  ¿yciowa ; ** ; AD ; 21 ; #wariant: witalnoœæ?
+siostra  cioteczna ; ** ; AD ; 21 ; #wariant: kuzynka?
+siostra  mi³osierdzia ; *- ; AD ;  ; 
+siostra  przyrodnia ; ** ; AD ; 21 ; 
+siostra  stryjeczna ; ** ; AD ; 21 ; #kuzynka?
+siostra  zakonna ; ** ; AD ; zakonnica ; 
+siódme  niebo ; ** ; AE ;  ; 
+siódme  poty ; ** ; AG ;  ; 
+skarb  narodowy ; ** ; AC ;  ; #21?
+skarb  pañstwa *AEAAAB ; *- ; AC ;  ; 
+sklepienie *AEBAA kolebkowe ; ** ; AE ;  ; 
+sklepienie *AEBAA niebieskie ; ** ; AE ; niebo ; 
+sklepienie *AEBAA ¿ebrowe ; ** ; AE ;  ; +inne sklepienia
+sk³ad  amunicji ; *- ; AC ;  ; #arsena³?
+sk³adnik  pokarmowy ; ** ; AC ;  ; 
+skok  o tyczce ; *-- ; AC ;  ; 
+skok  w dal ; *-- ; AC ;  ; 
+skok  wzwy¿ ; *- ; AC ;  ; 
+skoki *AGBB narciarskie ; ** ; AG ;  ; 
+skoñczona  idiotka ; ** ; AD ;  ; 
+skoñczona  kretynka ; ** ; AD ;  ; 
+skoñczona  wariatka ; ** ; AD ;  ; #skoñczony dureñ, osio³, wariat itp.
+skoñczone  zero ; ** ; AE ;  ; 
+skorupa  ziemska ; ** ; AD ; 21 ; 
+skostnia³e  palce ; ** ; AG ;  ; 
+skostnia³e  pogl¹dy ; ** ; AG ;  ; 
+skostnia³e  rêce ; ** ; AG ;  ; 
+skóra i koœci ; --- ; AG ; ;  #czm
+skrajna  lewica ; ** ; AD ;  ; 
+skrajna  nêdza ; ** ; AD ;  ; 
+skrajna  prawica ; ** ; AD ;  ; 
+skrêt *ACAAAAA  kiszek ; *- ; AC ;  ; 
+skrêt *ACAAAAA tu³owia ; *- ; AC ;  ; 
+skrót  myœlowy ; ** ; AC ; 21 ; 
+skruszona  mina ; ** ; AD ;  ; 
+skrytka  pocztowa ; ** ; AD ;  ; 
+skrzyd³a  fantazji ; *- ; AG ;  ; 
+skrzyd³o  bramy ; *- ; AE ;  ; 
+skrzyd³o  drzwi ; *- ; AE ;  ; 
+skrzynia  biegów ; *- ; AD ;  ; 
+skrzynka  na listy *ACAAAAA ; *-- ; AD ;  ; 
+skwaszona  mina ; ** ; AD ;  ; 
+slalom  gigant *ACAABAA ; *- ; AC ;  ; 
+slalom  specjalny ; ** ; AC ;  ; 
+s³aba  strona ; ** ; AD ;  ; 
+s³aby  punkt ; ** ; AC ;  ; 
+s³odka  idiotka ; ** ; AD ;  ; 
+s³odkie  s³ówka ; ** ; AG ;  ; 
+s³omiana  wdowa ; ** ; AD ;  ; 
+$ s³omiana  wdówka ; ** ; AD ;  ; 
+s³omiane  w³osy ; ** ; AG ;  ; 
+s³omiany  ogieñ ; ** ; AC ;  ; 
+$ s³omiany  zapa³ ; ** ; AC ;  ;
+s³omiany  wdowiec ; ** ; AA ;  ;  
+s³omkowy  kapelusz ; ** ; AC ; 21 ; 
+s³oneczne  okulary *AGAB ; ** ; AG ; 21 ; 
+s³ony  rachunek ; ** ; AC ;  ; 
+s³oñ  morski ; ** ; AB ;  ; #wariant: mirunga?
+s³oñ  w sk³adzie porcelany ; *--- ; AB ;  ; 
+s³owa  bez *GBBAA pokrycia ; *-- ; AG ;  ; 
+s³ownik  frazeologiczny ; ** ; AC ;  ; 
+s³owo  pisane ; ** ; AE ;  ; #21? proza?
+s³owo  wstêpne ; ** ; AE ;  ; #wsg?
+s³uch  absolutny ; ** ; AC ;  ; 
+s³uga *AABCA  bo¿y ; ** ; AA ;  ; #s³uga bo¿a
+s³up  cieczy ; *- ; AC ;  ; 
+s³up  energetyczny ; ** ; AC ;  ; 
+s³up  graniczny ; ** ; AC ;  ; 
+s³up  ognia ; *- ; AC ;  ; 
+s³up  powietrza ; *- ; AC ;  ; 
+s³up  rtêci ; *- ; AC ;  ;
+$ s³upek  rtêci ; *- ; AC ;  ; 
+s³upek  startowy ; ** ; AC ;  ; 
+s³upy  Herkulesa ; *- ; AG ;  ; 
+s³u¿ba  bo¿a ; ** ; AD ; 21 ;
+s³u¿ba  czynna ; ** ; AD ; 21 ; 
+smaczny  k¹sek ; ** ; AC ;  ; 
+smak  artystyczny ; ** ; AC ; 21 ; 
+smak  estetyczny ; ** ; AC ; 21 ; 
+smak  literacki ; ** ; AC ; 21 ; 
+smocza  jama ; ** ; AD ;  ; #21?
+smuga  cienia ; *- ; AD ;  ; 
+soda  oczyszczona ; ** ; AD ;  ; 
+sokoli  wzrok ; ** ; AC ; 21 ; 
+sole *AGCC od¿ywcze ; ** ; AG ;  ; #+trzeŸwi¹ce
+sopel  lodu ; *- ; AC ;  ; 
+sowa  b³otna ; ** ; AB ;  ; #termin?
+sowa  p³omykówka ; *- ; AB ;  ; 
+sowa  uszata ; ** ; AB ;  ; 
+sójka  w bok ; *-- ; AD ;  ; 
+spirytus  kamforowy ; ** ; AC ;  ; 
+spirytus  salicylowy ; ** ; AC ;  ; 
+spis *ACAAAAA rzeczy ; *- ; AC ;  ; 
+$ spis *ACAAAAA treœci ; *- ; AC ; ;
+spokój  filozoficzny ; ** ; AC ; 21 ; 
+spo³eczeñstwo  bezklasowe ; ** ; AE ;  ; 
+spo³eczna  postawa ; ** ; AD ; 21 ; 
+sport  wyczynowy ; ** ; AC ; 21 ; 
+sport  zawodowy ; ** ; AC ; 21 ; 
+sportowa gra *ADAAA ; ** ; AD ;  ; 
+sport wodny ; ** ; AC ;  ; 
+sport zimowy ; ** ; AC ;  ; 
+spowiedŸ  powszechna ; ** ; AD ;  ; 
+spowiedŸ  œwiêta *CAB ; ** ; AD ;  ; 
+spó³dzielnia  mieszkaniowa ; ** ; AD ;  ; 
+spó³dzielnia  pracy ; *- ; AD ;  ; 
+spó³dzielnia  produkcyjna ; ** ; AD ;  ; 
+spó³g³oska  miêkka ; ** ; AD ;  ; 
+spó³g³oska  twarda ; ** ; AD ;  ; 
+spó³ka  akcyjna ; ** ; AD ; SA ; 
+spó³ka  handlowa ; ** ; AD ;  ; 
+spó³ka  wydawnicza ; ** ; AD ;  ; 
+spó³ka  z *GBBAA ograniczon¹ odpowiedzialnoœci¹ ; *--- ; AD ;  ; #wariant: spó³ka z o. o.?
+sprawa  cywilna ; ** ; AD ;  ; 
+sprawa  nie *GBBBA cierpi¹ca zw³oki *ADAB ; *--- ; AD ; 2341 ; 
+sprawa  rozwodowa ; ** ; AD ;  ; 
+sprawa  ¿ycia i œmierci ; *--- ; AD ;  ; #kwestia, i/lub 
+sprawiedliwoœæ  dziejowa ; ** ; AD ; 21 ; 
+sprawa  sercowa ; ** ; AD ;  ; 
+sprzeda¿  ratalna ; ** ; AD ;  ; #21?
+sprzê¿enie *AEBAA zwrotne ; ** ; AE ;  ; 
+srebra  sto³owe ; ** ; AG ;  ; 
+srebrne  gody ; ** ; AG ;  ; 
+srebrne  wesele ; ** ; AE ;  ; 
+srebrny  medal ; ** ; AC ;  ; 
+stacja  benzynowa ; ** ; AD ;  ; 
+stacja  doœwiadczalna ; ** ; AD ;  ; 
+stacja  dysków ; *- ; AD ;  ; 
+stacja  klimatyczna ; ** ; AD ;  ; 
+stacja  kosmiczna ; ** ; AD ;  ; 
+stacja  pomp ; *- ; AD ;  ; #przest.?
+stajnia  augiaszowa ; ** ; AD ;  ; 
+$ stajnia Augiasza ; *- ; AD ; ;
+stal  damasceñska ; ** ; AD ; 21 ; 
+stal  nierdzewna ; ** ; AD ; 21 ; 
+stalowe  nerwy ; ** ; AG ;  ; 
+stan  cywilny ; ** ; AC ;  ; 
+stan  krytyczny ; ** ; AC ;  ; 
+stan  podgor¹czkowy ; ** ; AC ;  ; 
+stan  rzeczy ; *- ; AC ;  ; 
+stan  skupienia ; *- ; AC ;  ; 
+stan  wojenny ; ** ; AC ;  ; 
+stan  wyj¹tkowy ; ** ; AC ;  ; 
+stary  druh ; ** ; AA ;  ;
+stary  dziad ; ** ; AA ;  ; 
+stary  dziwak ; ** ; AA ;  ; 
+stary  grat ; ** ; AC ;  ; 
+stary  grzyb ; ** ; AA ;  ; 
+stary  kawaler ; ** ; AA ;  ; 
+stary  koñ *AAABCA ; ** ; AA ;  ; 
+stary  piernik *AAADBA ; ** ; AA ;  ; 
+stary  pryk ; ** ; AA ;  ; 
+stary  przyjaciel ; ** ; AA ;  ; 
+stary  rok ; ** ; AC ;  ; 
+stary  œwiat ; ** ; AC ; Europa ; 
+stary  wróbel ; ** ; AB ;  ; 
+stary  wyga *AABDBAB ; ** ; AA ;  ; 
+statek  kosmiczny ; ** ; AC ;  ; 
+stek  bzdur ; *- ; AC ;  ; 
+$ stek  k³amstw ; *- ; AC ;  ; 
+sto *DBGB pociech ; -- ; AG ;  ; 
+stoicki  spokój ; ** ; AC ;  ; 
+stolica  apostolska ; ** ; AD ;  ; #Watykan?
+stopa  dyskontowa ; ** ; AD ;  ; 
+stopa  procentowa ; ** ; AD ;  ; 
+stopieñ *ACACBAA najwy¿szy ; ** ; AC ;  ; #+wy¿szy
+stó³  szwedzki ; ** ; AC ; 21 ; 
+strajk  g³odowy ; ** ; AC ;  ; 
+strajk w³oski ; ** ; AC ; 21 ; 
+stra¿  graniczna ; ** ; AD ;  ; 
+stra¿  honorowa ; ** ; AD ;  ; 
+strefa  bezc³owa ; ** ; AD ;  ; 
+strona  czynna ; ** ; AD ;  ; #21?
+stró¿  porz¹dku ; *- ; AA ; ;
+stró¿ prawa ; *- ; AA ; policjant ;
+struna  grzbietowa ; ** ; AD ;  ; 
+struny  g³osowe ; ** ; AG ;  ; 
+strza³ *ACAAAAA w dziesi¹tkê ; *-- ; AC ;  ; 
+strzelec *AAACBA wyborowy ; ** ; AC ; snajper ; #etykieta (strzelcu?)
+studia *AGDB dzienne ; ** ; AG ;  ; #21?
+studia *AGDB wieczorowe ; ** ; AG ; ; 
+studia *AGDB zaoczne ; ** ; AG ;  ; 
+studnia  artezyjska ; ** ; AD ; 21 ; 
+studnia  bez *GBBAA dna ; *-- ; AD ;  ; 
+studnia  g³êbinowa ; ** ; AD ;  ; 
+stwardnienie  rozsiane ; ** ; AE ;  ; 
+stworzenie  boskie ; ** ; AE ;  ; 
+styl  gotycki ; ** ; AC ;  ; 
+styl  klasyczny ; ** ; AC ;  ; 
+styl  motylkowy ; ** ; AC ;  ; 
+styl  telegraficzny ; ** ; AC ;  ; 
+sucha  zaprawa ; ** ; AD ;  ; 
+suche  liczby ; ** ; AG ;  ; 
+suchy  chleb ; ** ; AC ;  ; 
+suchy  lód *ACAAAAA ; ** ; AC ;  ; 
+suchy  prowiant ; ** ; AC ;  ; 
+suknia *ADACBAA  duchowna ; ** ; AD ; 21 ; #wariant: sukienka? 2wo
+swoboda  ruchu ; *- ; AD ;  ; 
+swobody *AGAAA obywatelskie ; ** ; AG ; 21 ; 
+swój *EAABB  ch³op ; ** ; AA ;  ; #2wo
+$ swój *EAABB ch³opak ; ** ; AA ;  ; #2wo
+$ swój *EAABB cz³owiek ; ** ; AA ;  ; #jw
+syn  marnotrawny ; ** ; AA ; 21 ; 
+syrena  alarmowa ; ** ; AD ;  ; 
+syrena  fabryczna ; ** ; AD ;  ; 
+syreni  œpiew ; ** ; AC ;  ; 
+system  dziesiêtny ; ** ; AD ;  ; #+inne systemy
+sytuacja  podbramkowa ; ** ; AD ; 21 ; 
+syzyfowa  praca ; ** ; AD ;  ; 
+szala *ADACBABA zwyciêstwa ; *- ; AD ;  ; 
+szara  eminencja ; ** ; AD ;  ; 
+szara  strefa ; ** ; AD ;  ; 
+szare  komórki ; ** ; AG ;  ; 
+szare  myd³o ; ** ; AE ;  ; 
+szary  cz³owiek ; ** ; AA ;  ; 
+szary  sos ; ** ; AC ;  ; 
+szary  œwit *ACAAAAA ; ** ; AC ;  ; 
+szata  duchowna ; ** ; AD ; 21 ; 
+szata  graficzna ; ** ; AD ;  ; 
+szata  roœlinna ; ** ; AD ;  ; 
+szczeniêcy  wiek ; ** ; AC ;  ; 
+szczera  noc ; ** ; AD ;  ; 
+szczera  pustka ; ** ; AD ;  ; 
+szczere  pole *AEBAA ; ** ; AE ;  ; 
+szczêki *ADAB hamulcowe ; ** ; AG ;  ; #lp?
+szczur  l¹dowy ; ** ; AB ;  ; 
+szczwana  sztuka ; ** ; AD ;  ; 
+$ szczwany  lis ; ** ; AB ;  ; 
+szczyt  bezczelnoœci ; *- ; AC ;  ; 
+szczyt  g³upoty ; *- ; AC ;  ; 
+szczyt  marzeñ ; *- ; AC ;  ; 
+szermierka  s³owna ; **  ;AD ; 21 ; 
+szeroki  gest ; ** ; AC ;  ; 
+szerokoœæ  geograficzna ; ** ; AD ;  ; 
+szewska  pasja ; ** ; AD ;  ; 
+szewski  poniedzia³ek ; ** ; AC ;  ; 
+szklana  góra ; ** ; AD ;  ;
+szklane  domy ; ** ; AG ;  ; 
+szklany  wzrok ; ** ; AC ;  ; 
+szk³o kontaktowe ; ** ; AE ;  ; 
+$ soczewka kontaktowa ; ** ; AD ; ;
+szk³o  butelkowe ; ** ; AE ;  ; 
+szk³o  powiêkszaj¹ce ; ** ; AE ; lupa ; 
+szko³a  przetrwania ; *- ; AD ;  ; 
+szko³a  rodzenia ; *- ; AD ;  ; 
+szko³a  ¿ycia ; *- ; AD ;  ; 
+szlachta  dr¹¿kowa ; ** ; AD ;  ; 
+szlachta  herbowa ; ** ; AD ;  ; 
+szlak *ACABA handlowy ; ** ; AC ; 21 ; 
+szlify *AGAB generalskie ; ** ; AG ; 21 ; 
+szlify *AGAB  oficerskie ; ** ; AG ;  ; 
+szmat czasu ; *- ; AC ;  ; 
+szmat drogi ; *- ; AC ; ;
+szmat ¿ycia ; *- ; AC ;  ; 
+szpital  kliniczny ; ** ; AC ;  ; 
+sztuczna szczêka *ADAB ; ** ; AD ;  ; 
+sztuczne  oddychanie ; ** ; AE ;  ; 
+sztuczne  ognie ; ** ; AG ;  ; 
+sztuczny  miód ; ** ; AC ; 21 ; 
+sztuczny  satelita *ACG ; ** ; AC ;  ; 
+sztuka  ludowa ; ** ; AD ;  ; 
+sztuka  miêsa ; *- ; AD ;  ; 
+sztuka  s³owa ; *- ; AD ;  ; 
+sztuka dla sztuki ; *-- ; AD ;  ; 
+sztuki  wyzwolone ; ** ; AG ;  ; 
+szyk  bojowy ; ** ; AC ;  ; 
+œciana  p³aczu ; *- ; AD ;  ; 
+œlepa  amunicja ; ** ; AD ;  ; 
+œlepa  babka ; ** ; AD ;  ; 
+œlepa  fortuna ; ** ; AD ;  ; 
+œlepa  kiszka ; ** ; AD ;  ; 
+œlepa  uliczka ; ** ; AD ;  ; 
+œliska  droga *ADAB ; ** ; AD ;  ; 
+œlub  cywilny ; ** ; AC ;  ; 
+œmieræ  cywilna ; ** ; AD ; 21 ; 
+œmieræ  g³odowa ; ** ; AD ;  ; 
+œmieræ  kliniczna ; ** ; AD ; 21 ; 
+œmieræ  mêczeñska ; ** ; AD ; 21 ; 
+œmiertelna  choroba ; ** ; AD ;  ; 
+œmiertelna  chusta ; ** ; AD ;  ; 
+œmiertelna  obraza ; ** ; AD ;  ; 
+œmiertelne  niebezpieczeñstwo ; ** ; AE ;  ; 
+œmiertelne  przera¿enie ; ** ; AE ;  ; 
+$ œmiertelny  strach *ACAAAB ; ** ; AC ;  ; 
+œmietanka  towarzyska ; ** ; AD ;  ; 
+œmigus dyngus ; -- ; AC ;  ; #nazwa 
+œpi¹ca *CAA królewna ; ** ; AD ;  ; 
+œroda  popielcowa ; ** ; AD ;  ; 
+œrodek  ciê¿koœci ; *- ; AC ;  ; 
+œrodek  lokomocji ; *- ; AC ;  ; 
+œrodek  nasenny ; ** ; AC ;  ; 
+œrodek  p³atniczy ; ** ; AC ;  ; 
+œrodek czystoœci ; *- ; AC ;  ; 
+œrodki *AGBB masowego przekazu ; *-- ; AG ; media ; 
+œrodki *AGBB ostro¿noœci ; *- ; AG ;  ; 
+œrodek  przymusu ; *- ; AC ;  ; 
+œrodek  wyrazu ; *- ; AC ;  ; 
+œwiadectwo  dojrza³oœci ; *- ; AE ;  ; 
+œwiadectwo  lekarskie ; ** ; AE ;  ; 
+œwiadectwo  szkolne ; ** ; AE ;  ; 
+œwiadek  obrony ; *- ; AA ;  ; 
+œwiadek  oskar¿enia ; *- ; AA ;  ; 
+œwiadome  macierzyñstwo ; ** ; AE ;  ; 
+œwiat  materialny ; ** ; AC ;  ; 
+œwiat  nadprzyrodzony ; ** ; AC ;  ; 
+œwiat  pracy ; *- ; AC ;  ; 
+œwiat  roœlinny ; ** ; AC ;  ; 
+œwiat  zwierzêcy ; ** ; AC ;  ; 
+œwiate³ko  w tunelu ; *-- ; AE ;  ; 
+œwiatowa  dama ; ** ; AD ;  ; 
+œwiatowy  cz³owiek ; ** ; AA ; 21 ; 
+œwieca  dymna ; ** ; AD ;  ; 
+œwiêta *CAB  cierpliwoœæ ; ** ; AD ;  ; 
+œwiêta *CAB inkwizycja ; ** ; AD ;  ; 
+œwiêta *CAB  krowa ; ** ; AD ;  ; 
+œwiêta *CAB  prawda ; ** ; AD ;  ; 
+œwiêta *CAB racja ; ** ; AD ;  ; 
+œwiêta *CAB wojna ; ** ; AD ;  ; 
+œwiêto  narodowe ; ** ; AE ; 21 ; 
+œwinka  morska ; ** ; AB ;  ; 
+œwiñski  blondyn *AAADAA ; ** ; AA ;  ; 
+œwiñski  kawa³ ; ** ; AA ;  ; 
+œwiñskie  oczka ; ** ; AG ;  ; 
+tablica  pami¹tkowa ; ** ; AD ;  ; 
+tabliczka  mno¿enia ; *- ; AD ;  ; 
+tajemnica  lekarska ; ** ; AD ;  ; 
+tajemnica  pañstwowa ; ** ; AD ;  ; 
+tajemnica  poliszynela ; *- ; AD ;  ; 
+tajemnica  s³u¿bowa ; ** ; AD ;  ; 
+tajemnica  spowiedzi ; *- ; AD ;  ; 
+tajemnice  alkowy ; *- ; AG ;  ; 
+tajemnica  wiary ; *- ; AD ;  ; 
+tamten *ECABA œwiat ; ** ; AC ;  ; 
+taniec  chmielowy ; ** ; AC ;  ; 
+taniec  œmierci ; *- ; AC ;  ; 
+taryfa  ulgowa ; ** ; AD ; 21 ; 
+teatr  kameralny ; ** ; AC ;  ; 
+technik *AAACBA dentystyczny ; ** ; AA ;  ; 
+teka  ministerialna ; ** ; AD ; 21 ; 
+telefon  komórkowy ; ** ; AC ; komórka ; 
+telefon  zaufania ; *- ; AC ;  ; 
+temperatura  bezwzglêdna ; ** ; AD ;  ; 
+temperatura  krytyczna ; ** ; AD ; ; 
+temperatura  wrzenia ; *- ; AD ;  ; 
+teoria  dziedzicznoœci ; *- ; AD ;  ; 
+teoria  ewolucji *ADACBAA ; *- ; AD ;  ; 
+teoria  prawdopodobieñstwa ; *- ; AD ;  ; 
+têga  g³owa ; ** ; AD ;  ; 
+têpa  g³owa ; ** ; AD ;  ; 
+tkanka  kostna ; ** ; AD ;  ; #+inne tkanki
+t³usty  czwartek ; ** ; AC ;  ; #nazwa
+t³usty  druk ; ** ; AC ;  ; 
+t³usty  k¹sek ; ** ; AC ; ; 
+tor  przeszkód ; *- ; AC ;  ; 
+torebka  stawowa ; ** ; AD ;  ; 
+torebka  w³osowa ; ** ; AD ;  ; 
+totalizator  sportowy ; ** ; AC ;  ; 
+towarzystwo  wzajemnej adoracji ; *-- ; AE ;  ; 
+trasa  koncertowa ; ** ; AD ;  ; 
+tr¹ba  jerychoñska ; ** ; AD ;  ; 
+tr¹ba  powietrzna ; ** ; AD ;  ; 
+trójka  klasowa ; ** ; AD ; 21 ; 
+trójk¹t  bermudzki ; ** ; AC ;  ; 
+trójk¹t  ma³¿eñski ; ** ; AC ; 21 ; 
+trupia  czaszka ; ** ; AD ;  ; 
+$ trupia  g³ówka ; ** ; AD ;  ; 
+tryb *ACAAAAA doraŸny ; ** ; AC ;  ; #21?
+trybun *AAADAA ludowy ; ** ; AA ;  ; 
+trybuna³  konstytucyjny ; ** ; AC ;  ; 
+trzcina  cukrowa ; ** ; AD ;  ; 
+trzeci  bieg ; ** ; AC ;  ; 
+trzecia  osoba ; ** ; AD ;  ; 
+trzeŸwoœæ  umys³u ; *- ; AD ;  ; 
+trzêsienie *AEBAA ziemi ; *- ; AE ;  ; 
+trzoda  chlewna ; ** ; AD ;  ; 
+turniej  rycerski ; ** ; AC ;  ; 
+twarda  g³owa ; ** ; AD ;  ; 
+twarda  rêka ; ** ; AD ;  ; 
+twarda  szko³a ; ** ; AD ;  ; 
+twarda  waluta ; ** ; AD ;  ; 
+twarda  woda ; ** ; AD ;  ; 
+twarde  serce ; ** ; AE ;  ; 
+twarde  ¿ycie *AEBAA ; ** ; AE ;  ; 
+twardy  grunt ; ** ; AC ;  ; 
+twardy  sen ; ** ; AC ;  ; 
+twarz  pokerzysty ; *- ; AD ;  ; 
+tworzywo  sztuczne ; ** ; AE ;  ; #21?
+tyczka  grochowa ; ** ; AD ; 21 ; 
+tygrysi  skok ; ** ; AC ;  ; 
+tytoñ  fajkowy ; ** ; AC ; 21 ; 
+tytu³  w³asnoœci ; *- ; AC ;  ; 
+ubezpieczenie *AEBAA spo³eczne ; ** ; AE ;  ; 
+ubranie *AEBAA do figury ; *-- ; AE ;  ; 
+ubranie *AEBAA robocze ; ** ; AE ;  ; 
+ucho *AEAAAA igielne ; ** ; AE ;  ; 
+uczta  duchowa ; ** ; AD ; 21 ; 
+uczta  lukullusowa ; ** ; AD ;  ; 
+udar  s³oneczny ; ** ; AC ;  ; 
+udzielna  ksiê¿na ; ** ; AD ;  ; 
+udzielny  ksi¹¿ê ; ** ; AD ;  ; 
+uk³ad  kierowniczy ; ** ; AC ;  ; 
+uk³ad  kostny ; ** ; AC ;  ; 
+uk³ad  krwionoœny ; ** ; AC ;  ; 
+uk³ad  pokarmowy ; ** ; AC ;  ; 
+uk³ad  s³oneczny ; ** ; AC ;  ; 
+ukryta  sprê¿yna ; ** ; AD ;  ; 
+ulga  podatkowa ; ** ; AD ;  ; 
+u³amek  dziesiêtny ; ** ; AC ; 21 ; 
+umowa  dwustronna ; ** ; AD ;  ; #21?
+umowa  najmu ; *- ; AD ;  ; 
+umys³  œcis³y ; ** ; AC ; 21 ; 
+urlop  bezp³atny ; ** ; AC ; 21 ; 
+urlop  dziekañski ; ** ; AC ;  ; 
+urlop  macierzyñski ; ** ; AC ;  ; 
+urwanie *AEBAA g³owy ; *- ; AE ;  ; 
+urz¹d  patentowy ; ** ; AC ;  ; 
+urz¹d  stanu cywilnego ; *-- ; AC ; USC ; 
+urz¹d  tytularny ; ** ; AC ; 21 ; 
+urzêdnik  tytularny ; ** ; AA ;  ; 
+ustronne  miejsce ; ** ; AE ;  ; 
+uœmiech  fortuny ; *- ; AC ;  ; 
+$ uœmiech  losu ; *- ; AC ;  ; 
+utarczka  s³owna ; ** ; AD ; 21 ; 
+utwór  sceniczny ; ** ; AC ; ; #21?
+waga  ciê¿ka ; ** ; AD ;  ; 
+waga  kogucia ; ** ; AD ;  ; 
+waga  lekka ; ** ; AD ;  ; 
+waga  lekkociê¿ka ; ** ; AD ;  ; 
+waga  lekkopó³œrednia ; ** ; AD ;  ; 
+waga  lekkoœrednia ; ** ; AD ;  ; 
+waga  musza ; ** ; AD ;  ; 
+waga  piórkowa ; ** ; AD ;  ; 
+waga  pó³ciê¿ka ; ** ; AD ;  ; 
+wagon  bydlêcy ; ** ; AC ; 21 ; 
+walka  byków *ABAC ; *- ; AD ;  ; 
+walka  klas *AGAAA ; *- ; AD ;  ; 
+$ walka  klasowa ; ** ; AD ;  ; 
+walka na s³owa ; *-- ; AD ;  ; 
+walka  podziemna ; ** ; AD ; 21 ; 
+walka  z *GBBAA wiatrakami ; *-- ; AD ;  ; 
+wariackie  papiery *AGAB ; ** ; AG ;  ; 
+warsztat  samochodowy ; ** ; AC ;  ; 
+wartoœæ  bezwzglêdna ; ** ; AD ; modu³ ; #21?
+warunek  konieczny ; ** ; AC ;  ; 
+warunki  materialne ; ** ; AG ;  ; 
+wata *ADAAA cukrowa ; ** ; AD ; 21 ; 
+wata *ADAAA higroskopijna ; ** ; AD ;  ; #termin?
+wata *ADAAA szklana ; ** ; AD ;  ; 
+wa¿na  figura ; ** ; AD ;  ; 
+w¹skie  gard³o ; ** ; AE ;  ; 
+wczasy  pod grusz¹ ; *-- ; AG ;  ; 
+wdowi  grosz ; ** ; AC ;  ; 
+wejœcie  kuchenne ; ** ; AE ; 21 ; 
+wentyl  bezpieczeñstwa ; *- ; AC ;  ; 
+weso³e  miasteczko ; ** ; AE ;  ; 
+wêgiel  brunatny ; ** ; AC ;  ; 
+wêgiel  drzewny ; ** ; AC ;  ; 
+wêgiel  kamienny ; ** ; AC ;  ; 
+wêze³  drogowy ; ** ; AC ;  ; 
+wêze³  gordyjski ; ** ; AC ;  ; 
+wêze³  ma³¿eñski ; ** ; AC ;  ; 
+wêze³  marynarski ; ** ; AC ;  ; 
+wêz³y  ch³onne ; ** ; AG ;  ; #lp?
+wiadoma rzecz ; -- ; AD ; 21 ; 
+widmo  g³odu ; *- ; AE ;  ; 
+wieczne  miasto ; ** ; AE ; Rzym ; 
+wieczne  pióro ; ** ; AE ;  ; #21?
+wieczne  potêpienie ; ** ; AE ;  ; 
+wieczny  odpoczynek ; ** ; AC ;  ; 
+wieczny  student ; ** ; AA ;  ; 
+wieczór *ACAAAAA autorski ; ** ; AC ;  ; #2wo
+wieczór *ACAAAAA kawalerski ; ** ; AC ;  ; #2wo
+wieczysta  dzier¿awa ; ** ; AD ; 21 ; 
+wiek *ACABA balzakowski ; ** ; AC ; 21 ; 
+wiek *ACABA  mêski ; ** ; AC ;  ; 
+wiek *ACABA  produkcyjny ; ** ; AC ;  ; 
+wielb³¹d  dwugarbny ; ** ; AB ; dromader ; 
+wielb³¹d  jednogarbny ; ** ; AB ; baktrian ; 
+wielcy tego *ECABA œwiata ; *-- ; AG ;  ; 
+wielka sztuka ; ** ; AD ;  ; 
+wielki  cz³owiek ; ** ; AA ;  ; 
+wielki  inkwizytor ; ** ; AA ;  ; 
+wieniec  laurowy ; ** ; AC ; 21 ; 
+wiersz  bia³y ; ** ; AC ; 21 ; 
+wierutna  brednia ; ** ; AD ;  ; 
+$ wierutne  k³amstwo ; ** ; AE ;  ; #wierutna bzdura
+wierzba  p³acz¹ca ; ** ; AD ;  ; 
+wie¿a  z *GBBAA koœci *ADCCA s³oniowej ; *--- ; AD ;  ; 
+wiêkszoœæ  bezwzglêdna ; ** ; AD ; 21 ; 
+wiêzy  krwi ; *- ; AE ;  ; 
+wiêzy  ma³¿eñskie ; ** ; AE ;  ; 
+wiêzy  rodzinne ; ** ; AE ;  ; 
+wiêŸba  dachowa ; ** ; AD ; 21 ; 
+wikt i opierunek ; *-* ; AG ;  ; 
+wilcza  jagoda ; ** ; AD ;  ; 
+wilcze  ³yko ; ** ; AE ;  ; 
+wilcze  prawo ; ** ; AE ;  ; 
+wilczy  apetyt ; ** ; AC ;  ; 
+wilczy  bilet ; ** ; AC ;  ; 
+wilczy  dó³ ; ** ; AC ;  ; 
+wilczy  g³ód ; ** ; AC ;  ; 
+wilk  morski ; ** ; AA ;  ; 
+wilk  w owczej skórze ; *--- ; AB ;  ; 
+winne *CAB grono ; ** ; AE ; winogrono ; 
+wizja  lokalna ; ** ; AD ;  ; 
+w³osy  anielskie ; ** ; AG ;  ; 
+woda  gruntowa ; ** ; AD ;  ; 
+woda  koloñska ; ** ; AD ;  ; 
+woda  królewska ; ** ; AD ;  ; 
+woda  kwiatowa ; ** ; AD ;  ; 
+woda  letejska ; ** ; AD ;  ; 
+woda  ognista ; ** ; AD ;  ; 
+woda  sodowa ; ** ; AD ;  ; 
+woda  utleniona ; ** ; AD ;  ; 
+woda na m³yn ; *-- ; AD ;  ; 
+wojna  domowa ; ** ; AD ;  ; 
+wojna  na górze ; *-- ; AD ;  ; 
+wojna  podjazdowa ; ** ; AD ;  ; 
+wojna  totalna ; ** ; AD ; ; 
+wolna  elekcja ; ** ; AD ;  ; 
+wolna  konkurencja ; ** ; AD ;  ; 
+wolna  rêka ; ** ; AD ;  ; 
+wolna  sobota ; ** ; AD ;  ; 
+wolnoœæ  osobista ; ** ; AD ;  ; #21?
+wolnoœæ  sumienia ; *- ; AD ;  ; 
+woreczek  ¿ó³ciowy ; ** ; AC ;  ; 
+worek  bez *GBBAA dna *AEAAAB ; *-- ; AC ;  ; 
+worek  pokutny ; ** ; AC ;  ; #wór pokutny
+worek  treningowy ; ** ; AC ;  ; 
+wotum nieufnoœci ; -- ; AE ;  ; 
+wotum zaufania ; -- ; AE ;  ; 
+wóz  drabiniasty ; ** ; AC ;  ; #21?
+wóz  techniczny ; ** ; AC ;  ; 
+wózek  inwalidzki ; ** ; AC ;  ; 
+wprawne  oko *AEACA ; ** ; AE ;  ; #dwa wzorce odmiany
+wróg  klasowy ; ** ; AA ;  ; 
+wróg  ludu ; *- ; AA ;  ; 
+wróg  publiczny ; ** ; AA ;  ; 
+wróg  œmiertelny ; ** ; AA ;  ; 
+wschodz¹ca  gwiazda ; ** ; AD ;  ; 
+wschód  s³oñca ; *- ; AC ;  ; 
+wspólnota  duchowa ; ** ; AD ; 21 ; 
+wspólnota  pierwotna ; ** ; AD ; 21 ; 
+wspólny  jêzyk ; ** ; AC ;  ; 
+wspólny  mianownik ; ** ; AC ;  ; 
+wspó³czynnik  inteligencji ; *- ; AC ;  ; #wariant: iloraz?
+wsteczne  pogl¹dy ; ** ; AG ;  ; 
+wstrz¹s  mózgu ; *- ; AC ;  ; 
+wstydliwa  choroba ; ** ; AD ;  ; 
+wybraniec  losu ; *- ; AA ;  ; 
+wybryk  natury ; *- ; AC ;  ; 
+wychowanie *AEBAA fizyczne ; ** ; AE ;  ; 
+wyciskacz  ³ez ; *- ; AC ;  ; 
+wydzia³  filologiczny ; ** ; AC ;  ; 
+wydzia³  historyczny ; ** ; AC ;  ; 
+wydzia³  humanistyczny ; ** ; AC ;  ; 
+wydzia³  lekarski ; ** ; AC ;  ; 
+wydzia³  matematyczny ; ** ; AC ;  ; 
+wydzia³  rolniczy ; ** ; AC ;  ; +inne wydzia³y
+wyjœcie  bezpieczeñstwa ; *- ; AE ;  ; 
+wykapana  matka ; ** ; AD ;  ; 
+wykapany *CAB ojciec ; ** ; AA ;  ; 
+wykszta³cenie *AEBAA rolnicze ; ** ; AE ; 21 ; #+inne wykszta³cenia
+wy³adowanie *AEBAA elektryczne ; ** ; AE ;  ; 
+wymiana  pogl¹dów ; *- ; AD ;  ; 
+wymiar  sprawiedliwoœci ; *- ; AC ;  ; 
+wymijaj¹ca *CAA odpowiedŸ ; ** ; AD ;  ; #!!
+wymowa  sceniczna ; ** ; AD ; 21 ; 
+wypadek  drogowy ; ** ; AC ;  ; 
+wypadek  losowy ; ** ; AC ;  ; 
+wyraz  twarzy ; *- ; AC ;  ; 
+wyrazy  uznania ; *- ; AG ;  ; #lp?
+wyrok  prawomocny ; ** ; AC ; 21 ; 
+wyrok  œmierci ; *- ; AC ;  ; 
+wyrostek *ACABBA robaczkowy ; ** ; AC ;  ; #wariant: œlepa kiszka
+wyrzutek  spo³eczeñstwa ; *- ; AA ;  ; 
+wyrzutnia  rakietowa ; ** ; AD ;  ; 
+wyrzut  sumienia ; *- ; AC ;  ; 
+wysokie  progi ; ** ; AG ;  ; #wysoki próg
+wysokoœæ  bezwzglêdna ; ** ; AD ;  ; #21?
+wytarta  formu³a ; ** ; AD ;  ; 
+wyznanie *AEBAA moj¿eszowe ; ** ; AE ;  ; 
+wy¿  demograficzny ; ** ; AC ; 21 ; 
+wy¿sza  instancja ; ** ; AD ;  ; 
+wy¿sza  uczelnia ; ** ; AD ;  ; #warianty?
+wy¿sze  sfery ; ** ; AG ;  ; 
+wzloty i upadki ; *-* ; AG ; 321 ; 
+wzór  doskona³oœci ; *- ; AC ;  ; 
+zaawansowana  ci¹¿a ; ** ; AD ;  ; 
+zabawa  na dwadzieœcia *DBDB cztery *DBAB fajerki ; *---- ; AD ;  ; 
+zabawa  w kotka *ABAC i myszkê ; *---- ; AD ;  ; 
+zabójcze  spojrzenie ; ** ; AE ;  ; 
+zachód  s³oñca ; *- ; AC ;  ; 
+zacisze  domowe ; ** ; AE ; 21 ; 
+zadanie *AEBAA domowe ; ** ; AE ;  ; 
+zajêcza  warga ; ** ; AD ;  ; 
+zaklêty *CAB kr¹g ; ** ; AC ;  ; 
+zakon  moj¿eszowy ; ** ; AC ;  ; 
+zamek *ACABBA b³yskawiczny ; ** ; AC ;  ; 
+zapalenie *AEBAA p³uc ; *- ; AE ;  ; 
+zasi³ek  rodzinny ; ** ; AC ;  ; 
+zas³ona  dymna ; ** ; AD ;  ; 
+zatwardzia³y  grzesznik ; ** ; AA ;  ; 
+zawiadowca  stacji ; *- ; AA ;  ; 
+zawodnik  rezerwowy ; ** ; AA ; 21 ; 
+zawody  sportowe ; ** ; AG ;  ; 
+zawór  bezpieczeñstwa ; *- ; AC ;  ; 
+z¹b  czasu ; *- ; AC ;  ; 
+z¹bek  czosnku ; *- ; AC ;  ; 
+zbieg *ACABA okolicznoœci ; *- ; AC ;  ; 
+zb³¹kana  owca ; ** ; AD ;  ;
+$ zb³¹kana  owieczka ; ** ; AD ;  ; 
+zbrojne  ramiê *AECB ; ** ; AE ;  ; 
+zdobywca  serc ; *- ; AA ;  ; 
+zegarek  kieszonkowy ; ** ; AC ; 21 ; 
+zespó³  kameralny ; ** ; AC ;  ; 
+zew  krwi ; *- ; AC ;  ; 
+zezowate  szczêœcie ; ** ; AE ;  ; 
+z¹b m¹droœci *ADCCA ; *- ; AC ;  ; 
+ziarno  niezgody ; *- ; AE ;  ; 
+zielona  granica ; ** ; AD ;  ; 
+zielona  szko³a ; ** ; AD ;  ; 
+ziemia  obiecana ; ** ; AD ;  ; 
+ziemia  ojczysta ; ** ; AD ;  ; 
+ziemski  byt ; ** ; AC ; 21 ; 
+zima  kalendarzowa ; ** ; AD ; 21 ; 
+zimny  bufet ; ** ; AC ;  ; 
+zimny  chów ; ** ; AC ;  ; 
+zimny  drañ ; ** ; AA ;  ; 
+zimny  pot ; ** ; AC ;  ; 
+zjadacz  chleba ; *- ; AA ;  ; 
+z³o konieczne ; -- ; AE ;  ; 
+z³odziej  kieszonkowy ; ** ; AA ;  ; 
+zmiana  dekoracji ; *- ; AD ;  ; 
+zmiana  warty ; *- ; AD ;  ; 
+zmowa  milczenia ; *- ; AD ;  ; 
+zmys³  smaku ; *- ; AC ;  ; #+inne zmys³y
+znak  drogowy ; ** ; AC ;  ; 
+znak  fabryczny ; ** ; AC ;  ; 
+znak  firmowy ; ** ; AC ;  ; 
+znak  towarowy ; ** ; AC ;  ; 
+znak  zapytania ; *- ; AC ; pytajnik ; 
+znak  zodiaku ; *- ; AC ;  ; 
+znak  szczególny ; ** ; AC ;  ; 
+znieczulenie *AEBAA miejscowe ; ** ; AE ;  ; #+ogólne
+zrz¹dzenie  losu ; *- ; AE ;  ; 
+zsiad³e  mleko ; ** ; AE ;  ; 
+zupa  b³yskawiczna ; ** ; AD ;  ; 
+zupa  grochowa ; ** ; AD ; grochówka ; 
+zupa  jarzynowa ; ** ; AD ;  ; 
+zupa  mleczna ; ** ; AD ;  ; 
+zupa  nic ; *- ; AD ;  ; 
+zupa  rybna ; ** ; AD ;  ; 
+zupa  z *GBBAA wk³adk¹ ; *-- ; AD ;  ; 
+zwi¹zek  frazeologiczny ; ** ; AC ;  ; 
+zwi¹zek  ma³¿eñski ; ** ; AC ;  ; 
+zwi¹zek  organiczny ; ** ; AC ;  ; 
+zwierzê *AECA drapie¿ne ; ** ; AE ; drapie¿nik ; 
+zwolnienie *AEBAA dyscyplinarne ; ** ; AE ;  ; 
+zwolnienie *AEBAA lekarskie ; ** ; AE ;  ; 
+zwrot  grzecznoœciowy ; ** ; AE ; 21 ; 
+Ÿród³o  artezyjskie ; ** ; AE ;  ; 
+Ÿród³o  dochodu ; *- ; AE ;  ; 
+Ÿród³o  energii ; *- ; AE ;  ; 
+Ÿród³o  informacji ; *- ; AE ;  ; 
+Ÿród³o  ¿ycia ; *- ; AE ;  ; 
+¿elazna  dyscyplina ; ** ; AD ;  ; 
+¿elazna  kurtyna ; ** ; AD ;  ; #21?
+¿elazna  porcja ; ** ; AD ;  ; 
+¿elazna  racja ; ** ; AD ;  ; 
+¿elazna  rezerwa ; ** ; AD ;  ; 
+¿elazna  rêka ; ** ; AD ;  ; 
+¿elazny  kapita³ *ACAAAAA ; ** ; AC ;  ; 
+¿ó³ta  febra ; ** ; AD ;  ; 
+¿ó³te  papiery *AGAB ; ** ; AE ;  ; #+wariackie, zielone
+¿ó³ty  ser ; ** ; AC ; 21 ; 
+¿ycie *AEBAA doczesne ; ** ; AE ; 21 ; 
+¿ycie *AEBAA rodzinne ; ** ; AE ; 21 ; 
+¿y³ka  handlowa ; ** ; AD ;  ; 
+¿ywa  gotówka ; ** ; AD ;  ; 
+¿ywa  kronika ; ** ; AD ;  ; 
+¿ywa  pochodnia ; ** ; AD ;  ; 
+¿ywa  rana *ADAAA ; ** ; AD ;  ; 
+¿ywa  reklama ; ** ; AD ;  ; 
+¿ywe  srebro ; ** ; AE ;  ; 
+Akademickie Zrzeszenie *AEBAA Sportowe ; *** ; AE ; AZS ; 
+Anio³ *AAACAAB Pañski ; -- ; AA ;  ; 
+Armia Krajowa ; ** ; AD ; AK ;
+Armia Ludowa ; ** ; AD ; AL ; #inne armie
+Baranek Bo¿y ; ** ; AB ;  ; 
+Bia³y Dom ; ** ; AC ;  ; 
+Chleb Pañski ; ** ; AC ; hostia ; 
+Chrystusowy wiek *ACABA ; ** ; AC ; 21 ; #peryfraza 
+Cia³o Pañskie ; ** ; AE ;  ; #wariant?
+Czerwona Gwardia ; ** ; AD ; 21 ; #wieloznaczne
+Czerwony Krzy¿ ; ** ; AC ; ; 
+Daleki Wschód ; ** ; AC ; ; #wariant: Orient?
+Departament Stanu ; *- ; AC ;  ; 
+Diabla Góra ; ** ; AD ;  ; #termin?
+Dzieñ *ACACBAA Zaduszny ; ** ; AC ; Zaduszki ; #eytkieta?
+Dzikie Pola ; ** ; AG ;  ; 
+Generalna Gubernia ; ** ; AD ; GG ; 
+Gwardia Ludowa ; ** ; AD ; GL ; 
+Komisja Edukacji Narodowej ; *-- ; AD ; KEN ; 
+Kongres Wiedeñski ; ** ; AC ;  ; 
+Konwent Narodowy ; ** ; AC ;  ; 
+Kozio³ek Mato³ek *ABAC ; *- ; AB ;  ; 
+Królestwo *AEAAAB Kongresowe ; ** ; AE ; Kongresówka ; 
+$ Królestwo *AEAAAB Polskie ; ** ; AE ; ;
+Królowa Niebieska ; ** ; AD ; Maryja ; 
+Królowa Niebios ; *- ; AD ;  ; 
+Krzy¿ Po³udnia ; *- ; AC ;  ; 
+Legia Cudzoziemska ; ** ; AD ;  ; 
+Liga  Kobiet ; *- ; AD ;  ; 
+Liga  Narodów ; *- ; AD ;  ; 
+Matka  Boska ; ** ; AD ;  ; #wariant
+Mêka  Pañska ; ** ; AD ;  ; 
+Najwy¿sza  Izba  Kontroli ; **- ; AD ; NIK ; 
+Niedziela Palmowa ; ** ; AD ; 21 ; 
+Nowe  Przymierze ; ** ; AE ;  ; 
+Nowy  Rok ; ** ; AC ;  ; 
+Nowy  Œwiat ; ** ; AC ; Ameryka ; 
+Nowy  Testament ; ** ; AC ;  ; #czasem skrót NT
+Organizacja  Narodów  Zjednoczonych ; *-- ; AD ; ONZ ; 
+Pan Bóg ; *- ; AA ; 1,2 ; 
+$ Pan  Niebios ; *- ; AA ;  ; 
+$ Pan  Wszechmog¹cy ; ** ; AA ; 2 ; 
+$ Pan  Zastêpów ; *- ; AA ;  ; #mnóstwo innych wariantów, zamiast Pan czêsto mo¿e byæ Bóg
+Polska  Akademia  Nauk ; **- ; AD ; PAN ; 
+Polska  Akademia  Umiejêtnoœci ; **- ; AD ; PAU ; 
+Polska  Kongresowa ; ** ; AD ;  ; #wariant Kongresówki ?
+Polska  Rzeczpospolita *ADACCBAD Ludowa ; *** ; AD ; PRL ; 
+Prezes Rady *ADAAA Ministrów ; *-- ; AA ; premier ; 
+Przenajœwiêtsza  Panienka ; ** ; AA ; 21 ; 
+Przenajœwiêtszy  Sakrament ; ** ; AC ;  ; #warianty?
+Rewolucja  PaŸdziernikowa ; ** ; AD ;  ; #21?
+S¹d  Najwy¿szy ; ** ; AC ; SN ; 
+S¹dny  Dzieñ ; ** ; AC ;  ; #raczej Dzieñ S¹du, S¹d Ostateczny itp.
+Stary  Testament ; ** ; AC ; ST ; 
+Statua *ADAAC Wolnoœci ; *- ; AD ;  ; #2wo
+Stolica  Apostolska ; ** ; AD ;  ; #wariant: Watykan?
+Syn  Bo¿y ; ** ; AA ; 21 ; 
+$ Syn  Cz³owieczy ; ** ; AA ;  ; 
+$ Jezus Chrystus ; ** ; AA ; 1, 2 ; #imiê - wsg?
+Szko³a  G³ówna  Gospodarstwa Wiejskiego ; **-- ; AD ; SGGW ; 
+Trzecia  Rzesza ; ** ; AD ;  ; 
+Wielka  Emigracja ; ** ; AD ;  ; 
+Wielka  Niedziela ; ** ; AD ;  ; #wariant: wielkanoc?
+Wielka  Sobota ; ** ; AD ;  ; 
+Wielka  Œroda ; ** ; AD ;  ; 
+Wielki  Czwartek ; ** ; AC ;  ; 
+Wielki  Pi¹tek *ACABA ; ** ; AC ;  ; 
+Wielki  Poniedzia³ek ; ** ; AC ;  ; 
+Wielki  Tydzieñ ; ** ; AC ;  ; 
+adamowy strój *ACACACB ; ** ; AC ; 21 ; #peryfraza
+apel poleg³ych *AAEC ; *- ; AC ;  ; 
+arka przymierza *AEBAB ; *- ; AD ;  ; 
+artyku³ pierwszej *CAB potrzeby ; *-- ; AC ;  ; 
+babie *CBB lato ; ** ; AE ;  ; 
+bezgrzeszne lata *AGDAA ; ** ; AG ;  ; #21? wariant: dziecinstwo?
+bieg dru¿ynowy *CAB ; ** ; AC ;  ; 
+bieg³y *AAEC ksiêgowy ; ** ; AA ;  ; 
+bieg³y *AAEC s¹dowy ; ** ; AA ;  ; 
+biegun ciep³a *AEAAAB ; *- ; AC ;  ; 
+biegun zimna *AEAAAB ; *- ; AC ;  ; #+inne bieguny
+b³êdne ko³o *AEAAAB ; ** ; AE ;  ; 
+bocianie *CBB gniazdo ; ** ; AE ;  ; #21?
+bo¿e *CAA cielê *AECA ; ** ; AE ;  ; 
+brat ³ata *ADAAA ; ** ; AA ;  ; 
+brat polski *CBA ; ** ; AA ; arianin ; 
+but *ACAABAA hiszpañski *CBA ; ** ; AC ; 21 ; 
+cal angielski *CBA ; ** ; AC ;  ; 
+celuj¹cy *CAA uczeñ *AAAAB ; ** ; AA ;  ; #21?
+chart angielski *CBA ; ** ; AB ;  ; #+inne charty; psy
+chodz¹cy *CAA szkielet ; ** ; AC ;  ; 
+chude lata *AGDAA ; ** ; AG ; 21 ; #chudy rok?
+chytry *CAA lis ; ** ; AB ;  ; 
+cia³o sta³e *CAB; ** ; AE ;  ; 
+ciasto francuskie *CBA ; ** ; AE ; 21 ; 
+cielêce lata *AGDAA ; ** ; AG ;  ; 
+ciemna *CAB karta *ADAAA ; ** ; AD ;  ; 
+ciemna *CAB kuchnia ; ** ; AD ;  ; 
+ciemna *CAB masa ; ** ; AD ;  ; 
+ciemna *CAB strona ; ** ; AD ;  ; 
+ciep³a *CAB posadka ; ** ; AD ;  ; 
+ciep³e kraje *ACACACB ; ** ; AG ;  ; 
+ciep³o *AEAAAB rodzinne ; ** ; AE ;  ; #21?
+ciêty *CAB dowcip ; ** ; AC ;  ; 
+ciêty *CAB jêzyk ; ** ; AC ;  ; 
+cisza przed burz¹ *ADACABB ; *-- ; AD ;  ; 
+czarne z³oto *AEAAAB ; ** ; AE ; wêgiel ; 
+czas miejscowy *CAB ; ** ; AC ;  ; #21?
+czas przesz³y *CAB ; ** ; AC ;  ; 
+czas przysz³y *CAB ; ** ; AC ;  ; #+teraŸniejszy
+czêœæ mowy ; *- ; AD ;  ; 
+czêœæ œwiata ; *- ; AD ;  ; 
+czêœæ zamienna ; ** ; AD ;  ; 
+czyn zbrojny *CAB ; ** ; AC ;  ; 
+czynniki pierwsze *CAB ; ** ; AG ;  ; 
+czysta *CAB forma ; ** ; AD ;  ; 
+czyste *CAB rêce ; -- ; AG ;  ; 
+diabe³ *AAADAB wcielony ; ** ; AA ; 21 ; 
+d³ugie  spodnie *AGCC ; ** ; AG ;  ; 
+dobra *AGDAA doczesne ; ** ; AG ; 21 ; 
+dobra *CAA dusza ; ** ; AD ;  ; 
+dobra *AGDAA dziedziczne ; ** ; AG ; 21 ; 
+dobra *AGDAA koronne ; ** ; AG ;  ; 
+dobra *CAA nowina ; ** ; AD ; Ewangelia ; 
+dobra *CAA partia ; ** ; AD ;  ; 
+dobra *CAA wola *ADACBAA ; ** ; AD ;  ; 
+dobre *CAA imiê ; ** ; AE ;  ; 
+dodatek funkcyjny *CAB ; ** ; AC ;  ; 
+dojrza³y *CAB umys³ ; ** ; AC ; 21 ; 
+dojrza³y *CAB wiek *ACABA ; ** ; AC ; 21 ; 
+drakoñska  kara *ADAAA ; ** ; AD ;  ; #21?
+drêtwa *CAB mowa ; ** ; AD ;  ; #gadka?
+drobne *CAB pieni¹dze ; ** ; AG ; 1 ; 
+droga *ADAB krzy¿owa *CAB ; ** ; AD ;  ; 
+drogi *ADAB oddechowe ; ** ; AG ;  ; 
+dryl  wojskowy *CAB ; ** ; AC ; 21 ; 
+drzewo  iglaste *CAB ; ** ; AE ;  ; 
+drzewo  liœciaste *CAB ; ** ; AE ;  ; 
+drzewo wiadomoœci *ADCCA z³ego *AEBBB i dobrego *AEBBB ; *---- ; AE ;  ; #2wo (dobro)
+dworzec  osobowy *ACC ; ** ; AC ;  ; 
+dwusieczna *ADACCBA k¹ta ; *- ; AD ; 1 ; 
+dziad *AAAAAA  koœcielny *CAB ; ** ; AA ;  ; #'dziadzie' nie 'dziadu' (wtedy dziadowie koœcielni)?
+dzia³ *ACAAAAA wodny ; ** ; AC ;  ; 
+dziennik  ustaw *ADAAA ; *- ; AC ;  ; 
+dziesi¹ta *CAB woda po kisielu ; *--- ; AD ;  ; #pi¹ta?
+dzika *CBA pla¿a ; ** ; AD ;  ; 
+dzika *CBA ró¿a ; ** ; AD ;  ; 
+dzika *CBA œwinia ; ** ; AD ; dzik ; 
+dziki *CBA bez *ACAAAAA ; ** ; AC ;  ; 
+dziki *CBA lokator ; ** ; AA ;  ; 
+dziki *CBA osio³ *ABABAB ; ** ; AB ;  ; 
+dzika *CBA gêœ ; ** ; AD ;  ; 
+dzikie  zwierzê *AECA ; ** ; AE ;  ; 
+dŸwig  osobowy *CAB ; ** ; AC ; winda ; 
+fale *ADACBABA œrednie *CBB ; ** ; AG ;  ; #+inne fale
+farbowany *CAB lis ; ** ; AB ;  ; 
+feeria  barw *ADAAA ; ** ; AD ;  ; #kolorów
+francuski *CBA piesek ; ** ; AB ;  ; 
+gaz *ACAAAAA ³zawi¹cy ; ** ; AC ;  ; 
+gaz *ACAAAAA rozweselaj¹cy ; ** ; AC ;  ; 
+genera³ *AAAAAA broni *ADCAAA ; *- ; AA ;  ; 
+genera³ *AAAAAA brygady ; *- ; AA ; ; 
+gêsi *ADCCA kapitoliñskie ; ** ; AG ;  ; 
+g³êbia myœli ; *- ; AD ;  ; 
+g³uchy *CAB telefon ; ** ; AC ;  ; 
+g³upie  cielê *AECA ; ** ; AE ;  ; 
+gor¹ca *CAA krew *ADCAAA ; ** ; AD ;  ; 
+gor¹czka  z³ota *AEAAAB ; *- ; AD ;  ; 
+gospodarz *AAABD klasy *ADAAA ; *- ; AA ;  ; 
+gra *ADAAA cieni *ACACBAA ; *- ; AD ;  ; 
+gra *ADAAA w chowanego *ABC ; *-- ; AD ;  ; #wsg: w chowanego?
+grom *ACAAAAA z jasnego nieba ; *--- ; AC ;  ; 
+groszek *ACABBA pachn¹cy ; ** ; AC ;  ; 
+grzech  pierworodny *CAB ; ** ; AC ;  ; 
+grzyb  truj¹cy ; ** ; AC ; 21 ; 
+izba chorych *AAEB ; *- ; AD ;  ; 
+jarzmo niewoli *ADACBAA ; *- ; AE ;  ; 
+jeden *CCBA bies ; -- ; AB ;  ; #etykieta? (DAA?)
+$ jeden *CCBA diabe³ *AAADAB ; -- ; AA ;  ; 
+$ jedna *CCBA cholera ; -- ; AD ;  ; 
+jêzyk  obcy *CAA ; ** ; AC ; 21 ; 
+kaleka *AABDBB ¿yciowy ; ** ; AA ;  ; #kaleka ¿yciowa?
+kapusta w³oska *CBA ; ** ; AD ; 21 ; 
+kara *ADAAA œmierci ; *- ; AD ;  ; #+kara g³ówna
+kara *ADAAA dyscyplinarna ; ** ; AD ;  ; 
+k¹t rozwarty ; ** ; AC ;  ; 
+klucz *ACACBBA francuski *CBA ; ** ; AC ;  ; 
+klucz *ACACBBA wiolinowy ; ** ; AC ;  ; #+inne klucze
+kocie *CBB ³by ; ** ; AG ;  ; #wariant: bruk?
+kocie *CBB oczy *AEACA ; ** ; AG ;  ; 
+kodeks karny *CAB ; ** ; AC ;  ; #+inne kodeksy
+ko³acz *ACACBBA weselny ; ** ; AC ;  ; 
+ko³o *AEAAAB fortuny ; *- ; AE ;  ; 
+ko³o *AEAAAB m³yñskie ; ** ; AE ; 21 ; 
+ko³o *AEAAAB podbiegunowe ; ** ; AE ;  ; 
+ko³o *AEAAAB polarne ; ** ; AE ;  ; 
+ko³o *AEAAAB ratunkowe ; ** ; AE ;  ; 
+ko³o *AEAAAB zamachowe ; ** ; AE ;  ; 
+ko³o *AEAAAB zêbate ; ** ; AE ; zêbatka ; 
+koñska szczêka *ADAB ; ** ; AD ;  ; 
+kopalnia z³ota *AEAAAB ; *- ; AD ;  ; 
+kosz *ACACBBA na œmieci *ACABBB ; *-- ; AC ;  ; 
+koœció³ prawos³awny *CAB ; ** ; AC ;  ; 
+koœció³ reformowany ; ** ; AC ;  ; 
+koœæ *ADCCA ogonowa *CAB ; ** ; AD ;  ; #2wo
+kotlet schabowy *CAB ; ** ; AC ;  ; 
+kraina cieni *ACACBAA ; *- ; AD ;  ; 
+królestwo *AEAAAB bo¿e *CAA ; ** ; AE ;  ; #po³¹czyæ z 'królestwo niebieskie'
+krótkie spodnie *AGCC ; ** ; AG ;  ; 
+krzywe *CAB zwierciad³o ; ** ; AE ;  ; 
+kula *ADACBABA ziemska ; ** ; AD ;  ; 
+$ kurczê *AECA pieczone ; -- ; AE ;  ; 
+kurze *CAA ³apki *AGBA ; ** ; AG ;  ; 
+lany *CAB poniedzia³ek ; ** ; AC ;  ; #œmigus-dyngus - jedno s³owo?
+lata *AGDAA t³uste ; ** ; AG ; 21 ; #rok?
+lataj¹cy *CAA dywan ; ** ; AC ;  ; 
+lataj¹cy *CAA spodek ; ** ; AC ;  ; $po³¹czyæ z talerzem
+lataj¹cy *CAA uniwersytet ; ** ; AC ;  ; 
+lataj¹cy *CAA Holender ; ** ; AC ;  ; #czm? nazwa 
+leñ *AAABCA patentowany ; ** ; AA ; 21 ; 
+leñ *AAABCA œmierdz¹cy ; ** ; AA ; 21 ; #wariant?
+lep *ACAAAAA na muchy ; *-- ; AC ;  ; 
+lepszy goœæ *AAABCB ; ** ; AA ;  ; 
+lewy *CAB prosty ; ** ; AC ;  ; 
+lewy *CAB sierpowy ; ** ; AC ;  ; 
+lewy *CAB skrzyd³owy *AAEC ; ** ; AA ;  ; 
+litera prawa *AEAAAB ; *- ; AD ;  ; 
+lud *ACAAAAA pracuj¹cy ; ** ; AC ;  ; #21? 2 etykiety, ta sama odmiana?
+lwie *CBB serce ; ** ; AE ;  ; 
+³abêdzi *CBB œpiew ; ** ; AC ;  ; 
+³abêdzia *CBB szyja ; ** ; AD ;  ; 
+³awa oskar¿onych *AAEC ; *- ; AD ;  ; #+przysiêg³ych
+³owca g³ów *ADAAA ; *- ; AA ;  ; 
+malowany *CAB król *AAAAB ; ** ; AA ;  ; 
+ma³a *CAB czarna ; ** ; AD ;  ; 
+ma³a *CAB poligrafia ; ** ; AD ;  ; 
+ma³e *CAB piwo ; ** ; AE ;  ; 
+ma³pie *CBB miny ; ** ; AG ;  ; #lp?
+martwy *CAB punkt ; ** ; AC ;  ; 
+martwy *CAB sezon ; ** ; AC ;  ; 
+matka chrzestna *CAB ; ** ; AD ; 2 ; 
+matka prze³o¿ona *CAB ; ** ; AD ;  ; 
+milcz¹cy *CAA œwiadek ; ** ; AA ;  ; #+niemy œwiadek
+minimum *AED socjalne ; -* ; AE ;  ; 
+m³oda *CAB para *ADAAA ; ** ; AD ;  ; 
+m³ode *CAB kartofle ; ** ; AG ;  ; 
+$ m³ode *CAB ziemniaki ; ** ; AG ;  ; 
+moje *EEBB uszanowanie ; -- ; AE ;  ; #odm?
+most zwodzony ; ** ; AC ;  ; 
+myœl *ADCCA przewodnia ; ** ; AD ;  ; 
+nadzór budowlany *CAB ; ** ; AC ;  ; 
+namaszczenie *AEBAA chorych *AAEB ; *- ; AE ;  ; 
+niedŸwiedzia *CBB przys³uga ; ** ; AD ;  ; 
+niedŸwiedzia *CBB si³a ; ** ; AD ;  ; 
+nieproszony goœæ *AAABCB ; ** ; AA ;  ; 
+nieprzemakalny p³aszcz *ACACBBA ; ** ; AC ; 21 ; 
+niewierny *CAB Tomasz ; ** ; AA ;  ; 
+ni¿ *ACACACB demograficzny ; ** ; AC ; 21 ; 
+nowa miot³a *ADAAA ; ** ; AD ;  ; 
+obóz karny *CAB ; ** ; AC ; 21 ; 
+odgrzewany *CAB dowcip ; ** ; AC ;  ; 
+$ odgrzewany *CAB kawa³ ; ** ; AC ;  ; #+¿art?
+ojciec chrzestny *CAB ; ** ; AA ; 2 ; 
+ojciec duchowny *CAB ; ** ; AA ;  ; 
+olej *ACACACB kamforowy ; ** ; AC ;  ; 
+olej *ACACACB lniany ; ** ; AC ;  ; 
+olej *ACACACB napêdowy ; ** ; AC ;  ; #skrót ON? +inne oleje
+ostatnia wola *ADACBAA ; ** ; AD ; testament ; 
+oœ odciêtych *ADACCBA ; *- ; AD ;  ; #warianty 'oœ X', 'OX'? +rzêdnych
+oœle *CBB ucho *AEACA ; ** ; AE ;  ; #2wo
+owczarek niemiecki *CBA ; ** ; AB ;  ; #+inne owczarki, psy
+owoc zakazany ; ** ; AC ; 21 ; 
+palec wskazuj¹cy ; ** ; AC ;  ; #+inne palce
+pan m³ody *CAB ; ** ; AA ;  ; 
+panna m³oda *CAB ; ** ; AD ;  ; 
+pañstwo *AFA m³odzi *CAB ; ** ; AF ;  ; 
+para *ADAAA wodna ; ** ; AD ;  ; 
+park angielski *CBA ; ** ; AC ;  ; 
+$ ogród angielski *CBA ; ** ; AC ; ;
+park francuski *CBA ; ** ; AC ;  ; #+ogród
+pi¹te ko³o *AEAAAB u wozu ; **-- ; AE ;  ; 
+pierwsza *CAB dama ; ** ; AD ;  ; #wielkie litery?
+pierwsza *CAB jaskó³ka ; ** ; AD ;  ; 
+pierwsza *CAB klasa ; ** ; AD ;  ; 
+pierwsza *CAB komunia ; ** ; AD ;  ; 
+pierwsza *CAB osoba ; ** ; AD ;  ; 
+pierwsza *CAB pomoc ; ** ; AD ;  ; 
+pierwsza *CAB zmiana ; ** ; AD ;  ; #+druga (trzecia?)
+pierwsze *CAB imiê ; ** ; AE ;  ; 
+pierwsze *CAB œniadanie ; ** ; AE ;  ; 
+p³aszcz *ACACBBA k¹pielowy ; ** ; AC ;  ; 
+p³eæ *ADCAAA piêkna *CAB ; ** ; AD ;  ; #wariant: kobiety?
+poci¹g osobowy *CAB ; ** ; AC ;  ; 
+podesz³y *CAB wiek *ACABA ; ** ; AC ;  ; #21?
+podzia³ *ACAAAAA godzin ; *- ; AC ;  ; 
+pokorne cielê *AECA ; ** ; AE ;  ; 
+pole *AEBAA karne *CAB ; ** ; AE ;  ; 
+pora *ADAAA deszczowa ; ** ; AD ;  ; #+d¿d¿ysta
+pora *ADAAA roku ; ** ; AD ;  ; 
+poroniony *CAB pomys³ ; ** ; AC ;  ; 
+praca u podstaw *ADAAA ; *-- ; AD ;  ; 
+pracownik fizyczny *CAB ; ** ; AA ;  ; 
+prawa *AEAAAB autorskie ; ** ; AG ;  ; #prawo autorskie: osobny wsg
+prawa *AEAAAB cz³owieka ; *- ; AG ;  ; 
+prawa *AEAAAB kardynalne ; ** ; AG ;  ; #?
+prawa *AEAAAB natury ; *- ; AG ;  ; #lp?
+prawa *CAB rêka ; ** ; AD ;  ; 
+prawo karne *CAB ; ** ; AE ;  ; #+inne prawa
+prawy skrzyd³owy *AAEC ; ** ; AA ;  ; 
+proszony *CAB chleb ; ** ; AC ; ; #21?
+psie *CBB pieni¹dze ; ** ; AG ;  ; #po³¹czyæ z 'psi grosz'; psi pieni¹dz?
+punkt karny *CAB ; ** ; AC ;  ; 
+rada *ADAAA nadzorcza ; ** ; AD ;  ; 
+rada *ADAAA pedagogiczna ; ** ; AD ;  ; 
+raj *ACACACB na ziemi ; *-- ; AC ;  ; 
+raj *ACACACB utracony ; ** ; AC ;  ; 
+ranne *CAB pantofle *AGCC ; ** ; AG ;  ; 
+ranny *CAB ptaszek *AAADBA ; ** ; AA ;  ; 
+raport karny *CAB ; ** ; AC ;  ; 
+redaktor naczelny *CAB ; ** ; AA ;  ; 
+regulamin wojskowy *CAB ; ** ; AC ;  ; 
+robotnik wykwalifikowany ; ** ; AA ;  ; #21?
+rodzony *CAB brat ; ** ; AA ;  ; 
+rodzony *CAB ojciec ; ** ; AA ;  ; 
+rok *ACEA koœcielny *CAB ; ** ; AC ;  ; 
+rozmna¿anie *AEBAA przez podzia³ *ACAAAAA ; *-- ; AE ;  ; 
+rozstajne drogi *ADAB ; ** ; AG ;  ; 
+rozstrój *ACACACB nerwowy ; ** ; AC ;  ; 
+rozstrój *ACACACB ¿o³¹dka ; *- ; AC ;  ; 
+rozszczepienie *AEBAA œwiat³a *AEAAAB ; *- ; AE ;  ; 
+ro¿ek *ACABBA angielski ; ** ; AC ;  ; 
+równa *CAB babka ; ** ; AD ;  ; 
+ruch pieszy *CAB ; ** ; AC ;  ; 
+ruda *CAB mysz ; ** ; AD ;  ; 
+rybie *CBB oczy *AEACA ; ** ; AG ;  ; #2wo
+rygor wojskowy *CAB ; ** ; AC ; 21 ; 
+rzut karny *CAB ; ** ; AC ; 2 ; 
+rzut ro¿ny *CAB ; ** ; AC ; 2, róg, korner ; 
+rzut wolny *CAB ; ** ; AC ; 2 ; 
+sakrament pokuty *ADAAA ; *- ; AC ; spowiedŸ ; #+sakrament spowiedzi
+scena zazdroœci *ADCCA ; *- ; AD ;  ; 
+ser topiony ; ** ; AC ;  ; 
+siad podparty ; ** ; AC ;  ; #+prosty
+skala *ADACBABA barw *ADAAA ; *- ; AD ;  ; 
+skala *ADACBABA g³osu ; *- ; AD ;  ; 
+skala *ADACBABA muzyczna ; ** ; AD ;  ; 
+skala *ADACBABA Celsjusza ; *- ; AD ;  ; 
+skala *ADACBABA Fahrenheita ; *- ; AD ;  ; #+Kelvina
+sklep *ACAAAAA kolonialny ; ** ; AC ;  ; 
+sklep *ACAAAAA korzenny ; ** ; AC ;  ; 
+sklep *ACAAAAA monopolowy ; ** ; AC ;  ; 
+sklepienie *AEBAA krzy¿owe *CAB ; ** ; AE ;  ; #+inne 
+skup *ACAAAAA zbo¿a ; *- ; AC ;  ; 
+skup *ACAAAAA ¿ywca ; *- ; AC ;  ; 
+s³owo bo¿e *CAA ; ** ; AE ;  ; 
+s³owo drukowane *CAB ; ** ; AE ;  ; 
+s³up soli *ADCAAA ; *- ; AC ;  ; 
+sole *AGCC mineralne *CAB ; ** ; AG ;  ; #+trzeŸwi¹ce
+sól *ADCAAA attycka ; ** ; AD ;  ; 
+sól *ADCAAA bydlêca ; ** ; AD ;  ; 
+sól *ADCAAA kamienna ; ** ; AD ;  ; 
+sól *ADCAAA kuchenna ; ** ; AD ;  ; 
+sól *ADCAAA ziemi ; *- ; AD ;  ; 
+spirytus denaturowany ; ** ; AC ; denaturat ; #+s. ska¿ony
+sposób *ACAAAAA bycia ; *- ; AC ;  ; #wariant: styl b.?
+sta³y *CAB l¹d ; ** ; AC ;  ; #+suchy
+stan duchowny *CAB ; ** ; AC ;  ; 
+stan lêkowy ; ** ; AC ;  ; 
+stara *CAA bieda ; ** ; AD ;  ; 
+stara *CAA gwardia ; ** ; AD ;  ; 
+stara *CAA panna ; ** ; AD ;  ; 
+stara *CAA wiara ; ** ; AD ;  ; #po³¹czyæ z s. gwardia?
+stara *CAA œpiewka ; ** ; AD ;  ; 
+stare *CAA dzieje *AGCB ; ** ; AG ;  ; 
+strach *ABABAAB na wróble ; *-- ; AC ;  ; 
+strusi *CBB ¿o³¹dek ; ** ; AC ;  ; 
+strzêp *ACAAAAA cz³owieka ; *- ; AC ;  ; #+wrak
+syn pierworodny *CAB ; ** ; AA ;  ; #wariant: pierworodny
+szary t³um *ACAAAAA ; ** ; AC ;  ; 
+szatan *AAACAAAB wcielony ; ** ; AA ; 21 ; #clp: identyczna odmiana AA i AB; po³¹czyæ z diabe³
+szczere z³oto *AEAAAB ; ** ; AE ;  ; 
+szczyt wszystkiego *AEABB ; -- ; AC ;  ; 
+szeleszcz¹cy *CAA argument ; ** ; AC ;  ; 
+szmat drogi *ADAB ; -- ; AC ;  ; 
+sztuczna szczêka *ADAB ; ** ; AD ;  ; 
+szybki *CBA Bill ; ** ; AA ;  ; 
+œlepy *CAB los ; ** ; AC ;  ; 
+œlepy *CAB nabój ; ** ; AC ;  ; #+amunicja
+œlepy *CAB traf *ACAAAAA ; ** ; AC ;  ; 
+œlub koœcielny *CAB ; ** ; AC ;  ; #+cywilny
+œpi¹cy *CAA rycerz ; ** ; AA ;  ; 
+œrodek przeczyszczaj¹cy ; ** ; AC ;  ; 
+œwiêty *CAB pañski ; ** ; AA ;  ; #+œwiêta
+œwiête *CAB kolegium ; ** ; AE ;  ; # wariant: kolegium kardynalskie, kolgegium kardyna³ów
+œwiête *CAB miasto ; ** ; AE ; ; #wariant: Jerozolima?
+œwiête *CAB oburzenie ; ** ; AE ;  ; 
+œwiêty *CAB gniew ; ** ; AC ;  ; 
+œwiêty *CAB obowi¹zek ; ** ; AC ;  ; 
+œwiêty *CAB spokój ; ** ; AC ;  ; 
+œwiêty *AAEC turecki ; ** ; AA ;  ; 
+t³umacz *AAABD przysiêg³y *CAB ; ** ; AA ;  ; 
+torba podró¿na *CAB ; ** ; AD ; 21 ; 
+towarzysz *AAABD ¿ycia ; *- ; AA ;  ; 
+trwa³a *CAB ondulacja ; ** ; AD ; 1 ; 
+tryb *ACAAAAA rozkazuj¹cy ; ** ; AC ;  ; 
+uczona *CAB g³owa ; ** ; AD ;  ; 
+uk³ad scalony ; ** ; AC ;  ; 
+uk³ad wspó³rzêdnych *ADACCBA ; ** ; AC ;  ; 
+uwi¹d starczy *CAA ; ** ; AC ; 21 ; 
+waga œrednia *CBB ; ** ; AD ;  ; 
+walka wrêcz *GBBBA ; *- ; AD ;  ; #clp: wrêcz powinno byæ przys³ówkiem?
+wiatr halny *CAB ; ** ; AC ; 2 ; 
+wielka niewiadoma *ADACCBA ; ** ; AD ;  ; 
+wieœæ *ADCCA hiobowa ; ** ; AD ; 21 ; 
+wiêŸ *ADCCA duchowa ; ** ; AD ;  ; 
+wiêŸ *ADCCA rodzinna ; ** ; AD ;  ; 
+wiêŸ *ADCCA uczuciowa ; ** ; AD ;  ; 
+woda mineralna *CAB ; ** ; AD ;  ; 
+wole *CBB oko *AEAAAA ; ** ; AE ;  ; 
+wolna wola *ADACBAA ; ** ; AD  ; ;
+wolny *CAB czas ; ** ; AC ; 21 ; 
+wolny *CAB rynek *ACABA ; ** ; AC ;  ; 
+wolny *CAB s³uchacz ; ** ; AA ;  ; 
+wolny *CAB temat ; ** ; AC ;  ; 
+wolny *CAB wniosek ; ** ; AC ;  ; 
+wolny *CAB zawód ; ** ; AC ;  ; 
+wstêp wolny *CAB ; ** ; AC ;  ; 
+wyprawa krzy¿owa *CAB ; ** ; AD ; krucjata ; 
+zakazany *CAB owoc ; ** ; AC ;  ; 
+zaklête ko³o *AEAAAB ; ** ; AE ;  ; #+kr¹g
+zakuta *CAB pa³a *ADAAA ; ** ; AD ;  ; 
+$ zakuty *CAB ³eb ; ** ; AC ;  ; #+g³owa
+zapad³a *CAB dziura ; ** ; AD ;  ; 
+zapad³a *CAB wieœ ; ** ; AD ;  ; 
+$ zapad³a *CAB wiocha ; ** ; AD ;  ; 
+zawieszenie broni *ADCAAA ; *- ; AE ; rozejm ; 
+zbiór skoñczony ; ** ; AC ;  ; #+inne
+zdrowy *CAB rozs¹dek ; ** ; AC ;  ; 
+ziele angielskie *CBA ; ** ; AE ;  ; 
+zielone *CAB papiery *AGAB ; ** ; AG ;  ; #+wariackie, ¿ó³te
+zimna *CAB krew *ADCAAA ; ** ; AD ;  ; 
+zimne *CAB ognie ; ** ; AG ;  ; 
+z³a *CAB wola *ADACBAA ; ** ; AD ;  ; 
+z³ota *CAB jesieñ ; ** ; AD ;  ; 
+z³ota *CAB ksiêga ; ** ; AD ;  ; 
+z³ota *CAB m³odzie¿ ; ** ; AD ;  ; 
+z³ota *CAB myœl *ADCCA ; ** ; AD ;  ; 
+z³ota *CAB p³yta ; ** ; AD ;  ; #+platynowa
+z³ota *CAB rybka ; ** ; AB ;  ; 
+z³ote *CAB gody ; ** ; AG ;  ; 
+z³ote *CAB wesele ; ** ; AE ;  ; #po³¹czyæ z 'z³ote gody'
+z³oty *CAB cielec ; ** ; AB ;  ; 
+z³oty *CAB interes ; ** ; AC ;  ; 
+z³oty *CAB medal ; ** ; AC ;  ; 
+z³oty *ABC polski *CBA ; ** ; AC ; 21 ; #warianty: z³, PLN?
+z³oty *CAB œrodek ; ** ; AC ;  ; 
+z³y *CAB duch ; ** ; AB ;  ; 
+z³y *CAB humor ; ** ; AC ;  ; 
+z³y *CAB omen ; ** ; AC ;  ; 
+zwierzê *AECA domowe ; ** ; AE ;  ; 
+zwierzê *AECA poci¹gowe ; ** ; AE ;  ; 
+zwierzê *AECA rzeŸne ; ** ; AE ;  ; 
+Ÿród³o *AEAAAB œwiat³a ; *- ; AE ;  ; 
+¿al *ACACACB za grzechy ; *-- ; AC ;  ; 
+¿y³a *ADAAA wodna ; ** ; AD ;  ; 
+¿y³a *ADAAA z³ota *AEAAAB ; *- ; AD ;  ; 
+¿ywy *CAB symbol ; ** ; AC ;  ; 
+¿ywy *CAB szkielet ; ** ; AC ;  ; 
+¿ywy *CAB towar ; ** ; AC ;  ; #wariant: niewolnicy?
+¿ywy *CAB trup *AAACAAAB ; ** ; AA ;  ; 
