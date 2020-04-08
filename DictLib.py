@@ -1,7 +1,7 @@
 import marisa_trie as mt
 from Parser import *
-import pygtrie
-import time
+# import pygtrie
+# import time
 
 
 class WordNode:
@@ -109,16 +109,31 @@ class DictLib:
         self.filters = all_filters
         self.multi_segment = all_multi_segments
 
-        words_map = self.parse_regulars(self.regulars, words_map)
-        words_map = self.parse_filters(self.filters, words_map)
-        self.parse_multi_segments(all_multi_segments_words, words_map)
+        words_map = self._parse_regulars(self.regulars, words_map)
+        words_map = self._parse_filters(self.filters, words_map)
+        self._parse_multi_segments(all_multi_segments_words, words_map)
 
-        bt = self.pack_multiple_nodes(list(words_map.keys()), list(words_map.values()))
+        bt = self._pack_multiple_nodes(list(words_map.keys()), list(words_map.values()))
         self.binary_trie = bt
         print(len(bt.items()))  # checking how many words are in the trie
 
+    def print_word(self, word):
+        string = self.binary_trie.get(word)
+        string = WordNode.unpack_from_string(string)
+        lines = self.get_regular_lines(string)
+
+        for i in range(len(lines)):
+            if i == 0:
+                print("Regulars:")
+            elif i == 1:
+                print("\nFilters:")
+            else:
+                print("\nMulti segments:")
+            for line in lines[i]:
+                print(line)
+
     @staticmethod
-    def parse_regulars(regulars, words_map):
+    def _parse_regulars(regulars, words_map):
         regulars_count = len(regulars)
         for i in range(regulars_count):
 
@@ -134,7 +149,7 @@ class DictLib:
         return words_map
 
     @staticmethod
-    def parse_filters(filters, words_map):
+    def _parse_filters(filters, words_map):
         for i in range(len(filters)):
             for j in range(len(filters[i])):
                 if filters[i][j] not in words_map:
@@ -145,7 +160,7 @@ class DictLib:
         return words_map
 
     @staticmethod
-    def parse_multi_segments(multi_segments, words_map):
+    def _parse_multi_segments(multi_segments, words_map):
         for i in range(len(multi_segments)):
             for j in range(len(multi_segments[i])):
                 if multi_segments[i][j] not in words_map:
@@ -154,7 +169,7 @@ class DictLib:
                     words_map.get(multi_segments[i][j]).multi_segment.append(i)
 
     @staticmethod
-    def pack_multiple_nodes(keys, nodes):
+    def _pack_multiple_nodes(keys, nodes):
         values = []
         for node in nodes:
             values.append(bytes(node.pack_to_string(), encoding='utf8'))
