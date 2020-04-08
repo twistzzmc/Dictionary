@@ -80,7 +80,7 @@ class WordNode:
         return lines
 
 
-class WordLib:
+class DictLib:
     def __init__(self, file_paths, file_types):
         self.binary_trie = None
         self.regulars = []
@@ -101,7 +101,7 @@ class WordLib:
 
         bt = self.pack_multiple_nodes(list(words_map.keys()), list(words_map.values()))
         self.binary_trie = bt
-        print(len(bt.items()))
+        print(len(bt.items()))  # checking how many words are in the trie
 
     @staticmethod
     def parse_regulars(regulars, words_map):
