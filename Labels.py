@@ -15,6 +15,19 @@ class Labels(Enum):
     TEKST = "H"
     SKROT = "I"
 
+    def __str__(self):
+        switcherToName = {
+            self.RZECZOWNIK: "Rzeczownik",
+            self.CZASOWNIK: "Czasownik",
+            self.PRZYMIOTNIK: "Przymiotnik",
+            self.LICZEBNIK: "Liczebnik",
+            self.ZAIMEK: "Zaimek",
+            self.PRZYSLOWEK: "Przysłówek",
+            self.NIEODMIENNY: "Nieodmienny",
+            self.TEKST: "Tekst",
+            self.SKROT: "Skrótowiec"
+        }
+        return switcherToName.get(self)
 
 
 class Forms:
