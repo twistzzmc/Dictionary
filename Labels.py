@@ -78,7 +78,7 @@ class Forms:
         forms = []
         for index in indexes:
             forms.append(str(self.get_form(index, label)))
-        return str(label) + " | ".join(forms)
+        return str(label) + ":\n\t" + "\n\t".join(forms)
 
     def get_form(self, index, label):
         method_name = label.name.lower()
