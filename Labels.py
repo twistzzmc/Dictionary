@@ -16,7 +16,8 @@ class Labels(Enum):
     SKROT = "I"
 
 
-class Forms(Enum):
+
+class Forms:
     def rzeczownik(self, index):
         enum_list = list(Rzeczownik)
         form = enum_list[index]
@@ -47,35 +48,32 @@ class Forms(Enum):
         form = enum_list[index]
         return form.value
 
-    def nieodmienny(self):
-        return "Nieodmienne"
+    def count_indexes(self, regular_list, checked_word):
+        indexes = []
+        for index, word in enumerate(regular_list):
+            if word == checked_word:
+                indexes.append(index)
+        if 0 in indexes:
+            indexes.remove(0)
+        return indexes
 
-    def tekst(self):
-        return "Tekst"
+    def get_forms(self, regural_list, word):
+        indexes = self.count_indexes(regural_list, word)
+        flectional_label = regural_list[1]
+        label_string = flectional_label.strip('*')[0]
+        label = Labels(label_string)
+        forms = []
+        for index in indexes:
+            forms.append(str(self.get_form(index, label)))
+        return str(label) + " | ".join(forms)
 
-    def skrot(self):
-        return "Skrótowiec"
-
-    switcher = {
-        Labels.RZECZOWNIK: rzeczownik,
-        Labels.CZASOWNIK: czasownik,
-        Labels.PRZYMIOTNIK: przymiotnik,
-        Labels.LICZEBNIK: liczebnik,
-        Labels.ZAIMEK: zaimek,
-        Labels.PRZYSLOWEK: przyslowek,
-        Labels.NIEODMIENNY: nieodmienny,
-        Labels.TEKST: tekst,
-        Labels.SKROT: skrot
-    }
-
-    def get_form(self, index, flectionalLabel):
-        labelString = flectionalLabel.strip('*')[0]
-        label = Labels(labelString)
-        method = self.switcher.get(label, lambda: "Invalid label")
+    def get_form(self, index, label):
+        method_name = label.name.lower()
         if label in {Labels.NIEODMIENNY, Labels.TEKST, Labels.SKROT}:
-            return method()
-        else:
-            return method(index)
+            return ""
+        method = getattr(self, method_name, lambda: "Invalid label")
+        result = method(index)
+        return str(result)
 
 
 class Rzeczownik(Enum):
