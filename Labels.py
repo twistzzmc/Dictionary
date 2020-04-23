@@ -16,6 +16,68 @@ class Labels(Enum):
     SKROT = "I"
 
 
+class Forms(Enum):
+    def rzeczownik(self, index):
+        enum_list = list(Rzeczownik)
+        form = enum_list[index]
+        return form.value
+
+    def czasownik(self, index):
+        enum_list = list(Czasownik)
+        form = enum_list[index]
+        return form.value
+
+    def przymiotnik(self, index):
+        enum_list = list(Przymiotnik)
+        form = enum_list[index]
+        return form.value
+
+    def liczebnik(self, index):
+        enum_list = list(Liczebnik)
+        form = enum_list[index]
+        return form.value
+
+    def zaimek(self, index):
+        enum_list = list(Zaimek)
+        form = enum_list[index]
+        return form.value
+
+    def przyslowek(self, index):
+        enum_list = list(Przyslowek)
+        form = enum_list[index]
+        return form.value
+
+    def nieodmienny(self):
+        return "Nieodmienne"
+
+    def tekst(self):
+        return "Tekst"
+
+    def skrot(self):
+        return "Skrótowiec"
+
+    switcher = {
+        Labels.RZECZOWNIK: rzeczownik,
+        Labels.CZASOWNIK: czasownik,
+        Labels.PRZYMIOTNIK: przymiotnik,
+        Labels.LICZEBNIK: liczebnik,
+        Labels.ZAIMEK: zaimek,
+        Labels.PRZYSLOWEK: przyslowek,
+        Labels.NIEODMIENNY: nieodmienny,
+        Labels.TEKST: tekst,
+        Labels.SKROT: skrot
+    }
+
+    def get_form(self, index, flectionalLabel):
+        labelString = flectionalLabel.strip('*')[0]
+        label = Labels(labelString)
+        method = self.switcher.get(label, lambda: "Invalid label")
+        if label in {Labels.NIEODMIENNY, Labels.TEKST, Labels.SKROT}:
+            return method()
+        else:
+            return method(index)
+
+
 class Rzeczownik(Enum):
     F1 = "Liczba pojedyncza, Mianownik"
     F2 = "Liczba pojedyncza, Dopełniacz"
