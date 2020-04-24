@@ -1,5 +1,6 @@
 import marisa_trie as mt
 from Parser import *
+from Labels import Forms
 # import pygtrie
 # import time
 
@@ -121,16 +122,22 @@ class DictLib:
         string = self.binary_trie.get(word)
         string = WordNode.unpack_from_string(string)
         lines = self.get_regular_lines(string)
-
-        for i in range(len(lines)):
+        forms = Forms()
+        for i, list in enumerate(lines):
             if i == 0:
                 print("Regulars:")
-            elif i == 1:
-                print("\nFilters:")
+                for line in list:
+                    print(forms.get_forms(line, word))
+                    print("Forma podstawowa:", line[0])
+                    print(line)
             else:
-                print("\nMulti segments:")
-            for line in lines[i]:
-                print(line)
+                if i == 1:
+                    print("\nFilters:")
+                else:
+                    print("\nMulti segments:")
+                for line in list:
+                    print("Forma podstawowa:", line[0])
+                    print(line)
 
     @staticmethod
     def _parse_regulars(regulars, words_map):
