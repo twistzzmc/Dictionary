@@ -1,8 +1,8 @@
 import marisa_trie as mt
 from Parser import *
 from Labels import Forms
-# import pygtrie
-# import time
+import os
+import pickle
 
 
 class WordNode:
@@ -116,17 +116,17 @@ class DictLib:
 
         bt = self._pack_multiple_nodes(list(words_map.keys()), list(words_map.values()))
         self.binary_trie = bt
-        print(len(bt.items()))  # checking how many words are in the trie
+        # print(len(bt.items()))  # checking how many words are in the trie
 
     def print_word(self, word):
         string = self.binary_trie.get(word)
         string = WordNode.unpack_from_string(string)
         lines = self.get_regular_lines(string)
         forms = Forms()
-        for i, list in enumerate(lines):
+        for i, l in enumerate(lines):
             if i == 0:
                 print("Regulars:")
-                for line in list:
+                for line in l:
                     print(forms.get_forms(line, word))
                     print("Forma podstawowa:", line[0])
                     print(line)
@@ -135,7 +135,7 @@ class DictLib:
                     print("\nFilters:")
                 else:
                     print("\nMulti segments:")
-                for line in list:
+                for line in l:
                     print("Forma podstawowa:", line[0])
                     print(line)
 
@@ -193,6 +193,21 @@ class DictLib:
         lines = [regulars, filters, multi_segments]
 
         return lines
+
+    def save(self, file_name='DictLib'):
+        if os.path.isfile(file_name + '.pickle'):
+            raise ValueError('File with name \"' + file_name + '\" already exists! Change name or delete file.')
+
+        pickle.dump(self, open(file_name + '.pickle', 'wb'))
+
+    @staticmethod
+    def delete(file_name='DictLib'):
+        if os.path.isfile(file_name + '.pickle'):
+            os.remove(file_name + '.pickle')
+
+    @staticmethod
+    def load(file_name='DictLib'):
+        return pickle.load(open(file_name + '.pickle', 'rb'))
 
     # Used for tests for the alternative pygtrie library (slower but more convenient)
 

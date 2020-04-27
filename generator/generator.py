@@ -3,6 +3,7 @@ from random import randint, choice
 from string import ascii_uppercase
 import os
 
+
 class Generator:
 
     def __init__(self, ends_path):
