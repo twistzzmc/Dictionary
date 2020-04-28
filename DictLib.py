@@ -127,7 +127,7 @@ class DictLib:
             if i == 0:
                 print("Regulars:")
                 for line in l:
-                    print(forms.get_forms(line, word))
+                    print(forms.get_forms_values(line, word))
                     print("Forma podstawowa:", line[0])
                     print(line)
             else:

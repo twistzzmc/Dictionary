@@ -29,37 +29,31 @@ class Labels(Enum):
         }
         return switcherToName.get(self)
 
+    @staticmethod
+    def _get_label_from_flectional_label(flectional_label):
+        label_string = flectional_label.strip()
+        label_string = flectional_label.strip('*')[0]
+        return Labels(label_string)
+
 
 class Forms:
-    def rzeczownik(self, index):
-        enum_list = list(Rzeczownik)
-        form = enum_list[index]
-        return form.value
+    def rzeczownik(self):
+        return list(Rzeczownik)
 
-    def czasownik(self, index):
-        enum_list = list(Czasownik)
-        form = enum_list[index]
-        return form.value
+    def czasownik(self):
+        return list(Czasownik)
 
-    def przymiotnik(self, index):
-        enum_list = list(Przymiotnik)
-        form = enum_list[index]
-        return form.value
+    def przymiotnik(self):
+        return list(Przymiotnik)
 
-    def liczebnik(self, index):
-        enum_list = list(Liczebnik)
-        form = enum_list[index]
-        return form.value
+    def liczebnik(self):
+        return list(Liczebnik)
 
-    def zaimek(self, index):
-        enum_list = list(Zaimek)
-        form = enum_list[index]
-        return form.value
+    def zaimek(self):
+        return list(Zaimek)
 
-    def przyslowek(self, index):
-        enum_list = list(Przyslowek)
-        form = enum_list[index]
-        return form.value
+    def przyslowek(self):
+        return list(Przyslowek)
 
     def count_indexes(self, regular_list, checked_word):
         indexes = []
@@ -70,23 +64,25 @@ class Forms:
             indexes.remove(0)
         return indexes
 
-    def get_forms(self, regural_list, word):
-        indexes = self.count_indexes(regural_list, word)
-        flectional_label = regural_list[1]
-        label_string = flectional_label.strip('*')[0]
-        label = Labels(label_string)
+    def get_forms_values(self, regular_list, word):
+        indexes = self.count_indexes(regular_list, word)
+        label = Labels._get_label_from_flectional_label(regular_list[1])
         forms = []
         for index in indexes:
-            forms.append(str(self.get_form(index, label)))
+            forms.append(str(self.get_form_value(index, label)))
         return str(label) + ":\n\t" + "\n\t".join(forms)
 
-    def get_form(self, index, label):
+    def get_form_label_from_index(self, index, label):
         method_name = label.name.lower()
-        if label in {Labels.NIEODMIENNY, Labels.TEKST, Labels.SKROT}:
-            return ""
+        # if label in {Labels.NIEODMIENNY, Labels.TEKST, Labels.SKROT}:
+        #     return ""
         method = getattr(self, method_name, lambda: "Invalid label")
-        result = method(index)
-        return str(result)
+        label_list = method()
+        return label_list[index]
+
+    def get_form_value(self, index, label):
+        form_label = self.get_form_label_from_index(index, label)
+        return str(form_label.value)
 
 
 class Rzeczownik(Enum):
@@ -104,7 +100,6 @@ class Rzeczownik(Enum):
     Plural_Instrumental = "Liczba mnoga, Narzędnik"
     Plural_Locative = "Liczba mnoga, Miejscownik"
     Plural_Vocative = "Liczba mnoga, Wołacz"
-
 
 class Czasownik(Enum):
     Infinitive = "Bezokolicznik"
