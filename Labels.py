@@ -85,6 +85,15 @@ class Forms:
         return str(form_label.value)
 
 
+    @staticmethod
+    def _get_index_of_label(label, searched_label):
+        method_name = label.name.lower()
+        method = getattr(method_name, lambda: "Invalid label")
+        label_list = method()
+        for index, label_iterator in enumerate(label_list):
+            if label_iterator == searched_label:
+                return index
+
 class Rzeczownik(Enum):
     Singular_Nominative = "Liczba pojedyncza, Mianownik"
     Singular_Genitive = "Liczba pojedyncza, Dopełniacz"
