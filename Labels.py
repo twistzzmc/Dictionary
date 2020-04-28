@@ -110,12 +110,8 @@ class Czasownik(Enum):
     Present_2_Plural = "Czas teraźniejszy, 2 osoba liczby mnogiej"
     Present_3_Plural = "Czas teraźniejszy, 3 osoba liczby mnogiej"
     Imperative_2_Singular = "Tryb rozkazujący, 2 osoba liczby pojedynczej"
-    F9 = "brak"
     Imperative_1_Plural = "Tryb rozkazujący, 1 osoba liczby mnogiej"
     Imperative_2_Plural = "Tryb rozkazujący, 2 osoba liczby mnogiej"
-    F12 = "brak"
-    F13 = "Imiesłów przysłówkowy współczesny"
-    F14 = "Imiesłów przysłowkowy czynny"
     Past_1_Singular_Masculine = "Czas przeszły, 1 osoba liczby pojedynczej, rodzaj męski"
     Past_2_Singular_Masculine = "Czas przeszły, 2 osoba liczby pojedynczej, rodzaj męski"
     Past_3_Singular_Masculine = "Czas przeszły, 3 osoba liczby pojedynczej, rodzaj męski"
@@ -128,8 +124,8 @@ class Czasownik(Enum):
     Past_1_Plural_Masculine = "Czas przeszły, 1 osoba liczby mnogiej, rodzaj męskoosobowy"
     Past_2_Plural_Masculine = "Czas przeszły, 2 osoba liczby mnogiej, rodzaj męskoosobowy"
     Past_3_Plural_Masculine = "Czas przeszły, 3 osoba liczby mnogiej, rodzaj męskoosobowy"
-    Past_3_Plural_NonMasculine = "Czas przeszły, 1 osoba liczby mnogiej, rodzaj niemęskoosobowy"
-    Past_3_Plural_NonMasculine = "Czas przeszły, 2 osoba liczby mnogiej, rodzaj niemęskoosobowy"
+    Past_1_Plural_NonMasculine = "Czas przeszły, 1 osoba liczby mnogiej, rodzaj niemęskoosobowy"
+    Past_2_Plural_NonMasculine = "Czas przeszły, 2 osoba liczby mnogiej, rodzaj niemęskoosobowy"
     Past_3_Plural_NonMasculine = "Czas przeszły, 3 osoba liczby mnogiej, rodzaj niemęskoosobowy"
     Conditional_1_Singular_Masculine = "Tryb przypuszczający, 1 osoba liczby pojedynczej, rodzaj męski"
     Conditional_2_Singular_Masculine = "Tryb przypuszczający, 2 osoba liczby pojedynczej, rodzaj męski"
@@ -143,12 +139,16 @@ class Czasownik(Enum):
     Conditional_1_Plural_Masculine = "Tryb przypuszczający, 1 osoba liczby mnogiej, rodzaj męskoosobowy"
     Conditional_2_Plural_Masculine = "Tryb przypuszczający, 2 osoba liczby mnogiej, rodzaj męskoosobowy"
     Conditional_3_Plural_Masculine = "Tryb przypuszczający, 3 osoba liczby mnogiej, rodzaj męskoosobowy"
-    Conditional_3_Plural_NonMasculine = "Tryb przypuszczający, 1 osoba liczby mnogiej, rodzaj niemęskoosobowy"
-    Conditional_3_Plural_NonMasculine = "Tryb przypuszczający, 2 osoba liczby mnogiej, rodzaj niemęskoosobowy"
+    Conditional_1_Plural_NonMasculine = "Tryb przypuszczający, 1 osoba liczby mnogiej, rodzaj niemęskoosobowy"
+    Conditional_2_Plural_NonMasculine = "Tryb przypuszczający, 2 osoba liczby mnogiej, rodzaj niemęskoosobowy"
     Conditional_3_Plural_NonMasculine = "Tryb przypuszczający, 3 osoba liczby mnogiej, rodzaj niemęskoosobowy"
     Past_Impersonal = "Bezosobnik w czasie przeszłym"
-    F46 = "Imiesłów przymiotnikowy bierny"
-    F47 = "Imiesłów przysłówkowy uprzedni"
+
+    Present_Adverbial_Participle = "Imiesłów przysłówkowy współczesny"
+    Active_Adjectival_Participle = "Imiesłów przymiotnikowy czynny"
+    Passive_Adjectival_Participle = "Imiesłów przymiotnikowy bierny"
+    Perfect_Adverbial_Participle = "Imiesłów przysłówkowy uprzedni"
+    Gerundive = "Rzeczownik odczasownikowy"
 
 
 class Przymiotnik(Enum):
@@ -194,8 +194,10 @@ class Przymiotnik(Enum):
     Plural_Instrumental_NonMasculine = "Liczba mnoga, Narzędnik, rodzaj niemęskoosobowy"
     Plural_Locative_NonMasculine = "Liczba mnoga, Miejscownik, rodzaj niemęskoosobowy"
     Plural_Vocative_NonMasculine = "Liczba mnoga, Wołacz, rodzaj niemęskoosobowy"
-    F43 = "brak"
-    F44 = "brak"
+
+    Positive_Form = "Stopień równy"
+    Comparative_Form = "Stopień wyższy"
+    Superlative_Form = "Stopień najwyższy"
 
 
 class Liczebnik(Enum):
