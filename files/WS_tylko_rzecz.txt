@@ -3257,4 +3257,5 @@ zwierzê *AECA rzeŸne ; ** ; AE ;  ;
 ¿ywy *CAB symbol ; ** ; AC ;  ; 
 ¿ywy *CAB szkielet ; ** ; AC ;  ; 
 ¿ywy *CAB towar ; ** ; AC ;  ; #wariant: niewolnicy?
-¿ywy *CAB trup *AAACAAAB ; ** ; AA ;  ; 
+¿ywy *CAB trup *AAACAAAB ; ** ; AA ;  ;
+bieliæ BBCA ptaka ; ** ;

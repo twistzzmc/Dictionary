@@ -1,6 +1,7 @@
 import marisa_trie as mt
 from Parser import *
 from Labels import Forms
+from Lexeme import Lexeme
 import os
 import pickle
 
@@ -96,13 +97,13 @@ class DictLib:
 
         for i in range(len(file_paths)):
             if file_types[i] == 0:  # 0 - regular file
-                all_regulars += parse_regular_file(file_paths[i])
+                all_regulars += Parser.parse_regular_file(file_paths[i])
 
             if file_types[i] == 1:  # 1 - filter file
-                all_filters += parse_regular_file(file_paths[i])
+                all_filters += Parser.parse_regular_file(file_paths[i], True)
 
             if file_types[i] == 2:  # 2 - multi segment file
-                lines, words = parse_multi_segment_file(file_paths[i])
+                lines, words = Parser.parse_multi_segment_file(file_paths[i])
                 all_multi_segments += lines
                 all_multi_segments_words += words
 
@@ -120,8 +121,12 @@ class DictLib:
 
     def print_word(self, word):
         string = self.binary_trie.get(word)
+        if string is None:
+            print("Word \"" + word + "\" not found!")
+            return
+
         string = WordNode.unpack_from_string(string)
-        lines = self.get_regular_lines(string)
+        lines = self.get_lines(string)
         forms = Forms()
         for i, l in enumerate(lines):
             if i == 0:
@@ -145,7 +150,7 @@ class DictLib:
         for i in range(regulars_count):
 
             words_count = len(regulars[i])
-            for j in range(1, words_count):
+            for j in range(words_count):
                 if j == 1 or '#' in regulars[i][j]:
                     continue
                 if regulars[i][j] not in words_map:
@@ -155,14 +160,32 @@ class DictLib:
 
         return words_map
 
+    # @staticmethod
+    # def _parse_filters(filters, words_map):
+    #     for i in range(len(filters)):
+    #         for j in range(len(filters[i])):
+    #             if filters[i][j] not in words_map:
+    #                 words_map[filters[i][j]] = WordNode(filters=[i])
+    #             elif i not in words_map.get(filters[i][j]).filters:
+    #                 words_map.get(filters[i][j]).filters.append(i)
+    #
+    #     return words_map
+
     @staticmethod
     def _parse_filters(filters, words_map):
         for i in range(len(filters)):
+            is_word = False
             for j in range(len(filters[i])):
-                if filters[i][j] not in words_map:
-                    words_map[filters[i][j]] = WordNode(filters=[i])
-                elif i not in words_map.get(filters[i][j]).filters:
-                    words_map.get(filters[i][j]).filters.append(i)
+                if '#' not in filters[i][j] and not is_word:
+
+                    if filters[i][j] not in words_map:
+                        words_map[filters[i][j]] = WordNode(filters=[i])
+                    elif i not in words_map.get(filters[i][j]).filters:
+                        words_map.get(filters[i][j]).filters.append(i)
+
+                    is_word = True
+                else:
+                    is_word = False
 
         return words_map
 
@@ -185,7 +208,7 @@ class DictLib:
 
         return binary_trie
 
-    def get_regular_lines(self, node):
+    def get_lines(self, node):
         regulars = node.get_regular_lines(self.regulars)
         filters = node.get_filter_lines(self.filters)
         multi_segments = node.get_multi_segment_lines(self.multi_segment)
@@ -208,6 +231,28 @@ class DictLib:
     @staticmethod
     def load(file_name='DictLib'):
         return pickle.load(open(file_name + '.pickle', 'rb'))
+
+    def find(self, word):
+        string = self.binary_trie.get(word)
+        if string is None:
+            print("Word \"" + word + "\" not found!")
+            return
+
+        string = WordNode.unpack_from_string(string)
+        lines = self.get_lines(string)
+
+        lexemes = []
+        for l in lines[0]:
+            if word == l[0]:
+                lexemes.append(Lexeme(l, lines[1], lines[2]))
+            else:
+                basic_form_string = self.binary_trie.get(l[0])
+                basic_form_string = WordNode.unpack_from_string(basic_form_string)
+                basic_form_lines = self.get_lines(basic_form_string)
+
+                for regular in basic_form_lines[0]:
+                    if regular[1] == l[1]:
+                        lexemes.append(Lexeme(regular, basic_form_lines[1], basic_form_lines[2]))
 
     # Used for tests for the alternative pygtrie library (slower but more convenient)
 

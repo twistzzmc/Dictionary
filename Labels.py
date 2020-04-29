@@ -35,6 +35,18 @@ class Labels(Enum):
         label_string = flectional_label.strip('*')[0]
         return Labels(label_string)
 
+    def get_enum(self, index):
+        switch_to_word_type = {
+            self.RZECZOWNIK: list(Rzeczownik),
+            self.CZASOWNIK: list(Czasownik),
+            self.PRZYMIOTNIK: list(Przymiotnik),
+            self.LICZEBNIK: list(Liczebnik),
+            self.ZAIMEK: list(Zaimek),
+            self.PRZYSLOWEK: list(Przyslowek)
+        }
+
+        return switch_to_word_type.get(self)[index]
+
 
 class Forms:
     def rzeczownik(self):
