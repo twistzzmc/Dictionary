@@ -254,6 +254,8 @@ class DictLib:
                     if regular[1] == l[1]:
                         lexemes.append(Lexeme(regular, basic_form_lines[1], basic_form_lines[2]))
 
+        return lexemes
+
     # Used for tests for the alternative pygtrie library (slower but more convenient)
 
     # @staticmethod
