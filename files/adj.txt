@@ -1,4 +1,4 @@
-biały:bielszy:najbielszy:
-duży:większy:największy:
-mały:mniejszy:najmniejszy:
-dobry:lepszy:najlepszy:
+biały:CAB:bielszy:CAA:najbielszy:CAA:
+duży:*CAB:większy:*CAA:największy:*CAA:
+mały:CAB:mniejszy:CAA:najmniejszy:CAA:
+dobry:CAA:lepszy:CAB:najlepszy:CAB:

@@ -1,23 +1,22 @@
-jeść:BDD:jedząc:jedzący:jedzony:#
-pić:BAFB:pijąc:pijący:pity:#
-zjeść:BDD:#:#:zjedzony:zjadłszy
-wypić:BAFB:#:#:wypity:wypiwszy
-dopić:BAFB:#:#:dopity:dopiwszy
-napić się:BAFB:#:#:#:napiwszy
-brak:BFBA:#:#:#:#
-padać:BDA:padając:padający:#:#
-padać:BGA:#:#:#:#:
-grzmieć:BBBB:grzmiąc:grzmiący:#:#
-grzmieć:BGG:#:#:#:#
-abdykować:BAAA:abdykując:abdykujący:#:abdykowawszy:
-ślubować:BAAA:ślubując:ślubujący:ślubowany:ślubowawszy
-szczekać:BDA:szczekając:szczekający:#:#
-szczeknąć:BAEAA:#:#:#:szczeknąwszy
-myć:BAFB:myjąc:myjący:myty:#
-myć się:BAFB:myjąc:myjący:#:#
-dać:BDC:#:#:dany:dawszy
-dawać:BAAE:dając:dający:dawany:#
-brać:BAAFA:biorąc:biorący:brany:#
-wziąć:BAFCAC:#:#:wzięty:wziąwszy
-bielić:BBCA:bieląc:bielący:bielony:#:
-wolno:BFBA:#:#:#:#:
+jeść:BDD:jedząc:G:jedzący:CAA:jedzony:CAB:#:#:
+pić:BAFB:pijąc:G:pijący:CAA:pity:CAB:#:#:
+zjeść:BDD:#:#:#:#:zjedzony:CAB:zjadłszy:G:
+wypić:BAFB:#:#:#:#:wypity:CAB:wypiwszy:G:
+dopić:BAFB:#:#:#:#:dopity:CAB:dopiwszy:G:
+napić się:BAFB:#:#:#:#:#:#:napiwszy:G:
+brak:BFBA:#:#:#:#:#:#:#:#:
+padać:BDA:padając:G:padający:CAA:#:#:#:#:
+padać:BGA:#:#:#:#:#:#:#:#:
+grzmieć:BBBB:grzmiąc:G:grzmiący:CAA:#:#:#:#
+grzmieć:BGG:#:#:#:#:#:#:#:#:
+abdykować:BAAA:abdykując:G:abdykujący:CAA:#:#:abdykowawszy:G:
+ślubować:BAAA:ślubując:G:ślubujący:CAA:ślubowany:CAB:ślubowawszy:G:
+szczekać:BDA:szczekając:G:szczekający:CAA:#:#:#:#:
+szczeknąć:BAEAA:#:#:#:#:#:#:szczeknąwszy:G:
+myć:BAFB:myjąc:G:myjący:CAA:myty:CAB:#:#:
+myć się:BAFB:myjąc się:G:myjący się:CAA:#:#:#:#:
+dawać:BAAE:dając:G:dający:CAA:dawany:CAB:#:#:
+brać:BAAFA:biorąc:G:biorący:CAA:brany:CAB:#:#:
+wziąć:BAFCAC:#:#:#:#:wzięty:CAB:wziąwszy:G:
+bielić:BBCA:bieląc:G:bielący:CAA:bielony:CAB:#:#:
+wolno:BFBA:#:#:#:#:#:#:#:#:

@@ -1,6 +1,6 @@
-dużo:więcej:najwięcej:
-szybko:szybciej:najszybciej:
-wolno:wolniej:najwolniej:
-dobrze:lepiej:najlepiej:
-źle:gorzej:najgorzej:
-biało:bielej:najbielej:
+dużo: *FA:więcej:#:najwięcej:#:
+szybko:*FA:szybciej:#:najszybciej:#:
+wolno:*FA:wolniej:#:najwolniej:#:
+dobrze:*FB:lepiej:#:najlepiej:#:
+źle:FB:gorzej:#:najgorzej::
+biało:*FA:bielej:#:najbielej:#:

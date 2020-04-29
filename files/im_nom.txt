@@ -1,21 +1,21 @@
-jeść:BDD:jedząc:jedzący:jedzony:*:jedzenie:
-pić:BAFB:pijąc:pijący:pity:*:picie:
-zjeść:BDD:*:*:zjedzony:zjadłszy:zjedzenie:
-wypić:BAFB:*:*:wypity:wypiwszy:wypicie:
-dopić:BAFB:*:*:dopity:dopiwszy:dopicie:
-napić się:BAFB:*:*:*:napiwszy:napicie się:
-brak:BFBA:*:*:*:*:*:
-grzmieć:BBBB:grzmiąc:grzmiący:*:*:grzmienie:
-grzmieć:BGG:*:*:*:*:*:
-abdykować:BAAA:abdykując:abdykujący:*:abdykowawszy:abdykowanie:
-ślubować:BAAA:ślubując:ślubujący:ślubowany:ślubowawszy:ślubowanie:
-szczekać:BDA:szczekając:szczekający:*:*:szczekanie:
-szczeknąć:BAEAA:*:*:*:szczeknąwszy:szczeknięcie:
-myć:BAFB:myjąc:myjący:myty:*:mycie:
-myć się:BAFB:myjąc:myjący:*:*:mycie się:
-dać:BDC:*:*:dany:dawszy:danie:
-dawać:BAAE:dając:dający:dawany:*:dawanie:
-brać:BAAFA:biorąc:biorący:brany:*:branie:
-wziąć:BAFCAC:*:*:wzięty:wziąwszy:wzięcie:
-bielić:BBCA:bieląc:bielący:bielony:*:bielenie:
-wolno:BFBA:*:*:*:*:*:
+jeść:BDD:jedząc:G:jedzący:CAA:jedzony:CAB:#:#:jedzenie:ABCA:
+pić:BAFB:pijąc:G:pijący:CAA:pity:CAB:#:#:picie:ACD:
+zjeść:BDD:#:#:#:#:zjedzony:CAB:zjadłszy:G:zjedzenie:ABCA:
+wypić:BAFB:#:#:#:#:wypity:CAB:wypiwszy:G:wypicie:ACD:
+dopić:BAFB:#:#:#:#:dopity:CAB:dopiwszy:G:dopicie:ACD:
+napić się:BAFB:#:#:#:#:#:#:napiwszy:G:napicie się:ACD:
+brak:BFBA:#:#:#:#:#:#:#:#:#:#:
+grzmieć:BBBB:grzmiąc:G:grzmiący:CAA:#:#:#:#:grzmienie:ABCA:
+grzmieć:BGG:#:#:#:#:#:#:#:#:#:#:
+abdykować:BAAA:abdykując:G:abdykujący:CAA:#:#:abdykowawszy:G:abdykowanie:ABCA:
+ślubować:BAAA:ślubując:G:ślubujący:CAA:ślubowany:CAB:ślubowawszy:G:ślubowanie:ABCA:
+szczekać:BDA:szczekając:G:szczekający:CAA:#:#:#:#:szczekanie:ABCA:
+szczeknąć:BAEAA:#:#:#:#:#:#:szczeknąwszy:G:szczeknięcie:ACD:
+myć:BAFB:myjąc:G:myjący:CAA:myty:CAB:#:#:mycie:ACD:
+myć się:BAFB:myjąc się:G:myjący się:CAA:#:#:#:#:mycie się:ACD:
+dać:BDC:#:#:#:#:dany:CAB:dawszy:G:danie:ABCA:
+dawać:BAAE:dając:G:dający:CAA:dawany:CAB:#:#:dawanie:ABCA:
+brać:BAAFA:biorąc:G:biorący:CAA:brany:CAB:#:#:branie:ABCA:
+wziąć:BAFCAC:#:#:#:#:wzięty:CAB:wziąwszy:G:wzięcie:ACD:
+bielić:BBCA:bieląc:G:bielący:CAA:bielony:CAB:#:#:bielenie:ABCA:
+wolno:BFBA:#:#:#:#:#:#:#:#:#:#:
