@@ -31,17 +31,6 @@ class MultiSegment:
 
 
 class Lexeme:
-    """
-    Basic_form, flectional_label i label są chyba dobre.
-    flection dla wszystkich słów występujących w regular powinno też być dobrze
-    ale sprawdź dla tych co się usuwało czy na pewno (ja nie ogarniam tego)
-
-    Problem w flection z filtrami, dodałem na końcu listu jako para słowo z etykietą
-    (jak było w pliku z filtrem)
-
-    Multi segment dobrze, tylko trzeba dodać dobre motody w klasie MultiSegment i powinno śmigać
-    Zostawiłem printy do zobaczenia jak to wygląda
-    """
     def __init__(self, regular, filters=None, multi_segments=None):
         if regular is not None:
             self.basic_form = regular[0]
@@ -63,6 +52,25 @@ class Lexeme:
         # print(filters)
         # print(multi_segments)
         # print()
+
+    @staticmethod
+    def get_lexeme(regular, filters=None, multi_segments=None):
+        label = regular[1].strip('*')[0] if regular is not None else None
+
+        if label == 'B':
+            return LexemeVerb(regular, filters, multi_segments)
+        elif label == 'A':
+            return LexemeNoun(regular, filters, multi_segments)
+        elif label == 'C':
+            return LexemeAdjective(regular, filters, multi_segments)
+        elif label == 'F':
+            return LexemeAdverb(regular, filters, multi_segments)
+        elif label == 'DONT KNOW':
+            return LexemeParticiple(regular, filters, multi_segments)
+        elif label == 'G':
+            return LexemeUninflected(regular, filters, multi_segments)
+        else:
+            return Lexeme(regular, filters, multi_segments)
 
     def _handle_flection(self, regular, filters):
         flection = []
@@ -119,3 +127,37 @@ class Lexeme:
         for multi_segment in self.multi_segments:
             lexeme += "\t" + str(multi_segment) + "\n"
         return lexeme + "\n\n"
+
+
+class LexemeVerb(Lexeme):  # Czasownik
+    def __init__(self, regular, filters=None, multi_segments=None):
+        super().__init__(regular, filters, multi_segments)
+
+    def get_Present_Adverbial_Participle_lexeme(self):
+        # TODO
+        return None
+
+
+class LexemeNoun(Lexeme):  # Rzeczownik
+    def __init__(self, regular, filters=None, multi_segments=None):
+        super().__init__(regular, filters, multi_segments)
+
+
+class LexemeAdjective(Lexeme):  # Przymiotnik
+    def __init__(self, regular, filters=None, multi_segments=None):
+        super().__init__(regular, filters, multi_segments)
+
+
+class LexemeAdverb(Lexeme):  # Przysłówek
+    def __init__(self, regular, filters=None, multi_segments=None):
+        super().__init__(regular, filters, multi_segments)
+
+
+class LexemeParticiple(Lexeme):  # Imiesłów
+    def __init__(self, regular, filters=None, multi_segments=None):
+        super().__init__(regular, filters, multi_segments)
+
+
+class LexemeUninflected(Lexeme):  # Nieodmienne
+    def __init__(self, regular, filters=None, multi_segments=None):
+        super().__init__(regular, filters, multi_segments)

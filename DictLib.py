@@ -244,7 +244,7 @@ class DictLib:
         lexemes = []
         for l in lines[0]:
             if word == l[0]:
-                lexemes.append(Lexeme(l, lines[1], lines[2]))
+                lexemes.append(Lexeme.get_lexeme(l, lines[1], lines[2]))
             else:
                 basic_form_string = self.binary_trie.get(l[0])
                 basic_form_string = WordNode.unpack_from_string(basic_form_string)
@@ -252,7 +252,7 @@ class DictLib:
 
                 for regular in basic_form_lines[0]:
                     if regular[1] == l[1]:
-                        lexemes.append(Lexeme(regular, basic_form_lines[1], basic_form_lines[2]))
+                        lexemes.append(Lexeme.get_lexeme(regular, basic_form_lines[1], basic_form_lines[2]))
 
         if len(lines[0]) == 0:
             print("No regular word found in association!")
@@ -260,7 +260,7 @@ class DictLib:
                 print("Also NO filters were found!")
             if len(lines[2]) == 0:
                 print("Also NO multi segment associations were found!")
-            return [Lexeme(None, lines[1], lines[2])]
+            return [Lexeme.get_lexeme(None, lines[1], lines[2])]
 
         return lexemes
 

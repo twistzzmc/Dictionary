@@ -1,6 +1,3 @@
-"""
-Basic Enum not implemented yet.
-"""
 from enum import Enum, auto
 
 
