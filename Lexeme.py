@@ -25,7 +25,7 @@ class Lexeme:
     def __init__(self, regular, filters=None, multi_segments=None):
         self.basic_form = regular[0]
         self.flectional_label = regular[1]
-        self.label = Labels(regular[1][0]) if regular[1][0] != '*' else Labels(regular[1][1])
+        self.label = Labels.get_label_from_flectional_label(regular[1])
         self.flection = self._handle_flection(regular, filters)
         self.multi_segments = [MultiSegment(multi_segment) for multi_segment in multi_segments]
 
@@ -40,41 +40,34 @@ class Lexeme:
 
     def _handle_flection(self, regular, filters):
         flection = []
-        for i in range(len(regular) - 2):
-            if self.label == Labels.CZASOWNIK:
-                if i >= 11:
-                    enum_type = self.label.get_enum(i - 2)
-                elif i >= 8:
-                    enum_type = self.label.get_enum(i - 1)
-                else:
-                    enum_type = self.label.get_enum(i)
-            elif self.label == Labels.PRZYMIOTNIK:
-                if i >= 43:
-                    enum_type = self.label.get_enum(i - 2)
-                elif i >= 42:
-                    enum_type = self.label.get_enum(i - 1)
-                else:
-                    enum_type = self.label.get_enum(i)
-            elif self.label == Labels.PRZYSLOWEK:
-                if i >= 2:
-                    enum_type = self.label.get_enum(i - 2)
-                elif i >= 1:
-                    enum_type = self.label.get_enum(i - 1)
-                else:
-                    enum_type = self.label.get_enum(i)
-            else:
+        if self.label in {Labels.NIEODMIENNY, Labels.SKROT, Labels.TEKST}:
+            flection.append((regular[2], self.label))
+        else:
+            for i in range(len(regular) - 2):
                 enum_type = self.label.get_enum(i)
+                flection.append((regular[i + 2], enum_type))
 
-            flection.append((regular[i + 2], enum_type))
-
-        for filter_word in self._get_filters(filters):
-            flection.append(filter_word)
+            for filter_word in self._get_filters(filters):
+                flection.append(filter_word)
 
         return flection
 
     def _get_filters(self, filters):
+        filter = self._get_my_filter(filters)
         filter_words = []
-        for i in range(len(filters)):
-            if i % 2 == 0 and self.basic_form != filters[i] and '#' not in filters[i]:
-                filter_words.append((filters[i], filters[i + 1]))
+        if filter:
+            for word, flectional_label in self.pairwise(filter):
+                if flectional_label not in {"#", "*"}:
+                    filter_words.append((word, flectional_label))
         return filter_words
+
+    def _get_my_filter(self, filters):
+        for filter in filters:
+            if self.flectional_label == filter[1]:
+                return filter
+
+    @staticmethod
+    def pairwise(list_):
+        "s -> (s0, s1), (s2, s3), (s4, s5), ..."
+        a = iter(list_)
+        return zip(a, a)
