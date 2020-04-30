@@ -6,8 +6,28 @@ class MultiSegment:
         self.line = line
 
     def __repr__(self):
-        #TODO change repr
-        return str(self.line)
+        line = []
+        for i in range(len(self.line)):
+            line += self.line[i].split(' ')
+
+        for i in range(len(line) - 1, -1, -1):
+            if line[i] == '' or line[i] == '$' or line[i] == '#':
+                line.pop(i)
+            else:
+                is_label = True
+                for j in range(len(line[i])):
+                    if line[i][j] == '*':
+                        is_label = True
+                        break
+                    elif ord(line[i][j]) > 90 or ord(line[i][j]) < 60:
+                        is_label = False
+                        break
+                if is_label:
+                    line.pop(i)
+        multi_segment = ''
+        for word in line:
+            multi_segment += word + ' '
+        return multi_segment
 
 
 class Lexeme:
