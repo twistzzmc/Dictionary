@@ -7,8 +7,7 @@ class MultiSegment:
 
     def __repr__(self):
         line = []
-        for i in range(len(self.line)):
-            line += self.line[i].split(' ')
+        line += self.line[0].split(' ')
 
         for i in range(len(line) - 1, -1, -1):
             if line[i] == '' or line[i] == '$' or line[i] == '#':

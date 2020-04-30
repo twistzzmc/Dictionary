@@ -8,7 +8,7 @@ if __name__ == "__main__":
     file_types = [0, 1, 2, 1, 1]
     bt = DictLib(files, file_types)  # creates WordLib structure
     # bt.print_word("amatorsko")
-    biel = bt.find("bielić")
+    biel = bt.find("biały")
     for b in biel:
         print(b)
 
