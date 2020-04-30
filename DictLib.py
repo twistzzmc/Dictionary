@@ -254,6 +254,14 @@ class DictLib:
                     if regular[1] == l[1]:
                         lexemes.append(Lexeme(regular, basic_form_lines[1], basic_form_lines[2]))
 
+        if len(lines[0]) == 0:
+            print("No regular word found in association!")
+            if len(lines[1]) == 0:
+                print("Also NO filters were found!")
+            if len(lines[2]) == 0:
+                print("Also NO multi segment associations were found!")
+            return [Lexeme(None, lines[1], lines[2])]
+
         return lexemes
 
     # Used for tests for the alternative pygtrie library (slower but more convenient)

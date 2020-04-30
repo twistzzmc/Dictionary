@@ -8,16 +8,18 @@ if __name__ == "__main__":
     file_types = [0, 1, 2, 1, 1]
     bt = DictLib(files, file_types)  # creates WordLib structure
     # bt.print_word("amatorsko")
-    bt.find("biel")
+    biel = bt.find("wolno")
+    for b in biel:
+        print(b)
 
     # bt.print_word("biały")
 
     # bt.save()
     # dl = bt.load()
-    print("Załadowany")
-    while True:
-        input_ = input()
-        if input_ == "exit":
-            break
-        bt.find(input_)
-    bt.delete()
+    # print("Załadowany")
+    # while True:
+    #     input_ = input()
+    #     if input_ == "exit":
+    #         break
+    #     bt.find(input_)
+    # bt.delete()
