@@ -30,7 +30,7 @@ class Labels(Enum):
         return switcherToName.get(self)
 
     @staticmethod
-    def _get_label_from_flectional_label(flectional_label):
+    def get_label_from_flectional_label(flectional_label):
         label_string = flectional_label.strip()
         label_string = flectional_label.strip('*')[0]
         return Labels(label_string)

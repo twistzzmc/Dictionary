@@ -11,13 +11,13 @@ if __name__ == "__main__":
     bt.find("biel")
 
     # bt.print_word("biały")
-    #
+
     # bt.save()
     # dl = bt.load()
-    # print("Załadowany")
-    # while True:
-    #     input_ = input()
-    #     if input_ == "exit":
-    #         break
-    #     dl.print_word(input_)
-    # dl.delete()
+    print("Załadowany")
+    while True:
+        input_ = input()
+        if input_ == "exit":
+            break
+        bt.find(input_)
+    bt.delete()
