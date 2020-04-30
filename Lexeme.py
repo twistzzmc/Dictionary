@@ -78,15 +78,15 @@ class Lexeme:
 
         return flection
 
-    @staticmethod
-    def _get_filters(filters):
+    def _get_filters(self, filters):
         filter_words = []
         for filter_line in filters:
             for i in range(0, len(filter_line), 2):
-                if '#' not in filter_line[i] and '#' not in filter_line[i + 1]:
-                    filter_words.append((filter_line[i], filter_line[i + 1]))
-                elif '#' not in filter_line[i]:
-                    filter_words.append((filter_line[i], None))
+                if self.basic_form != filter_line[i]:
+                    if '#' not in filter_line[i] and '#' not in filter_line[i + 1]:
+                        filter_words.append((filter_line[i], filter_line[i + 1]))
+                    elif '#' not in filter_line[i]:
+                        filter_words.append((filter_line[i], None))
         return filter_words
 
     # def _get_filters(self, filters):

@@ -2,5 +2,5 @@ dużo: *FA:więcej:#:najwięcej:#:
 szybko:*FA:szybciej:#:najszybciej:#:
 wolno:*FA:wolniej:#:najwolniej:#:
 dobrze:*FB:lepiej:#:najlepiej:#:
-źle:FB:gorzej:#:najgorzej::
+źle:FB:gorzej:#:najgorzej:#:
 biało:*FA:bielej:#:najbielej:#:
