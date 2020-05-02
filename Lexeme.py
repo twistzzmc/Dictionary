@@ -77,10 +77,12 @@ class Lexeme:
     #                 filter_words.append((word, flectional_label))
     #     return filter_words
     #
-    # def _get_my_filter(self, filters):
-    #     for filter in filters:
-    #         if self.flectional_label == filter[1]:
-    #             return filter
+    def _get_my_filters(self, filters):
+        my_filters = []
+        for filter in filters:
+            if self.flectional_label == filter[1]:
+                my_filters.append(filter)
+        return my_filters
 
     @staticmethod
     def pairwise(list_):
@@ -104,7 +106,7 @@ class NounLexeme(Lexeme):  # Rzeczownik
     def __init__(self, regular, filter_structure, multi_segments=None):
         super().__init__(regular, multi_segments)
         self.label = Labels.RZECZOWNIK
-        self.is_gerundive = False
+        self.gerundive = False
         print(regular)
         for index, word in enumerate(regular):
             if index in {0, 1}:
@@ -117,6 +119,12 @@ class NounLexeme(Lexeme):  # Rzeczownik
 
     def __repr__(self):
         return f"{super().__repr__()}\n Czasownik: {self.verb_data}"
+
+    def get_verb_data(self):
+        return self.verb_data
+
+    def is_gerundive(self):
+        return self.gerundive
 
 
 class VerbLexeme(Lexeme):  # Czasownik
