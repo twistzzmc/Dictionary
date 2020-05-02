@@ -1,4 +1,6 @@
 import marisa_trie as mt
+
+from Filters import FilterStructure, Filters
 from Parser import *
 from Labels import Forms
 from Lexeme import Lexeme
@@ -132,7 +134,7 @@ class DictLib:
             if i == 0:
                 print("Regulars:")
                 for line in l:
-                    print(forms.get_forms_values(line, word))
+                    # print(forms.get_forms_values(line, word))
                     print("Forma podstawowa:", line[0])
                     print(line)
             else:
@@ -266,21 +268,8 @@ class DictLib:
 
     # Used for tests for the alternative pygtrie library (slower but more convenient)
 
-    # @staticmethod
-    # def pygtrie_tests():
-    #     regulars = parse_regular_file('files/pospolite (1).txt')
-    #
-    #     pg = pygtrie.StringTrie()
-    #
-    #     for i in range(len(regulars)):
-    #         for j in range(1, len(regulars[i])):
-    #             if j == 1 or '#' in regulars[i][j]:
-    #                 continue
-    #             if regulars[i][j] not in pg:
-    #                 word_node = WordNode()
-    #                 word_node.regulars.append(i)
-    #                 pg.update([(regulars[i][j], word_node)])
-    #             else:
-    #                 word_node = pg.get(regulars[i][j])
-    #                 if i not in word_node.regulars:
-    #                     word_node.regulars.append(i)
+    @staticmethod
+    def get_filter_structure_of_kind(filter_kind, filter_structures):
+        for filter_structure in filter_structures:
+            if filter_structure.filter_kind == filter_kind:
+                return filter_structure
