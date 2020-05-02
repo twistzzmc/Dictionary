@@ -2,8 +2,9 @@ import marisa_trie as mt
 
 from Filters import FilterStructure, Filters
 from Parser import *
-from Labels import Forms
-from Lexeme import Lexeme
+from Labels import Forms, Labels
+from Lexeme import Lexeme, NounLexeme, VerbLexeme, AdjectiveLexeme, NumeralLexeme, PronounLexeme, AdverbLexeme
+from Lexeme import UninflectedLexeme, TextLexeme, AcronymLexeme
 import os
 import pickle
 
@@ -245,17 +246,8 @@ class DictLib:
 
         lexemes = []
         for l in lines[0]:
-            if word == l[0]:
-                lexemes.append(Lexeme.get_lexeme(l, lines[1], lines[2]))
-            else:
-                basic_form_string = self.binary_trie.get(l[0])
-                basic_form_string = WordNode.unpack_from_string(basic_form_string)
-                basic_form_lines = self.get_lines(basic_form_string)
-
-                for regular in basic_form_lines[0]:
-                    if regular[1] == l[1]:
-                        lexemes.append(Lexeme.get_lexeme(regular, basic_form_lines[1], basic_form_lines[2]))
-
+            lexemes.append(self.get_lexem(l[0], l[1]))
+        #  tworzenie przysłówków dla wyższych form
         if len(lines[0]) == 0:
             print("No regular word found in association!")
             if len(lines[1]) == 0:
@@ -266,7 +258,53 @@ class DictLib:
 
         return lexemes
 
-    # Used for tests for the alternative pygtrie library (slower but more convenient)
+    def get_lexem(self, word, flectional_label):
+        string = self.binary_trie.get(word)
+        string = WordNode.unpack_from_string(string)
+        lines = self.get_lines(string)
+        for line in lines[0]:
+            if line[1] == flectional_label:
+                regular = line
+                break
+        multi_segments = lines[2]
+        filters = []
+        for filter in lines[1]:
+            for word, f_label in Lexeme.pairwise(filter):
+                if f_label == flectional_label:
+                    filters.append(filter)
+        filter_structures = FilterStructure.get_filter_structures(filters)
+        label = Labels.get_label_from_flectional_label(flectional_label)
+        if label == Labels.RZECZOWNIK:
+            structure = self.get_filter_structure_of_kind(Filters.ParticiplesAndGerundive, filter_structures)
+            return NounLexeme(regular, structure, multi_segments)
+        elif label == Labels.CZASOWNIK:
+            structure = self.get_filter_structure_of_kind(Filters.ParticiplesAndGerundive, filter_structures)
+            if not structure:  # brak filtra z gerundivem
+                structure = self.get_filter_structure_of_kind(Filters.Participles, filter_structures)
+            return VerbLexeme(regular, structure, multi_segments)
+        elif label == Labels.PRZYMIOTNIK:
+            structure = self.get_filter_structure_of_kind(Filters.AdjectionComparison, filter_structures)  # stopniowalny
+            if not structure:  # imiesłów przymiotnikowy
+                structure = self.get_filter_structure_of_kind(Filters.ParticiplesAndGerundive, filter_structures)
+                if not structure:
+                    structure = self.get_filter_structure_of_kind(Filters.Participles, filter_structures)
+            return AdjectiveLexeme(regular, structure, multi_segments)
+        elif label == Labels.LICZEBNIK:
+            return NumeralLexeme(regular, None, multi_segments)
+        elif label == Labels.ZAIMEK:
+            return PronounLexeme(regular, None, multi_segments)
+        elif label == Labels.PRZYSLOWEK:
+            structure = self.get_filter_structure_of_kind(Filters.AdverbComparison, filter_structures)
+            return AdverbLexeme(regular, structure, multi_segments)
+        elif label == Labels.NIEODMIENNY:
+            structure = self.get_filter_structure_of_kind(Filters.ParticiplesAndGerundive, filter_structures)
+            if not structure:
+                structure = self.get_filter_structure_of_kind(Filters.Participles, filter_structures)
+            return UninflectedLexeme(regular, structure, multi_segments)
+        elif label == 'H':
+            return AcronymLexeme(regular, None, multi_segments)
+        else:
+            return TextLexeme(regular, None, multi_segments)
 
     @staticmethod
     def get_filter_structure_of_kind(filter_kind, filter_structures):
