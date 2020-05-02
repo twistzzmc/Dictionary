@@ -1,6 +1,5 @@
 from enum import Enum
 from Labels import Labels, Przyslowek, Przymiotnik, Czasownik
-from Lexeme import Lexeme
 
 
 class Filters(Enum):
@@ -12,6 +11,7 @@ class Filters(Enum):
 
 class FilterStructure:
     forms = dict()
+    filter_kind = None
 
     def __init__(self, filter):
         label_of_first = Labels.get_label_from_flectional_label(filter[1])
@@ -37,9 +37,13 @@ class FilterStructure:
                 self.filter_kind = Filters.ParticiplesAndGerundive
                 self.forms[Czasownik.Gerundive] = (filter[10], filter[11])
 
+    def __repr__(self):
+        return str(self.forms) + str(self.filter_kind)
+
     @staticmethod
     def get_filter_structures(filters):
         filter_structures = []
         for filter in filters:
-            filter_structures.append(FilterStructure(filter))
+            filter_structure = FilterStructure(filter)
+            filter_structures.append(filter_structure)
         return filter_structures
