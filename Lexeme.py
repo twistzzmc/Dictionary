@@ -1,5 +1,5 @@
-from Labels import Labels
-from abc import ABC, abstractmethod
+from Labels import Labels, Przyslowek
+
 
 class MultiSegment:
     def __init__(self, line):
@@ -30,17 +30,15 @@ class MultiSegment:
 
 
 class Lexeme:
-    def __init__(self, regular, filters=None, multi_segments=None):
+    def __init__(self, regular, multi_segments=None):
         if regular is not None:
             self.basic_form = regular[0]
             self.flectional_label = regular[1]
-            self.label = Labels.get_label_from_flectional_label(regular[1])
-            self.flection = self._handle_flection(regular, filters)
         else:
             self.basic_form = "None"
             self.flectional_label = "None"
             self.label = "None"
-            self.flection = self._get_filters(filters)
+            self.flection = "None"
         self.multi_segments = [MultiSegment(multi_segment) for multi_segment in multi_segments]
 
         # print(self.basic_form, self.flectional_label, self.label)
@@ -121,15 +119,12 @@ class Lexeme:
         return zip(a, a)
 
     def __repr__(self):
-        lexeme = f"Basic form --- {self.basic_form}\nLabel --- {self.flectional_label} --- {str(self.label)}"
-        lexeme += "\nOther flections: \n"
-        for flection in self.flection:
-            lexeme += "\t" + flection[0] + " --- " + str(flection[1]) + "\n"
-
-        lexeme += "Multi segments: \n"
-        for multi_segment in self.multi_segments:
-            lexeme += "\t" + str(multi_segment) + "\n"
-        return lexeme + "\n\n"
+        lexeme = f"Basic form --- {self.basic_form}\nLabel --- {self.flectional_label}"
+        if self.multi_segments:
+            lexeme += "Multi segments: \n"
+            for multi_segment in self.multi_segments:
+                lexeme += f"\t{str(multi_segment)}"
+        return lexeme
 
 
 class NounLexeme(Lexeme):  # Rzeczownik
@@ -140,10 +135,6 @@ class NounLexeme(Lexeme):  # Rzeczownik
 class VerbLexeme(Lexeme):  # Czasownik
     def __init__(self, regular, filters=None, multi_segments=None):
         super().__init__(regular, filters, multi_segments)
-
-    def get_Present_Adverbial_Participle_lexeme(self):
-        # TODO
-        return None
 
 
 class AdjectiveLexeme(Lexeme):  # Przymiotnik
@@ -162,8 +153,23 @@ class PronounLexeme(Lexeme):  # Zaimek
 
 
 class AdverbLexeme(Lexeme):  # Przysłówek
-    def __init__(self, regular, filters=None, multi_segments=None):
-        super().__init__(regular, filters, multi_segments)
+    def __init__(self, regular, filter_structure, multi_segments=None):
+        super().__init__(regular, multi_segments)
+        self.is_gradable = False
+        flection = list()
+        flection.append((regular[0], Przyslowek.Positive_Form))
+        if filter_structure:
+            self.is_gradable = True
+            flection.append((filter_structure.forms[Przyslowek.Comparative_Form][0], Przyslowek.Comparative_Form))
+            flection.append((filter_structure.forms[Przyslowek.Superlative_Form][0], Przyslowek.Superlative_Form))
+        self.flection = flection
+
+    def __repr__(self):
+        lexeme = super().__repr__()
+        lexeme += "\nFlections: \n"
+        for flection in self.flection:
+            lexeme += "\t" + flection[0] + " --- " + str(flection[1]) + "\n"
+        return lexeme
 
 
 class UninflectedLexeme(Lexeme):  # Nieodmienne
