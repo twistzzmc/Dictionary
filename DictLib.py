@@ -236,7 +236,7 @@ class DictLib:
         string = self.binary_trie.get(word)
         if string is None:
             print("Word \"" + word + "\" not found!")
-            return
+            return []
 
         string = WordNode.unpack_from_string(string)
         lines = self.get_lines(string)
