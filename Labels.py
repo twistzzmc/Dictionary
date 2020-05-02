@@ -30,6 +30,8 @@ class Labels(Enum):
     def get_label_from_flectional_label(flectional_label):
         label_string = flectional_label.strip()
         label_string = flectional_label.strip('*')[0]
+        if label_string not in set('ABCDEFGHI'):
+            return None
         return Labels(label_string)
 
     def get_enum(self, index):

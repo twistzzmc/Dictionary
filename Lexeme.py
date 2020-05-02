@@ -1,5 +1,5 @@
 from Labels import Labels
-
+from abc import ABC, abstractmethod
 
 class MultiSegment:
     def __init__(self, line):
@@ -54,20 +54,24 @@ class Lexeme:
 
     @staticmethod
     def get_lexeme(regular, filters=None, multi_segments=None):
-        label = regular[1].strip('*')[0] if regular is not None else None
+        label = Labels.get_label_from_flectional_label(regular[1]) if regular else None
 
-        if label == 'B':
-            return LexemeVerb(regular, filters, multi_segments)
-        elif label == 'A':
-            return LexemeNoun(regular, filters, multi_segments)
+        if label == 'A':
+            return NounLexeme(regular, filters, multi_segments)
+        elif label == 'B':
+            return VerbLexeme(regular, filters, multi_segments)
         elif label == 'C':
-            return LexemeAdjective(regular, filters, multi_segments)
+            return AdjectiveLexeme(regular, filters, multi_segments)
+        elif label == 'D':
+            return NumeralLexeme(regular, filters, multi_segments)
+        elif label == 'E':
+            return PronounLexeme(regular, filters, multi_segments)
         elif label == 'F':
-            return LexemeAdverb(regular, filters, multi_segments)
-        elif label == 'DONT KNOW':
-            return LexemeParticiple(regular, filters, multi_segments)
+            return AdverbLexeme(regular, filters, multi_segments)
         elif label == 'G':
-            return LexemeUninflected(regular, filters, multi_segments)
+            return UninflectedLexeme(regular, filters, multi_segments)
+        elif label == 'H':
+            return AcronymLexeme(regular, filters, multi_segments)
         else:
             return Lexeme(regular, filters, multi_segments)
 
@@ -117,7 +121,7 @@ class Lexeme:
         return zip(a, a)
 
     def __repr__(self):
-        lexeme = "Basic for --- " + self.basic_form + "\nLabel --- " + self.flectional_label + " --- " + str(self.label)
+        lexeme = f"Basic form --- {self.basic_form}\nLabel --- {self.flectional_label} --- {str(self.label)}"
         lexeme += "\nOther flections: \n"
         for flection in self.flection:
             lexeme += "\t" + flection[0] + " --- " + str(flection[1]) + "\n"
@@ -128,7 +132,12 @@ class Lexeme:
         return lexeme + "\n\n"
 
 
-class LexemeVerb(Lexeme):  # Czasownik
+class NounLexeme(Lexeme):  # Rzeczownik
+    def __init__(self, regular, filters=None, multi_segments=None):
+        super().__init__(regular, filters, multi_segments)
+
+
+class VerbLexeme(Lexeme):  # Czasownik
     def __init__(self, regular, filters=None, multi_segments=None):
         super().__init__(regular, filters, multi_segments)
 
@@ -137,26 +146,36 @@ class LexemeVerb(Lexeme):  # Czasownik
         return None
 
 
-class LexemeNoun(Lexeme):  # Rzeczownik
+class AdjectiveLexeme(Lexeme):  # Przymiotnik
     def __init__(self, regular, filters=None, multi_segments=None):
         super().__init__(regular, filters, multi_segments)
 
 
-class LexemeAdjective(Lexeme):  # Przymiotnik
+class NumeralLexeme(Lexeme):  # Liczebnik
+    def __init__(self, regular, filters=None, mulit_segments=None):
+        super().__init__(regular, filters, mulit_segments)
+
+
+class PronounLexeme(Lexeme):  # Zaimek
+    def __init__(self, regular, filters=None, mulit_segments=None):
+        super().__init__(regular, filters, mulit_segments)
+
+
+class AdverbLexeme(Lexeme):  # Przysłówek
     def __init__(self, regular, filters=None, multi_segments=None):
         super().__init__(regular, filters, multi_segments)
 
 
-class LexemeAdverb(Lexeme):  # Przysłówek
+class UninflectedLexeme(Lexeme):  # Nieodmienne
     def __init__(self, regular, filters=None, multi_segments=None):
         super().__init__(regular, filters, multi_segments)
 
 
-class LexemeParticiple(Lexeme):  # Imiesłów
+class TextLexeme(Lexeme):  # Text
     def __init__(self, regular, filters=None, multi_segments=None):
         super().__init__(regular, filters, multi_segments)
 
 
-class LexemeUninflected(Lexeme):  # Nieodmienne
+class AcronymLexeme(Lexeme):  # Skrótowiec, Akronim
     def __init__(self, regular, filters=None, multi_segments=None):
         super().__init__(regular, filters, multi_segments)
