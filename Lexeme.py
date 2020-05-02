@@ -1,4 +1,4 @@
-from Labels import Labels, Przyslowek
+from Labels import Labels, Przyslowek, Czasownik, Forms
 
 
 class MultiSegment:
@@ -41,38 +41,6 @@ class Lexeme:
             self.label = "None"
             self.flection = "None"
         self.multi_segments = [MultiSegment(multi_segment) for multi_segment in multi_segments]
-
-        # print(self.basic_form, self.flectional_label, self.label)
-        # print(self.flection)
-        # print(self.multi_segments)
-        #
-        # print(regular)
-        # print(filters)
-        # print(multi_segments)
-        # print()
-
-    @staticmethod
-    def get_lexeme(regular, filters=None, multi_segments=None):
-        label = Labels.get_label_from_flectional_label(regular[1]) if regular else None
-
-        if label == 'A':
-            return NounLexeme(regular, filters, multi_segments)
-        elif label == 'B':
-            return VerbLexeme(regular, filters, multi_segments)
-        elif label == 'C':
-            return AdjectiveLexeme(regular, filters, multi_segments)
-        elif label == 'D':
-            return NumeralLexeme(regular, filters, multi_segments)
-        elif label == 'E':
-            return PronounLexeme(regular, filters, multi_segments)
-        elif label == 'F':
-            return AdverbLexeme(regular, filters, multi_segments)
-        elif label == 'G':
-            return UninflectedLexeme(regular, filters, multi_segments)
-        elif label == 'H':
-            return AcronymLexeme(regular, filters, multi_segments)
-        else:
-            return Lexeme(regular, filters, multi_segments)
 
     def _handle_flection(self, regular, filters):
         flection = []
@@ -133,8 +101,22 @@ class Lexeme:
 
 
 class NounLexeme(Lexeme):  # Rzeczownik
-    def __init__(self, regular, filters=None, multi_segments=None):
-        super().__init__(regular, filters, multi_segments)
+    def __init__(self, regular, filter_structure, multi_segments=None):
+        super().__init__(regular, multi_segments)
+        self.label = Labels.RZECZOWNIK
+        self.is_gerundive = False
+        print(regular)
+        for index, word in enumerate(regular):
+            if index in {0, 1}:
+                continue
+            self.flection.append((word, self.label.get_enum(index - 2)))
+        if Czasownik.Gerundive in filter_structure.forms.keys():
+            self.is_gerundive = True
+            self.flection.append((filter_structure.forms[Czasownik.Infinitive][0], Czasownik.Infinitive))
+            self.verb_data = filter_structure.forms[Czasownik.Infinitive]
+
+    def __repr__(self):
+        return f"{super().__repr__()}\n Czasownik: {self.verb_data}"
 
 
 class VerbLexeme(Lexeme):  # Czasownik
@@ -161,13 +143,11 @@ class AdverbLexeme(Lexeme):  # Przysłówek
     def __init__(self, regular, filter_structure, multi_segments=None):
         super().__init__(regular, multi_segments)
         self.is_gradable = False
-        flection = list()
-        flection.append((regular[0], Przyslowek.Positive_Form))
+        self.flection.append((regular[0], Przyslowek.Positive_Form))
         if filter_structure:
             self.is_gradable = True
-            flection.append((filter_structure.forms[Przyslowek.Comparative_Form][0], Przyslowek.Comparative_Form))
-            flection.append((filter_structure.forms[Przyslowek.Superlative_Form][0], Przyslowek.Superlative_Form))
-        self.flection = flection
+            self.flection.append((filter_structure.forms[Przyslowek.Comparative_Form][0], Przyslowek.Comparative_Form))
+            self.flection.append((filter_structure.forms[Przyslowek.Superlative_Form][0], Przyslowek.Superlative_Form))
 
 
 class UninflectedLexeme(Lexeme):  # Nieodmienne
