@@ -34,6 +34,7 @@ class Lexeme:
         if regular is not None:
             self.basic_form = regular[0]
             self.flectional_label = regular[1]
+            self.flection = []
         else:
             self.basic_form = "None"
             self.flectional_label = "None"
@@ -89,7 +90,8 @@ class Lexeme:
 
     def _get_filters(self, filters):
         filter_words = []
-        for filter_line in filters:
+        my_filters = self._get_my_filters(filters)
+        for filter_line in my_filters:
             for i in range(0, len(filter_line), 2):
                 if self.basic_form != filter_line[i]:
                     if '#' not in filter_line[i] and '#' not in filter_line[i + 1]:
@@ -119,7 +121,10 @@ class Lexeme:
         return zip(a, a)
 
     def __repr__(self):
-        lexeme = f"Basic form --- {self.basic_form}\nLabel --- {self.flectional_label}"
+        lexeme = f"Basic form --- {self.basic_form}\nLabel --- {self.flectional_label}\n"
+        lexeme += "Flections: \n"
+        for flection in self.flection:
+            lexeme += "\t" + flection[0] + " --- " + str(flection[1]) + "\n"
         if self.multi_segments:
             lexeme += "Multi segments: \n"
             for multi_segment in self.multi_segments:
@@ -163,13 +168,6 @@ class AdverbLexeme(Lexeme):  # Przysłówek
             flection.append((filter_structure.forms[Przyslowek.Comparative_Form][0], Przyslowek.Comparative_Form))
             flection.append((filter_structure.forms[Przyslowek.Superlative_Form][0], Przyslowek.Superlative_Form))
         self.flection = flection
-
-    def __repr__(self):
-        lexeme = super().__repr__()
-        lexeme += "\nFlections: \n"
-        for flection in self.flection:
-            lexeme += "\t" + flection[0] + " --- " + str(flection[1]) + "\n"
-        return lexeme
 
 
 class UninflectedLexeme(Lexeme):  # Nieodmienne
