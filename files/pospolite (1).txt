@@ -69,14 +69,14 @@ dwaj :  *DABAB:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#
 dwie :  *DABCA:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:dwie:dwu:dwu:dwie:dwiema:dwu:dwie:
 dwie :  *DABCB:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:dwie:dwóch:dwom:dwie:dwoma:dwóch:dwie:
 dyrektor :  *AAACAAAB:dyrektor:dyrektora:dyrektorowi:dyrektora:dyrektorem:dyrektorze:dyrektorze:dyrektorzy:dyrektorów:dyrektorom:dyrektorów:dyrektorami:dyrektorach:dyrektorzy:
-grzmiąc:G:grzmiąc
+grzmiąc:G:grzmiąc:
 grzmiący:CAA:grzmiący:grzmiącego:grzmiącemu:grzmiącego:grzmiącym:grzmiącym:grzmiący:grzmiący:grzmiącego:grzmiącemu:grzmiący:grzmiącym:grzmiącym:grzmiący:grzmiąca:grzmiącej:grzmiącej:grzmiącą:grzmiącą:grzmiącej:grzmiąca:grzmiące:grzmiącego:grzmiącemu:grzmiące:grzmiącym:grzmiącym:grzmiące:grzmiący:grzmiących:grzmiącym:grzmiących:grzmiącymi:grzmiących:grzmiący:grzmiące:grzmiących:grzmiącym:grzmiące:grzmiącymi:grzmiących:grzmiące:grzmiący:grzmiący:
 grzmieć :  *BBBB:grzmieć:grzmię:grzmisz:grzmi:grzmimy:grzmicie:grzmią:grzmij:##:grzmijmy:grzmijcie:##:grzmiąc:grzmiący:grzmiałem:grzmiałeś:grzmiał:grzmiałam:grzmiałaś:grzmiała:grzmiałom:grzmiałoś:grzmiało:grzmieliśmy:grzmieliście:grzmieli:grzmiałyśmy:grzmiałyście:grzmiały:grzmiałbym:grzmiałbyś:grzmiałby:grzmiałabym:grzmiałabyś:grzmiałaby:grzmiałobym:grzmiałobyś:grzmiałoby:grzmielibyśmy:grzmielibyście:grzmieliby:grzmiałybyśmy:grzmiałybyście:grzmiałyby:grzmiano:grzmiany:grzmiawszy:
 grzmieć :  *BGG:grzmieć:#:#:grzmi:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:#:grzmiało:#:#:#:#:#:#:#:#:#:#:#:#:#:#:grzmiałoby:#:#:#:#:#:#:##:#:#:
 grzmienie:ABCA:grzmienie:grzmienia:grzmieniu:grzmienie:grzmieniem:grzmieniu:grzmienie:grzmienia:grzmień:grzmieniom:grzmienia:grzmieniami:grzmieniach:grzmienia:
 i :  *GBBAB:i:
 jeść :  *BDD:jeść:jem:jesz:je:jemy:jecie:jedzą:jedz:##:jedzmy:jedzcie:##:jedząc:jedzący:jadłem:jadłeś:jadł:jadłam:jadłaś:jadła:jadłom:jadłoś:jadło:jedliśmy:jedliście:jedli:jadłyśmy:jadłyście:jadły:jadłbym:jadłbyś:jadłby:jadłabym:jadłabyś:jadłaby:jadłobym:jadłobyś:jadłoby:jedlibyśmy:jedlibyście:jedliby:jadłybyśmy:jadłybyście:jadłyby:jedzono:jedzony:jadłszy:
-jedząc:G:jedząc
+jedząc:G:jedząc:
 jedzący:CAA:jedzący:jedzącego:jedzącemu:jedzącego:jedzącym:jedzącym:jedzący:jedzący:jedzącego:jedzącemu:jedzący:jedzącym:jedzącym:jedzący:jedząca:jedzącej:jedzącej:jedzącą:jedzącą:jedzącej:jedząca:jedzące:jedzącego:jedzącemu:jedzące:jedzącym:jedzącym:jedzące:jedzący:jedzących:jedzącym:jedzących:jedzącymi:jedzących:jedzący:jedzące:jedzących:jedzącym:jedzące:jedzącymi:jedzących:jedzące:jedzący:jedzący:
 jedzenie:ABCA:jedzenie:jedzenia:jedzeniu:jedzenie:jedzeniem:jedzeniu:jedzenie:jedzenia:jedzeń:jedzeniom:jedzenia:jedzeniami:jedzeniach:jedzenia:
 jedzony:CAB:jedzony:jedzonego:jedzonemu:jedzonego:jedzonym:jedzonym:jedzony:jedzony:jedzonego:jedzonemu:jedzony:jedzonym:jedzonym:jedzony:jedzona:jedzonej:jedzonej:jedzoną:jedzoną:jedzonej:jedzona:jedzone:jedzonego:jedzonemu:jedzone:jedzonym:jedzonym:jedzone:jedzeni:jedzonych:jedzonym:jedzonych:jedzonymi:jedzonych:jedzeni:jedzone:jedzonych:jedzonym:jedzone:jedzonymi:jedzonych:jedzone:jedzeńszy:jedzeńszy:
