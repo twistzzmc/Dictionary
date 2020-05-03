@@ -7,7 +7,7 @@ napić się:BAFB:#:#:#:#:#:#:napiwszy:G:
 brak:BFBA:#:#:#:#:#:#:#:#:
 padać:BDA:padając:G:padający:CAA:#:#:#:#:
 padać:BGA:#:#:#:#:#:#:#:#:
-grzmieć:BBBB:grzmiąc:G:grzmiący:CAA:#:#:#:#
+grzmieć:BBBB:grzmiąc:G:grzmiący:CAA:#:#:#:#:
 grzmieć:BGG:#:#:#:#:#:#:#:#:
 abdykować:BAAA:abdykując:G:abdykujący:CAA:#:#:abdykowawszy:G:
 ślubować:BAAA:ślubując:G:ślubujący:CAA:ślubowany:CAB:ślubowawszy:G:

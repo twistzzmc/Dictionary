@@ -1,4 +1,4 @@
-from enum import Enum, auto
+from enum import Enum
 
 
 class Labels(Enum):
@@ -30,6 +30,8 @@ class Labels(Enum):
     def get_label_from_flectional_label(flectional_label):
         label_string = flectional_label.strip()
         label_string = flectional_label.strip('*')[0]
+        if label_string not in set('ABCDEFGHI'):
+            return None
         return Labels(label_string)
 
     def get_enum(self, index):
@@ -119,6 +121,9 @@ class Rzeczownik(Enum):
     Plural_Locative = "Liczba mnoga, Miejscownik"
     Plural_Vocative = "Liczba mnoga, Wołacz"
 
+    def __str__(self):
+        return self.value
+
 class Czasownik(Enum):
     Infinitive = "Bezokolicznik"
     Present_1_Singular = "Czas teraźniejszy, 1 osoba liczby pojedynczej"
@@ -168,6 +173,8 @@ class Czasownik(Enum):
     Perfect_Adverbial_Participle = "Imiesłów przysłówkowy uprzedni"
     Gerundive = "Rzeczownik odczasownikowy"
 
+    def __str__(self):
+        return self.value
 
 class Przymiotnik(Enum):
     Singular_Nominative_Masculine_Personal_Animate = "Liczba pojedyncza, Mianownik, rodzaj męski osobowy i męski żywotny"
@@ -217,6 +224,8 @@ class Przymiotnik(Enum):
     Comparative_Form = "Stopień wyższy"
     Superlative_Form = "Stopień najwyższy"
 
+    def __str__(self):
+        return self.value
 
 class Liczebnik(Enum):
     Singular_Nominative_Masculine_Personal = "Liczba pojedyncza, Mianownik, rodzaj męski osobowy"
@@ -269,6 +278,8 @@ class Liczebnik(Enum):
     Plural_Locative_NonMasculine = "Liczba mnoga, Miejscownik, rodzaj niemęskoosobowy"
     Plural_Vocative_NonMasculine = "Liczba mnoga, Wołacz, rodzaj niemęskoosobowy"
 
+    def __str__(self):
+        return self.value
 
 class Zaimek(Enum):
     Singular_Nominative = "Liczba pojedyncza, Mianownik"
@@ -286,8 +297,13 @@ class Zaimek(Enum):
     Plural_Locative = "Liczba mnoga, Miejscownik"
     Plural_Vocative = "Liczba mnoga, Wołacz"
 
+    def __str__(self):
+        return self.value
 
 class Przyslowek(Enum):
     Positive_Form = "Stopień równy"
     Comparative_Form = "Stopień wyższy"
     Superlative_Form = "Stopień najwyższy"
+
+    def __str__(self):
+        return self.value
