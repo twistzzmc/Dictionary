@@ -187,13 +187,13 @@ class AdjectiveLexeme(Lexeme):  # Przymiotnik
 
 
 class NumeralLexeme(Lexeme):  # Liczebnik
-    def __init__(self, regular, filters=None, mulit_segments=None):
-        super().__init__(regular, filters, mulit_segments)
+    def __init__(self, regular, filter_structure, multi_segments=None):
+        super().__init__(regular,  multi_segments)
 
 
 class PronounLexeme(Lexeme):  # Zaimek
-    def __init__(self, regular, filters=None, mulit_segments=None):
-        super().__init__(regular, filters, mulit_segments)
+    def __init__(self, regular, filter_structure, multi_segments=None):
+        super().__init__(regular,  multi_segments)
 
 
 class AdverbLexeme(Lexeme):  # Przysłówek
@@ -217,10 +217,10 @@ class UninflectedLexeme(Lexeme):  # Nieodmienne
             self.flection.append((filter_structure.forms[Czasownik.Infinitive][0], Czasownik.Infinitive))
 
 class TextLexeme(Lexeme):  # Text
-    def __init__(self, regular, filters=None, multi_segments=None):
-        super().__init__(regular, filters, multi_segments)
+    def __init__(self, regular, filter_structure, multi_segments=None):
+        super().__init__(regular,  multi_segments)
 
 
 class AcronymLexeme(Lexeme):  # Skrótowiec, Akronim
-    def __init__(self, regular, filters=None, multi_segments=None):
-        super().__init__(regular, filters, multi_segments)
+    def __init__(self, regular, filter_structure, multi_segments=None):
+        super().__init__(regular,  multi_segments)
