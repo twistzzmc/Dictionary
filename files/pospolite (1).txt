@@ -191,3 +191,4 @@ zjeść :  *BDD:zjeść:zjem:zjesz:zje:zjemy:zjecie:zjedzą:zjedz:##:zjedzmy:zje
 źle : 	FB:źle:gorzej:gorzej:
 zły :  *ABC:zły:złego:złemu:złego:złym:złym:zły:złe:złych:złym:złe:złymi:złych:złe:
 zły :  *CAB:zły:złego:złemu:złego:złym:złym:zły:zły:złego:złemu:zły:złym:złym:zły:zła:złej:złej:złą:złą:złej:zła:złe:złego:złemu:złe:złym:złym:złe:źli:złych:złym:złych:złymi:złych:źli:złe:złych:złym:złe:złymi:złych:złe:gorszy:gorszy:
+pantałyku : H:pantałyku:
