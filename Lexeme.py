@@ -140,9 +140,8 @@ class VerbLexeme(Lexeme):  # Czasownik
             return None
 
     def get_gerundive_data(self):
-        enum = Czasownik.Gerundive
-        if enum in self.participles.keys():
-            return self.participles[enum]
+        if self.gerundive:
+            return self.gerundive
         else:
             return None
 

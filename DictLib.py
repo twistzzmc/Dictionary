@@ -163,17 +163,6 @@ class DictLib:
 
         return words_map
 
-    # @staticmethod
-    # def _parse_filters(filters, words_map):
-    #     for i in range(len(filters)):
-    #         for j in range(len(filters[i])):
-    #             if filters[i][j] not in words_map:
-    #                 words_map[filters[i][j]] = WordNode(filters=[i])
-    #             elif i not in words_map.get(filters[i][j]).filters:
-    #                 words_map.get(filters[i][j]).filters.append(i)
-    #
-    #     return words_map
-
     @staticmethod
     def _parse_filters(filters, words_map):
         for i in range(len(filters)):
