@@ -1,5 +1,5 @@
-from Labels import Labels, Przyslowek, Czasownik, Forms
-
+from Labels import Labels, Przyslowek, Czasownik, Forms, Przymiotnik
+from Filters import Filters
 
 class MultiSegment:
     def __init__(self, line):
@@ -49,7 +49,7 @@ class Lexeme:
         return zip(a, a)
 
     def __repr__(self):
-        lexeme = f"Basic form --- {self.basic_form}\nLabel --- {self.flectional_label}\n"
+        lexeme = f"Basic form --- {self.basic_form}\nLabel --- {self.flectional_label} - {self.label}\n"
         lexeme += "Flections: \n"
         for flection in self.flection:
             lexeme += "\t" + flection[0] + " --- " + str(flection[1]) + "\n"
@@ -59,6 +59,13 @@ class Lexeme:
                 lexeme += f"\t{str(multi_segment)}"
         return lexeme
 
+    @staticmethod
+    def get_key(my_dict, val):
+        for key, value in my_dict.items():
+            if val == value:
+                return key
+        return "key doesn't exist"
+
 
 class NounLexeme(Lexeme):  # Rzeczownik
     def __init__(self, regular, filter_structure, multi_segments=None):
@@ -67,7 +74,8 @@ class NounLexeme(Lexeme):  # Rzeczownik
         for index, word in enumerate(regular):
             if index in {0, 1}:
                 continue
-            self.flection.append((word, self.label.get_enum(index - 2)))
+            if word.isalpha():
+                self.flection.append((word, self.label.get_enum(index - 2)))
         self.gerundive = False
         if filter_structure and Czasownik.Gerundive in filter_structure.forms.keys():
             self.is_gerundive = True
@@ -107,9 +115,6 @@ class VerbLexeme(Lexeme):  # Czasownik
             if Czasownik.Gerundive in filter_structure.forms.keys():
                 self.flection.append((filter_structure.forms[Czasownik.Gerundive][0], Czasownik.Gerundive))
                 self.gerundive = filter_structure.forms[Czasownik.Gerundive]
-
-    def get_participles_enums(self):
-        return self.participles
 
     def get_present_adverbial_participle_data(self):
         enum = Czasownik.Present_Adverbial_Participle
@@ -168,9 +173,14 @@ class AdverbLexeme(Lexeme):  # Przysłówek
         self.is_gradable = False
         self.flection.append((regular[0], Przyslowek.Positive_Form))
         if filter_structure:
-            self.is_gradable = True
-            self.flection.append((filter_structure.forms[Przyslowek.Comparative_Form][0], Przyslowek.Comparative_Form))
-            self.flection.append((filter_structure.forms[Przyslowek.Superlative_Form][0], Przyslowek.Superlative_Form))
+            if filter_structure.filter_kind == Filters.AdjectionComparison:
+                self.is_gradable = True
+                self.flection.append((filter_structure.forms[Przyslowek.Comparative_Form][0], Przyslowek.Comparative_Form))
+                self.flection.append((filter_structure.forms[Przyslowek.Superlative_Form][0], Przyslowek.Superlative_Form))
+            else:  # imiesłów przysłówkowy
+                my_participle = Lexeme.get_key(filter_structure.forms, (self.basic_form, self.flectional_label))
+                self.label = my_participle
+                self.flection.append((filter_structure.forms[Czasownik.Infinitive][0], Czasownik.Infinitive))
 
 
 class UninflectedLexeme(Lexeme):  # Nieodmienne
