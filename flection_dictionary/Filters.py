@@ -1,5 +1,5 @@
 from enum import Enum
-from Labels import Labels, Przyslowek, Przymiotnik, Czasownik
+from flection_dictionary.Labels import Labels, Przyslowek, Przymiotnik, Czasownik
 
 
 class Filters(Enum):

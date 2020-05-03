@@ -1,10 +1,10 @@
 import marisa_trie as mt
 
-from Filters import FilterStructure, Filters
-from Parser import *
-from Labels import Forms, Labels, Przyslowek
-from Lexeme import Lexeme, NounLexeme, VerbLexeme, AdjectiveLexeme, NumeralLexeme, PronounLexeme, AdverbLexeme
-from Lexeme import UninflectedLexeme, TextLexeme, AcronymLexeme
+from flection_dictionary.Filters import FilterStructure, Filters
+from flection_dictionary.Parser import *
+from flection_dictionary.Labels import Forms, Labels, Przyslowek
+from flection_dictionary.Lexeme import Lexeme, NounLexeme, VerbLexeme, AdjectiveLexeme, NumeralLexeme, PronounLexeme, AdverbLexeme
+from flection_dictionary.Lexeme import UninflectedLexeme, TextLexeme, AcronymLexeme
 import os
 import pickle
 

@@ -1,5 +1,5 @@
-from Labels import Labels, Przyslowek, Czasownik, Forms, Przymiotnik
-from Filters import Filters
+from flection_dictionary.Labels import Labels, Przyslowek, Czasownik, Przymiotnik
+from flection_dictionary.Filters import Filters
 
 class MultiSegment:
     def __init__(self, line):
