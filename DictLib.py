@@ -270,7 +270,7 @@ class DictLib:
         filters = []
         for filter in lines[1]:
             for word, f_label in Lexeme.pairwise(filter):
-                if f_label == flectional_label:
+                if f_label.strip('*') == flectional_label.strip('*'):
                     filters.append(filter)
         filter_structures = FilterStructure.get_filter_structures(filters)
         label = Labels.get_label_from_flectional_label(flectional_label)
