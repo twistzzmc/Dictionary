@@ -210,17 +210,34 @@ class AdverbLexeme(Lexeme):  # Przysłówek
 
 class UninflectedLexeme(Lexeme):  # Nieodmienne
     def __init__(self, regular, filter_structure, multi_segments=None):
-        super().__init__(regular,  multi_segments)
+        self.basic_form = regular[0]
+        self.flectional_label = regular[1]
+        self.flection = []
+        self.label = Labels.NIEODMIENNY
         if filter_structure:  # imiesłów przysłówkowy
             my_participle = Lexeme.get_key(filter_structure.forms, (self.basic_form, self.flectional_label))
             self.label = my_participle
+            self.flection.append((regular[2], my_participle))
             self.flection.append((filter_structure.forms[Czasownik.Infinitive][0], Czasownik.Infinitive))
+        else:
+            self.flection.append((regular[2], Labels.NIEODMIENNY))
+        self.multi_segments = [MultiSegment(multi_segment) for multi_segment in multi_segments]
 
 class TextLexeme(Lexeme):  # Text
     def __init__(self, regular, filter_structure, multi_segments=None):
-        super().__init__(regular,  multi_segments)
+        self.basic_form = regular[0]
+        self.flectional_label = regular[1]
+        self.flection = []
+        self.label = Labels.TEKST
+        self.flection.append((regular[2], Labels.TEKST))
+        self.multi_segments = [MultiSegment(multi_segment) for multi_segment in multi_segments]
 
 
 class AcronymLexeme(Lexeme):  # Skrótowiec, Akronim
     def __init__(self, regular, filter_structure, multi_segments=None):
-        super().__init__(regular,  multi_segments)
+        self.basic_form = regular[0]
+        self.flectional_label = regular[1]
+        self.flection = []
+        self.label = Labels.SKROT
+        self.flection.append((regular[2], Labels.SKROT))
+        self.multi_segments = [MultiSegment(multi_segment) for multi_segment in multi_segments]
