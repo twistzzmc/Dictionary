@@ -245,7 +245,7 @@ class DictLib:
         lines = self.get_lines(string)
         lexemes = []
         for l in lines[0]:
-            lexemes.append(self.get_lexem(l[0], l[1]))
+            lexemes.append(self.get_lexem((l[0], l[1])))
 
         if len(lines[1]) != 0:
             filter_structures = FilterStructure.get_filter_structures(lines[1])
@@ -261,7 +261,8 @@ class DictLib:
 
         return lexemes
 
-    def get_lexem(self, word, flectional_label):
+    def get_lexem(self, lexem_data):
+        word, flectional_label = lexem_data
         string = self.binary_trie.get(word)
         string = WordNode.unpack_from_string(string)
         lines = self.get_lines(string)
