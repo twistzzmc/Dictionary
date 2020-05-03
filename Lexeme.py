@@ -45,7 +45,7 @@ class Lexeme:
             self.basic_form = "None"
             self.flectional_label = "None"
             self.label = "None"
-            self.flection = "None"
+            self.flection = []
         self.multi_segments = [MultiSegment(multi_segment) for multi_segment in multi_segments]
 
     @staticmethod
@@ -199,13 +199,18 @@ class PronounLexeme(Lexeme):  # Zaimek
 class AdverbLexeme(Lexeme):  # Przysłówek
     def __init__(self, regular, filter_structure, multi_segments=None):
         super().__init__(regular, multi_segments)
-        self.is_gradable = False
-        self.flection.append((regular[0], Przyslowek.Positive_Form))
         if filter_structure:
-            if filter_structure.filter_kind == Filters.AdjectionComparison:
+            if filter_structure.filter_kind == Filters.AdverbComparison:
                 self.is_gradable = True
-                self.flection.append((filter_structure.forms[Przyslowek.Comparative_Form][0], Przyslowek.Comparative_Form))
-                self.flection.append((filter_structure.forms[Przyslowek.Superlative_Form][0], Przyslowek.Superlative_Form))
+                self.my_grade = Przyslowek.Positive_Form
+                grades = [Przyslowek.Comparative_Form, Przyslowek.Superlative_Form]
+                self.grades = dict()
+                for grade in grades:
+                    self.flection.append((filter_structure.forms[grade][0], grade))
+                    self.grades[grade] = filter_structure.forms[grade]
+        else:  # w pospolite niestopniowalne przysłówki nie mają 3 kolumny :/
+            self.flection.append((regular[0], Przyslowek.Positive_Form))
+            self.is_gradable = False
 
 
 class UninflectedLexeme(Lexeme):  # Nieodmienne
@@ -222,6 +227,7 @@ class UninflectedLexeme(Lexeme):  # Nieodmienne
         else:
             self.flection.append((regular[2], Labels.NIEODMIENNY))
         self.multi_segments = [MultiSegment(multi_segment) for multi_segment in multi_segments]
+
 
 class TextLexeme(Lexeme):  # Text
     def __init__(self, regular, filter_structure, multi_segments=None):
