@@ -35,6 +35,12 @@ class Lexeme:
             self.basic_form = regular[0]
             self.flectional_label = regular[1]
             self.flection = []
+            self.label = Labels.get_label_from_flectional_label(self.flectional_label)
+            for index, word in enumerate(regular):
+                if index in {0, 1}:
+                    continue
+                if word.isalpha():
+                    self.flection.append((word, self.label.get_enum(index - 2)))
         else:
             self.basic_form = "None"
             self.flectional_label = "None"
@@ -70,12 +76,6 @@ class Lexeme:
 class NounLexeme(Lexeme):  # Rzeczownik
     def __init__(self, regular, filter_structure, multi_segments=None):
         super().__init__(regular, multi_segments)
-        self.label = Labels.RZECZOWNIK
-        for index, word in enumerate(regular):
-            if index in {0, 1}:
-                continue
-            if word.isalpha():
-                self.flection.append((word, self.label.get_enum(index - 2)))
         self.gerundive = False
         if filter_structure and Czasownik.Gerundive in filter_structure.forms.keys():
             self.is_gerundive = True
@@ -99,11 +99,6 @@ class VerbLexeme(Lexeme):  # Czasownik
     def __init__(self, regular, filter_structure, multi_segments=None):
         super().__init__(regular,  multi_segments)
         self.label = Labels.CZASOWNIK
-        for index, word in enumerate(regular):
-            if index in {0, 1}:
-                continue
-            if word.isalpha():
-                self.flection.append((word, self.label.get_enum(index - 2)))
         participles = [Czasownik.Present_Adverbial_Participle, Czasownik.Active_Adjectival_Participle,
                        Czasownik.Passive_Adjectival_Participle, Czasownik.Perfect_Adverbial_Participle]
         self.participles = dict()
@@ -155,12 +150,6 @@ class VerbLexeme(Lexeme):  # Czasownik
 class AdjectiveLexeme(Lexeme):  # Przymiotnik
     def __init__(self, regular, filter_structure, multi_segments=None):
         super().__init__(regular,  multi_segments)
-        self.label = Labels.PRZYMIOTNIK
-        for index, word in enumerate(regular):
-            if index in {0, 1}:
-                continue
-            if word.isalpha():
-                self.flection.append((word, self.label.get_enum(index - 2)))
         self.is_gradable = False
         self.is_participle = False
         if filter_structure:
