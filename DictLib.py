@@ -2,7 +2,7 @@ import marisa_trie as mt
 
 from Filters import FilterStructure, Filters
 from Parser import *
-from Labels import Forms, Labels
+from Labels import Forms, Labels, Przyslowek
 from Lexeme import Lexeme, NounLexeme, VerbLexeme, AdjectiveLexeme, NumeralLexeme, PronounLexeme, AdverbLexeme
 from Lexeme import UninflectedLexeme, TextLexeme, AcronymLexeme
 import os
@@ -243,18 +243,21 @@ class DictLib:
 
         string = WordNode.unpack_from_string(string)
         lines = self.get_lines(string)
-
         lexemes = []
         for l in lines[0]:
             lexemes.append(self.get_lexem(l[0], l[1]))
-        #  tworzenie przysłówków dla wyższych form
-        if len(lines[0]) == 0:
-            print("No regular word found in association!")
-            if len(lines[1]) == 0:
-                print("Also NO filters were found!")
-            if len(lines[2]) == 0:
-                print("Also NO multi segment associations were found!")
-            return [Lexeme.get_lexeme(None, lines[1], lines[2])]
+
+        if len(lines[1]) != 0:
+            filter_structures = FilterStructure.get_filter_structures(lines[1])
+            structure = self.get_filter_structure_of_kind(Filters.AdverbComparison, filter_structures)
+            if structure:  # szukanie dla wyższych form przysłówka
+                positive_adverb, f_label = structure.forms[Przyslowek.Positive_Form]
+                if positive_adverb != word:
+                    regular = [positive_adverb, f_label, positive_adverb]
+                    lexemes.append(AdverbLexeme(regular, structure, lines[2]))
+
+        if not lines[0] and not lines[1] and lines[2]:
+                lexemes.append(Lexeme(None, lines[2]))
 
         return lexemes
 
