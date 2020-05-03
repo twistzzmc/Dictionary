@@ -88,8 +88,63 @@ class NounLexeme(Lexeme):  # Rzeczownik
 
 
 class VerbLexeme(Lexeme):  # Czasownik
-    def __init__(self, regular, filters=None, multi_segments=None):
-        super().__init__(regular, filters, multi_segments)
+    def __init__(self, regular, filter_structure, multi_segments=None):
+        super().__init__(regular,  multi_segments)
+        self.label = Labels.CZASOWNIK
+        for index, word in enumerate(regular):
+            if index in {0, 1}:
+                continue
+            if word.isalpha():
+                self.flection.append((word, self.label.get_enum(index - 2)))
+        participles = [Czasownik.Present_Adverbial_Participle, Czasownik.Active_Adjectival_Participle,
+                       Czasownik.Passive_Adjectival_Participle, Czasownik.Perfect_Adverbial_Participle]
+        self.participles = dict()
+        if filter_structure:
+            for participle in participles:
+                if participle in filter_structure.forms.keys():
+                    self.flection.append((filter_structure.forms[participle][0], participle))
+                    self.participles[participle] = filter_structure.forms[participle]
+            if Czasownik.Gerundive in filter_structure.forms.keys():
+                self.flection.append((filter_structure.forms[Czasownik.Gerundive][0], Czasownik.Gerundive))
+                self.gerundive = filter_structure.forms[Czasownik.Gerundive]
+
+    def get_participles_enums(self):
+        return self.participles
+
+    def get_present_adverbial_participle_data(self):
+        enum = Czasownik.Present_Adverbial_Participle
+        if enum in self.participles.keys():
+            return self.participles[enum]
+        else:
+            return None
+
+    def get_active_adjectival_participle_data(self):
+        enum = Czasownik.Active_Adjectival_Participle
+        if enum in self.participles.keys():
+            return self.participles[enum]
+        else:
+            return None
+
+    def get_passive_adjectival_participle_data(self):
+        enum = Czasownik.Passive_Adjectival_Participle
+        if enum in self.participles.keys():
+            return self.participles[enum]
+        else:
+            return None
+
+    def get_perfect_adverbial_participle_data(self):
+        enum = Czasownik.Perfect_Adverbial_Participle
+        if enum in self.participles.keys():
+            return self.participles[enum]
+        else:
+            return None
+
+    def get_gerundive_data(self):
+        enum = Czasownik.Gerundive
+        if enum in self.participles.keys():
+            return self.participles[enum]
+        else:
+            return None
 
 
 class AdjectiveLexeme(Lexeme):  # Przymiotnik
