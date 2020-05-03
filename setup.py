@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="flection_dictionary",
+    name="flection_dict",
     version="0.0.1",
     author="Michał Szczepaniak",
     author_email="michal.szczepaniak1999@gmail.com",
