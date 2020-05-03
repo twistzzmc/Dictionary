@@ -206,16 +206,15 @@ class AdverbLexeme(Lexeme):  # Przysłówek
                 self.is_gradable = True
                 self.flection.append((filter_structure.forms[Przyslowek.Comparative_Form][0], Przyslowek.Comparative_Form))
                 self.flection.append((filter_structure.forms[Przyslowek.Superlative_Form][0], Przyslowek.Superlative_Form))
-            else:  # imiesłów przysłówkowy
-                my_participle = Lexeme.get_key(filter_structure.forms, (self.basic_form, self.flectional_label))
-                self.label = my_participle
-                self.flection.append((filter_structure.forms[Czasownik.Infinitive][0], Czasownik.Infinitive))
 
 
 class UninflectedLexeme(Lexeme):  # Nieodmienne
-    def __init__(self, regular, filters=None, multi_segments=None):
-        super().__init__(regular, filters, multi_segments)
-
+    def __init__(self, regular, filter_structure, multi_segments=None):
+        super().__init__(regular,  multi_segments)
+        if filter_structure:  # imiesłów przysłówkowy
+            my_participle = Lexeme.get_key(filter_structure.forms, (self.basic_form, self.flectional_label))
+            self.label = my_participle
+            self.flection.append((filter_structure.forms[Czasownik.Infinitive][0], Czasownik.Infinitive))
 
 class TextLexeme(Lexeme):  # Text
     def __init__(self, regular, filters=None, multi_segments=None):
