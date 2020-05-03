@@ -42,48 +42,6 @@ class Lexeme:
             self.flection = "None"
         self.multi_segments = [MultiSegment(multi_segment) for multi_segment in multi_segments]
 
-    def _handle_flection(self, regular, filters):
-        flection = []
-        if self.label in {Labels.NIEODMIENNY, Labels.SKROT, Labels.TEKST}:
-            flection.append((regular[2], self.label))
-        else:
-            for i in range(len(regular) - 2):
-                enum_type = self.label.get_enum(i)
-                flection.append((regular[i + 2], enum_type))
-
-            for filter_word in self._get_filters(filters):
-                flection.append(filter_word)
-
-        return flection
-
-    def _get_filters(self, filters):
-        filter_words = []
-        my_filters = self._get_my_filters(filters)
-        for filter_line in my_filters:
-            for i in range(0, len(filter_line), 2):
-                if self.basic_form != filter_line[i]:
-                    if '#' not in filter_line[i] and '#' not in filter_line[i + 1]:
-                        filter_words.append((filter_line[i], filter_line[i + 1]))
-                    elif '#' not in filter_line[i]:
-                        filter_words.append((filter_line[i], None))
-        return filter_words
-
-    # def _get_filters(self, filters):
-    #     filter = self._get_my_filter(filters)
-    #     filter_words = []
-    #     if filter:
-    #         for word, flectional_label in self.pairwise(filter):
-    #             if flectional_label not in {"#", "*"}:
-    #                 filter_words.append((word, flectional_label))
-    #     return filter_words
-    #
-    def _get_my_filters(self, filters):
-        my_filters = []
-        for filter in filters:
-            if self.flectional_label == filter[1]:
-                my_filters.append(filter)
-        return my_filters
-
     @staticmethod
     def pairwise(list_):
         "s -> (s0, s1), (s2, s3), (s4, s5), ..."
@@ -106,19 +64,21 @@ class NounLexeme(Lexeme):  # Rzeczownik
     def __init__(self, regular, filter_structure, multi_segments=None):
         super().__init__(regular, multi_segments)
         self.label = Labels.RZECZOWNIK
-        self.gerundive = False
-        print(regular)
         for index, word in enumerate(regular):
             if index in {0, 1}:
                 continue
             self.flection.append((word, self.label.get_enum(index - 2)))
-        if Czasownik.Gerundive in filter_structure.forms.keys():
+        self.gerundive = False
+        if filter_structure and Czasownik.Gerundive in filter_structure.forms.keys():
             self.is_gerundive = True
             self.flection.append((filter_structure.forms[Czasownik.Infinitive][0], Czasownik.Infinitive))
             self.verb_data = filter_structure.forms[Czasownik.Infinitive]
 
     def __repr__(self):
-        return f"{super().__repr__()}\n Czasownik: {self.verb_data}"
+        result = f"{super().__repr__()}\n"
+        if self.gerundive:
+            result += f"Czasownik: {self.verb_data}"
+        return result
 
     def get_verb_data(self):
         return self.verb_data
