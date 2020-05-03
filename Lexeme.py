@@ -153,8 +153,48 @@ class VerbLexeme(Lexeme):  # Czasownik
 
 
 class AdjectiveLexeme(Lexeme):  # Przymiotnik
-    def __init__(self, regular, filters=None, multi_segments=None):
-        super().__init__(regular, filters, multi_segments)
+    def __init__(self, regular, filter_structure, multi_segments=None):
+        super().__init__(regular,  multi_segments)
+        self.label = Labels.PRZYMIOTNIK
+        for index, word in enumerate(regular):
+            if index in {0, 1}:
+                continue
+            if word.isalpha():
+                self.flection.append((word, self.label.get_enum(index - 2)))
+        self.is_gradable = False
+        self.is_participle = False
+        if filter_structure:
+            if filter_structure.filter_kind == Filters.AdjectionComparison:
+                my_grade = Lexeme.get_key(filter_structure.forms, (self.basic_form, self.flectional_label))
+                grades = {Przymiotnik.Positive_Form, Przymiotnik.Comparative_Form, Przymiotnik.Superlative_Form}
+                grades.remove(my_grade)
+                self.grades = dict()
+                for grade in grades:
+                    self.flection.append((filter_structure.forms[grade][0], grade))
+                    self.grades[grade] = filter_structure.forms[grade]
+                self.is_gradable = True
+                self.my_grade = my_grade
+            else:
+                my_participle = Lexeme.get_key(filter_structure.forms, (self.basic_form, self.flectional_label))
+                self.label = my_participle
+                self.flection.append((filter_structure.forms[Czasownik.Infinitive][0], Czasownik.Infinitive))
+                self.is_participle = True
+                self.verb_data = filter_structure.forms[Czasownik.Infinitive]
+
+    def get_grades(self):
+        if hasattr(self, "grades"):
+            return self.grades
+        return None
+
+    def get_verb_data(self):
+        if hasattr(self, "verb_data"):
+            return self.verb_data
+        return None
+
+    def get_my_grade(self):
+        if hasattr(self, "my_grade"):
+            return self.my_grade
+        return None
 
 
 class NumeralLexeme(Lexeme):  # Liczebnik
