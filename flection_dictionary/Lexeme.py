@@ -79,6 +79,19 @@ class Lexeme:
                 enums.append(enum)
         return enums
 
+    def find_flection(self, searched_enum):
+        allowed_enums = self.label.get_enum_list()
+        """rzeczownik może być gerundium; przymiotnik, nieodmienny - imiesłowami"""
+        if self.label == Labels.RZECZOWNIK or self.label == Labels.PRZYMIOTNIK or self.label == Labels.NIEODMIENNY:
+            allowed_enums.append(Czasownik.Infinitive)
+        print(allowed_enums)
+        if searched_enum not in allowed_enums:
+            raise ValueError("You cannot search {} in {}".format(searched_enum, self.label))
+        for word, enum in self.flection:
+            if enum == searched_enum:
+                return word
+        return None
+
 
 class NounLexeme(Lexeme):  # Rzeczownik
     def __init__(self, regular, filter_structure, multi_segments=None):
@@ -228,8 +241,6 @@ class UninflectedLexeme(Lexeme):  # Nieodmienne
         self.flection.append((regular[2], Labels.NIEODMIENNY))
         self.is_participle = False
         if filter_structure:  # imiesłów przysłówkowy
-            my_participle = Lexeme.get_key(filter_structure.forms, (self.basic_form, self.flectional_label))
-            self.label = my_participle
             self.flection.append((filter_structure.forms[Czasownik.Infinitive][0], Czasownik.Infinitive))
             self.is_participle = True
         self.multi_segments = [MultiSegment(multi_segment) for multi_segment in multi_segments]
