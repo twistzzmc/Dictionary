@@ -29,7 +29,7 @@ class Labels(Enum):
     @staticmethod
     def get_label_from_flectional_label(flectional_label):
         label_string = flectional_label.strip()
-        label_string = flectional_label.strip('*')[0]
+        label_string = label_string.strip('*')[0]
         if label_string not in set('ABCDEFGHI'):
             return None
         return Labels(label_string)

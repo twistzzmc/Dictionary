@@ -218,13 +218,13 @@ class UninflectedLexeme(Lexeme):  # Nieodmienne
         self.flectional_label = regular[1]
         self.flection = []
         self.label = Labels.NIEODMIENNY
+        self.flection.append((regular[2], Labels.NIEODMIENNY))
+        self.is_participle = False
         if filter_structure:  # imiesłów przysłówkowy
             my_participle = Lexeme.get_key(filter_structure.forms, (self.basic_form, self.flectional_label))
             self.label = my_participle
-            self.flection.append((regular[2], my_participle))
             self.flection.append((filter_structure.forms[Czasownik.Infinitive][0], Czasownik.Infinitive))
-        else:
-            self.flection.append((regular[2], Labels.NIEODMIENNY))
+            self.is_participle = True
         self.multi_segments = [MultiSegment(multi_segment) for multi_segment in multi_segments]
 
 
