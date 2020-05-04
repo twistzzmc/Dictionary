@@ -2,27 +2,27 @@ from enum import Enum
 
 
 class Labels(Enum):
-    RZECZOWNIK = "A"
-    CZASOWNIK = "B"
-    PRZYMIOTNIK = "C"
-    LICZEBNIK = "D"
-    ZAIMEK = "E"
-    PRZYSLOWEK = "F"
-    NIEODMIENNY = "G"
-    TEKST = "H"
-    SKROT = "I"
+    NOUN = "A"
+    VERB = "B"
+    ADJECTIVE = "C"
+    NUMERAL = "D"
+    PRONOUN = "E"
+    ADVERB = "F"
+    UNINFLECTED = "G"
+    TEXT = "H"
+    ACRONYM = "I"
 
     def __str__(self):
         switcherToName = {
-            self.RZECZOWNIK: "Rzeczownik",
-            self.CZASOWNIK: "Czasownik",
-            self.PRZYMIOTNIK: "Przymiotnik",
-            self.LICZEBNIK: "Liczebnik",
-            self.ZAIMEK: "Zaimek",
-            self.PRZYSLOWEK: "Przysłówek",
-            self.NIEODMIENNY: "Nieodmienny",
-            self.TEKST: "Tekst",
-            self.SKROT: "Skrótowiec"
+            self.NOUN: "Rzeczownik",
+            self.VERB: "Czasownik",
+            self.ADJECTIVE: "Przymiotnik",
+            self.NUMERAL: "Liczebnik",
+            self.PRONOUN: "Zaimek",
+            self.ADVERB: "Przysłówek",
+            self.UNINFLECTED: "Nieodmienny",
+            self.TEXT: "Tekst",
+            self.ACRONYM: "Skrótowiec"
         }
         return switcherToName.get(self)
 
@@ -36,15 +36,15 @@ class Labels(Enum):
 
     def get_enum_list(self):
         switch_to_word_type = {
-            self.RZECZOWNIK: list(Rzeczownik),
-            self.CZASOWNIK: list(Czasownik),
-            self.PRZYMIOTNIK: list(Przymiotnik),
-            self.LICZEBNIK: list(Liczebnik),
-            self.ZAIMEK: list(Zaimek),
-            self.PRZYSLOWEK: list(Przyslowek),
-            self.NIEODMIENNY: [self.NIEODMIENNY],
-            self.TEKST: [self.TEKST],
-            self.SKROT: [self.SKROT]
+            self.NOUN: list(Noun),
+            self.VERB: list(Verb),
+            self.ADJECTIVE: list(Adjective),
+            self.NUMERAL: list(Numeral),
+            self.PRONOUN: list(Pronoun),
+            self.ADVERB: list(Adverb),
+            self.UNINFLECTED: [self.UNINFLECTED],
+            self.TEXT: [self.TEXT],
+            self.ACRONYM: [self.ACRONYM]
         }
         return switch_to_word_type.get(self)
 
@@ -52,7 +52,7 @@ class Labels(Enum):
         return self.get_enum_list()[index]
 
 
-class Rzeczownik(Enum):
+class Noun(Enum):
     Singular_Nominative = "Liczba pojedyncza, Mianownik"
     Singular_Genitive = "Liczba pojedyncza, Dopełniacz"
     Singular_Dative = "Liczba pojedyncza, Celownik"
@@ -71,7 +71,8 @@ class Rzeczownik(Enum):
     def __str__(self):
         return self.value
 
-class Czasownik(Enum):
+
+class Verb(Enum):
     Infinitive = "Bezokolicznik"
     Present_1_Singular = "Czas teraźniejszy, 1 osoba liczby pojedynczej"
     Present_2_Singular = "Czas teraźniejszy, 2 osoba liczby pojedynczej"
@@ -123,7 +124,8 @@ class Czasownik(Enum):
     def __str__(self):
         return self.value
 
-class Przymiotnik(Enum):
+
+class Adjective(Enum):
     Singular_Nominative_Masculine_Personal_Animate = "Liczba pojedyncza, Mianownik, rodzaj męski osobowy i męski żywotny"
     Singular_Genitive_Masculine_Personal_Animate = "Liczba pojedyncza, Dopełniacz, rodzaj męski osobowy i męski żywotny"
     Singular_Dative_Masculine_Personal_Animate = "Liczba pojedyncza, Celownik, rodzaj męski osobowy i męski żywotny"
@@ -174,7 +176,8 @@ class Przymiotnik(Enum):
     def __str__(self):
         return self.value
 
-class Liczebnik(Enum):
+
+class Numeral(Enum):
     Singular_Nominative_Masculine_Personal = "Liczba pojedyncza, Mianownik, rodzaj męski osobowy"
     Singular_Genitive_Masculine_Personal = "Liczba pojedyncza, Dopełniacz, rodzaj męski osobowy"
     Singular_Dative_Masculine_Personal = "Liczba pojedyncza, Celownik, rodzaj męski osobowy"
@@ -228,7 +231,8 @@ class Liczebnik(Enum):
     def __str__(self):
         return self.value
 
-class Zaimek(Enum):
+
+class Pronoun(Enum):
     Singular_Nominative = "Liczba pojedyncza, Mianownik"
     Singular_Genitive = "Liczba pojedyncza, Dopełniacz"
     Singular_Dative = "Liczba pojedyncza, Celownik"
@@ -247,7 +251,8 @@ class Zaimek(Enum):
     def __str__(self):
         return self.value
 
-class Przyslowek(Enum):
+
+class Adverb(Enum):
     Positive_Form = "Stopień równy"
     Comparative_Form = "Stopień wyższy"
     Superlative_Form = "Stopień najwyższy"
