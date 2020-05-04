@@ -99,12 +99,6 @@ class NounLexeme(Lexeme):  # Rzeczownik
             self.flection[Verb.Infinitive] = filter_structure.forms[Verb.Infinitive][0]
             self.verb_data = filter_structure.forms[Verb.Infinitive]
 
-    def __repr__(self):
-        result = f"{super().__repr__()}\n"
-        if self.gerundive:
-            result += f"Czasownik: {self.verb_data}"
-        return result
-
     def get_verb_data(self):
         if self.is_gerundive:
             return self.verb_data
