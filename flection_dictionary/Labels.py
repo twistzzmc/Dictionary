@@ -34,17 +34,22 @@ class Labels(Enum):
             return None
         return Labels(label_string)
 
-    def get_enum(self, index):
+    def get_enum_list(self):
         switch_to_word_type = {
             self.RZECZOWNIK: list(Rzeczownik),
             self.CZASOWNIK: list(Czasownik),
             self.PRZYMIOTNIK: list(Przymiotnik),
             self.LICZEBNIK: list(Liczebnik),
             self.ZAIMEK: list(Zaimek),
-            self.PRZYSLOWEK: list(Przyslowek)
+            self.PRZYSLOWEK: list(Przyslowek),
+            self.NIEODMIENNY: [self.NIEODMIENNY],
+            self.TEKST: [self.TEKST],
+            self.SKROT: [self.SKROT]
         }
+        return switch_to_word_type.get(self)
 
-        return switch_to_word_type.get(self)[index]
+    def get_enum(self, index):
+        return self.get_enum_list()[index]
 
 
 class Rzeczownik(Enum):
