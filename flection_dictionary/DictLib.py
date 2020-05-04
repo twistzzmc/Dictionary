@@ -2,7 +2,7 @@ import marisa_trie as mt
 
 from flection_dictionary.Filters import FilterStructure, Filters
 from flection_dictionary.Parser import *
-from flection_dictionary.Labels import Forms, Labels, Przyslowek
+from flection_dictionary.Labels import Labels, Przyslowek
 from flection_dictionary.Lexeme import Lexeme, NounLexeme, VerbLexeme, AdjectiveLexeme, NumeralLexeme, PronounLexeme, AdverbLexeme
 from flection_dictionary.Lexeme import UninflectedLexeme, TextLexeme, AcronymLexeme
 import os
@@ -123,29 +123,9 @@ class DictLib:
         # print(len(bt.items()))  # checking how many words are in the trie
 
     def print_word(self, word):
-        string = self.binary_trie.get(word)
-        if string is None:
-            print("Word \"" + word + "\" not found!")
-            return
-
-        string = WordNode.unpack_from_string(string)
-        lines = self.get_lines(string)
-        forms = Forms()
-        for i, l in enumerate(lines):
-            if i == 0:
-                print("Regulars:")
-                for line in l:
-                    # print(forms.get_forms_values(line, word))
-                    print("Forma podstawowa:", line[0])
-                    print(line)
-            else:
-                if i == 1:
-                    print("\nFilters:")
-                else:
-                    print("\nMulti segments:")
-                for line in l:
-                    print("Forma podstawowa:", line[0])
-                    print(line)
+        lexemes = self.find(word)
+        for lexem in lexemes:
+            print(lexem)
 
     @staticmethod
     def _parse_regulars(regulars, words_map):
