@@ -120,40 +120,12 @@ class VerbLexeme(Lexeme):  # Czasownik
                     self.participles[participle] = filter_structure.forms[participle]
             if Verb.Gerundive in filter_structure.forms.keys():
                 self.flection[Verb.Gerundive] = filter_structure.forms[Verb.Gerundive][0]
-                self.gerundive = filter_structure.forms[Verb.Gerundive]
+                self.gerundive_data = filter_structure.forms[Verb.Gerundive]
                 self.has_gerundive = True
-
-    def get_present_adverbial_participle_data(self):
-        enum = Verb.Present_Adverbial_Participle
-        if enum in self.participles.keys():
-            return self.participles[enum]
-        else:
-            return None
-
-    def get_active_adjectival_participle_data(self):
-        enum = Verb.Active_Adjectival_Participle
-        if enum in self.participles.keys():
-            return self.participles[enum]
-        else:
-            return None
-
-    def get_passive_adjectival_participle_data(self):
-        enum = Verb.Passive_Adjectival_Participle
-        if enum in self.participles.keys():
-            return self.participles[enum]
-        else:
-            return None
-
-    def get_perfect_adverbial_participle_data(self):
-        enum = Verb.Perfect_Adverbial_Participle
-        if enum in self.participles.keys():
-            return self.participles[enum]
-        else:
-            return None
 
     def get_gerundive_data(self):
         if self.has_gerundive:
-            return self.gerundive
+            return self.gerundive_data
         else:
             return None
 
