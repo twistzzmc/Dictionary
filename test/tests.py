@@ -1,7 +1,7 @@
 import unittest, types
 
 from flection_dictionary.DictLib import DictLib
-from flection_dictionary.Labels import Verb, Adjective
+from flection_dictionary.Labels import Verb, Adjective, Numeral, Noun
 
 
 class TestDictLib(unittest.TestCase):
@@ -21,4 +21,19 @@ class TestDictLib(unittest.TestCase):
         with self.assertRaises(ValueError):
             result = lexem.find_flection(Adjective.Positive_Form)
 
+    def test_find_flection_returns_none_if_such_flection_doesnt_exist(self):
+        lexem = self.bt.get_lexeme(("czternaście", "DBCA"))  # nie ma liczby pojedynczej
+        result = lexem.find_flection(Numeral.Singular_Nominative_Masculine_Personal)
+        self.assertEqual(result, None)
 
+    def test_method_find_flection_enums_for_zjedzenie(self):
+        lexem = self.bt.get_lexeme(("zjedzenie", "ABCA"))
+        result = lexem.find_flection_enums("zjedzenie")
+        expected = [Noun.Singular_Nominative, Noun.Singular_Accusative, Noun.Singular_Vocative]
+        self.assertEqual(result, expected)
+
+    def test_method_find_flection_for_zly(self):
+        lexem = self.bt.get_lexeme(("zły", "*ABC"))
+        result = lexem.find_flection(Noun.Singular_Accusative)
+        expected = "złego"
+        self.assertEqual(result, expected)
