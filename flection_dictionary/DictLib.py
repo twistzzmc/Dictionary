@@ -214,13 +214,13 @@ class DictLib:
         lines = self.get_lines(string)
         lexemes = []
         for l in lines[0]:
-            lexemes.append(self.get_lexem((l[0], l[1])))
+            lexemes.append(self.get_lexeme((l[0], l[1])))
 
         if len(lines[1]) != 0:
             filter_structures = FilterStructure.get_filter_structures(lines[1])
             structure = self.get_filter_structure_of_kind(Filters.AdverbComparison, filter_structures)
             if structure:  # szukanie dla wyższych form przysłówka
-                positive_adverb, f_label = structure.forms[Przyslowek.Positive_Form]
+                positive_adverb, f_label = structure.forms[Adverb.Positive_Form]
                 if positive_adverb != word:
                     regular = [positive_adverb, f_label, positive_adverb]
                     lexemes.append(AdverbLexeme(regular, structure, lines[2]))
@@ -230,8 +230,8 @@ class DictLib:
 
         return lexemes
 
-    def get_lexem(self, lexem_data):
-        word, flectional_label = lexem_data
+    def get_lexeme(self, lexeme_data):
+        word, flectional_label = lexeme_data
         string = self.binary_trie.get(word)
         string = WordNode.unpack_from_string(string)
         lines = self.get_lines(string)
