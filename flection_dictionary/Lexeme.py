@@ -34,18 +34,18 @@ class Lexeme:
         if regular is not None:
             self.basic_form = regular[0]
             self.flectional_label = regular[1]
-            self.flection = []
+            self.flection = dict()
             self.label = Labels.get_label_from_flectional_label(self.flectional_label)
             for index, word in enumerate(regular):
                 if index in {0, 1}:
                     continue
                 if word.isalpha():
-                    self.flection.append((word, self.label.get_enum(index - 2)))
+                    self.flection[self.label.get_enum(index - 2)] = word
         else:
             self.basic_form = "None"
             self.flectional_label = "None"
             self.label = "None"
-            self.flection = []
+            self.flection = dict()
         self.multi_segments = [MultiSegment(multi_segment) for multi_segment in multi_segments]
 
     @staticmethod
@@ -57,8 +57,8 @@ class Lexeme:
     def __repr__(self):
         lexeme = f"Basic form --- {self.basic_form}\nLabel --- {self.flectional_label} - {self.label}\n"
         lexeme += "Flections: \n"
-        for flection in self.flection:
-            lexeme += "\t" + flection[0] + " --- " + str(flection[1]) + "\n"
+        for enum, word in self.flection.items():
+            lexeme += f"\t{word} --- {str(enum)}\n"
         if self.multi_segments:
             lexeme += "Multi segments: \n"
             for multi_segment in self.multi_segments:
@@ -74,7 +74,7 @@ class Lexeme:
 
     def find_flection_enums(self, searched_word):
         enums = []
-        for word, enum in self.flection:
+        for enum, word in self.flection.items():
             if word == searched_word:
                 enums.append(enum)
         return enums
@@ -87,10 +87,7 @@ class Lexeme:
         print(allowed_enums)
         if searched_enum not in allowed_enums:
             raise ValueError("You cannot search {} in {}".format(searched_enum, self.label))
-        for word, enum in self.flection:
-            if enum == searched_enum:
-                return word
-        return None
+        return self.flection.get(searched_enum)
 
 
 class NounLexeme(Lexeme):  # Rzeczownik
@@ -99,7 +96,7 @@ class NounLexeme(Lexeme):  # Rzeczownik
         self.gerundive = False
         if filter_structure and Verb.Gerundive in filter_structure.forms.keys():
             self.is_gerundive = True
-            self.flection.append((filter_structure.forms[Verb.Infinitive][0], Verb.Infinitive))
+            self.flection[Verb.Infinitive] = filter_structure.forms[Verb.Infinitive][0]
             self.verb_data = filter_structure.forms[Verb.Infinitive]
 
     def __repr__(self):
@@ -109,10 +106,9 @@ class NounLexeme(Lexeme):  # Rzeczownik
         return result
 
     def get_verb_data(self):
-        return self.verb_data
-
-    def is_gerundive(self):
-        return self.gerundive
+        if self.is_gerundive:
+            return self.verb_data
+        return None
 
 
 class VerbLexeme(Lexeme):  # Czasownik
@@ -122,14 +118,16 @@ class VerbLexeme(Lexeme):  # Czasownik
         participles = [Verb.Present_Adverbial_Participle, Verb.Active_Adjectival_Participle,
                        Verb.Passive_Adjectival_Participle, Verb.Perfect_Adverbial_Participle]
         self.participles = dict()
+        self.has_gerundive = False
         if filter_structure:
             for participle in participles:
                 if participle in filter_structure.forms.keys():
-                    self.flection.append((filter_structure.forms[participle][0], participle))
+                    self.flection[participle] = filter_structure.forms[participle][0]
                     self.participles[participle] = filter_structure.forms[participle]
             if Verb.Gerundive in filter_structure.forms.keys():
-                self.flection.append((filter_structure.forms[Verb.Gerundive][0], Verb.Gerundive))
+                self.flection[Verb.Gerundive] = filter_structure.forms[Verb.Gerundive][0]
                 self.gerundive = filter_structure.forms[Verb.Gerundive]
+                self.has_gerundive = True
 
     def get_present_adverbial_participle_data(self):
         enum = Verb.Present_Adverbial_Participle
@@ -160,7 +158,7 @@ class VerbLexeme(Lexeme):  # Czasownik
             return None
 
     def get_gerundive_data(self):
-        if self.gerundive:
+        if self.has_gerundive:
             return self.gerundive
         else:
             return None
@@ -171,6 +169,7 @@ class AdjectiveLexeme(Lexeme):  # Przymiotnik
         super().__init__(regular,  multi_segments)
         self.is_gradable = False
         self.is_participle = False
+        self.my_grade = Adjective.Positive_Form
         if filter_structure:
             if filter_structure.filter_kind == Filters.AdjectionComparison:
                 my_grade = Lexeme.get_key(filter_structure.forms, (self.basic_form, self.flectional_label))
@@ -178,28 +177,23 @@ class AdjectiveLexeme(Lexeme):  # Przymiotnik
                 grades.remove(my_grade)
                 self.grades = dict()
                 for grade in grades:
-                    self.flection.append((filter_structure.forms[grade][0], grade))
+                    self.flection[grade] = filter_structure.forms[grade][0]
                     self.grades[grade] = filter_structure.forms[grade]
                 self.is_gradable = True
                 self.my_grade = my_grade
             else:
-                self.flection.append((filter_structure.forms[Verb.Infinitive][0], Verb.Infinitive))
+                self.flection[Verb.Infinitive] = filter_structure.forms[Verb.Infinitive][0]
                 self.is_participle = True
                 self.verb_data = filter_structure.forms[Verb.Infinitive]
 
     def get_grades(self):
-        if hasattr(self, "grades"):
+        if self.is_gradable:
             return self.grades
         return None
 
     def get_verb_data(self):
-        if hasattr(self, "verb_data"):
+        if self.is_participle:
             return self.verb_data
-        return None
-
-    def get_my_grade(self):
-        if hasattr(self, "my_grade"):
-            return self.my_grade
         return None
 
 
@@ -216,17 +210,17 @@ class PronounLexeme(Lexeme):  # Zaimek
 class AdverbLexeme(Lexeme):  # Przysłówek
     def __init__(self, regular, filter_structure, multi_segments=None):
         super().__init__(regular, multi_segments)
+        self.my_grade = Adverb.Positive_Form
         if filter_structure:
             if filter_structure.filter_kind == Filters.AdverbComparison:
                 self.is_gradable = True
-                self.my_grade = Adverb.Positive_Form
                 grades = [Adverb.Comparative_Form, Adverb.Superlative_Form]
                 self.grades = dict()
                 for grade in grades:
-                    self.flection.append((filter_structure.forms[grade][0], grade))
+                    self.flection[grade] = filter_structure.forms[grade][0]
                     self.grades[grade] = filter_structure.forms[grade]
         else:  # w pospolite niestopniowalne przysłówki nie mają 3 kolumny :/
-            self.flection.append((regular[0], Adverb.Positive_Form))
+            self.flection[Adverb.Positive_Form] = regular[0]
             self.is_gradable = False
 
 
@@ -234,12 +228,12 @@ class UninflectedLexeme(Lexeme):  # Nieodmienne
     def __init__(self, regular, filter_structure, multi_segments=None):
         self.basic_form = regular[0]
         self.flectional_label = regular[1]
-        self.flection = []
+        self.flection = dict()
         self.label = Labels.UNINFLECTED
-        self.flection.append((regular[2], Labels.UNINFLECTED))
+        self.flection[Labels.UNINFLECTED] = regular[2]
         self.is_participle = False
         if filter_structure:  # imiesłów przysłówkowy
-            self.flection.append((filter_structure.forms[Verb.Infinitive][0], Verb.Infinitive))
+            self.flection[Verb.Infinitive] = filter_structure.forms[Verb.Infinitive][0]
             self.is_participle = True
         self.multi_segments = [MultiSegment(multi_segment) for multi_segment in multi_segments]
 
@@ -248,9 +242,9 @@ class TextLexeme(Lexeme):  # Text
     def __init__(self, regular, filter_structure, multi_segments=None):
         self.basic_form = regular[0]
         self.flectional_label = regular[1]
-        self.flection = []
+        self.flection = dict()
         self.label = Labels.TEXT
-        self.flection.append((regular[2], Labels.TEXT))
+        self.flection[Labels.TEXT] = regular[2]
         self.multi_segments = [MultiSegment(multi_segment) for multi_segment in multi_segments]
 
 
@@ -260,5 +254,5 @@ class AcronymLexeme(Lexeme):  # Skrótowiec, Akronim
         self.flectional_label = regular[1]
         self.flection = []
         self.label = Labels.ACRONYM
-        self.flection.append((regular[2], Labels.ACRONYM))
+        self.flection[Labels.ACRONYM] = regular[2]
         self.multi_segments = [MultiSegment(multi_segment) for multi_segment in multi_segments]
