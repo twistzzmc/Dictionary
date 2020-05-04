@@ -47,64 +47,6 @@ class Labels(Enum):
         return switch_to_word_type.get(self)[index]
 
 
-class Forms:
-    def rzeczownik(self):
-        return list(Rzeczownik)
-
-    def czasownik(self):
-        return list(Czasownik)
-
-    def przymiotnik(self):
-        return list(Przymiotnik)
-
-    def liczebnik(self):
-        return list(Liczebnik)
-
-    def zaimek(self):
-        return list(Zaimek)
-
-    def przyslowek(self):
-        return list(Przyslowek)
-
-    def count_indexes(self, regular_list, checked_word):
-        indexes = []
-        for index, word in enumerate(regular_list):
-            if word == checked_word:
-                indexes.append(index)
-        if 0 in indexes:
-            indexes.remove(0)
-        return indexes
-
-    def get_forms_values(self, regular_list, word):
-        indexes = self.count_indexes(regular_list, word)
-        label = Labels._get_label_from_flectional_label(regular_list[1])
-        forms = []
-        for index in indexes:
-            forms.append(str(self.get_form_value(index, label)))
-        return str(label) + ":\n\t" + "\n\t".join(forms)
-
-    def get_form_label_from_index(self, index, label):
-        method_name = label.name.lower()
-        # if label in {Labels.NIEODMIENNY, Labels.TEKST, Labels.SKROT}:
-        #     return ""
-        method = getattr(self, method_name, lambda: "Invalid label")
-        label_list = method()
-        return label_list[index]
-
-    def get_form_value(self, index, label):
-        form_label = self.get_form_label_from_index(index, label)
-        return str(form_label.value)
-
-
-    @staticmethod
-    def _get_index_of_label(label, searched_label):
-        method_name = label.name.lower()
-        method = getattr(method_name, lambda: "Invalid label")
-        label_list = method()
-        for index, label_iterator in enumerate(label_list):
-            if label_iterator == searched_label:
-                return index
-
 class Rzeczownik(Enum):
     Singular_Nominative = "Liczba pojedyncza, Mianownik"
     Singular_Genitive = "Liczba pojedyncza, Dopełniacz"
