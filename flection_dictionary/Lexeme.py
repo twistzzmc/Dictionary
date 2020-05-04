@@ -226,19 +226,9 @@ class UninflectedLexeme(Lexeme):  # Nieodmienne
 
 class TextLexeme(Lexeme):  # Text
     def __init__(self, regular, filter_structure, multi_segments=None):
-        self.basic_form = regular[0]
-        self.flectional_label = regular[1]
-        self.flection = dict()
-        self.label = Labels.TEXT
-        self.flection[Labels.TEXT] = regular[2]
-        self.multi_segments = [MultiSegment(multi_segment) for multi_segment in multi_segments]
+        super().__init__(regular,  multi_segments)
 
 
 class AcronymLexeme(Lexeme):  # Skrótowiec, Akronim
     def __init__(self, regular, filter_structure, multi_segments=None):
-        self.basic_form = regular[0]
-        self.flectional_label = regular[1]
-        self.flection = []
-        self.label = Labels.ACRONYM
-        self.flection[Labels.ACRONYM] = regular[2]
-        self.multi_segments = [MultiSegment(multi_segment) for multi_segment in multi_segments]
+        super().__init__(regular,  multi_segments)
