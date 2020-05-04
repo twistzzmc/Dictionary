@@ -72,6 +72,13 @@ class Lexeme:
                 return key
         return "key doesn't exist"
 
+    def find_flection_enums(self, searched_word):
+        enums = []
+        for word, enum in self.flection:
+            if word == searched_word:
+                enums.append(enum)
+        return enums
+
 
 class NounLexeme(Lexeme):  # Rzeczownik
     def __init__(self, regular, filter_structure, multi_segments=None):
