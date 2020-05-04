@@ -189,7 +189,6 @@ class AdverbLexeme(Lexeme):  # Przysłówek
             if filter_structure.filter_kind == Filters.AdverbComparison:
                 self.is_gradable = True
                 grades = [Adverb.Comparative_Form, Adverb.Superlative_Form]
-                self.grades = dict()
                 for grade in grades:
                     self.flection[grade] = filter_structure.forms[grade][0]
                     self.grades[grade] = filter_structure.forms[grade]
@@ -207,9 +206,22 @@ class UninflectedLexeme(Lexeme):  # Nieodmienne
         self.flection[Labels.UNINFLECTED] = regular[2]
         self.is_participle = False
         if filter_structure:  # imiesłów przysłówkowy
+            my_participle = Lexeme.get_key(filter_structure.forms, (self.basic_form, self.flectional_label))
             self.flection[Verb.Infinitive] = filter_structure.forms[Verb.Infinitive][0]
             self.is_participle = True
+            self.verb_data = filter_structure.forms[Verb.Infinitive]
+            self.participle_kind = my_participle
         self.multi_segments = [MultiSegment(multi_segment) for multi_segment in multi_segments]
+
+    def get_verb_data(self):
+        if self.is_participle:
+            return self.verb_data
+        return None
+
+    def get_participle_kind(self):
+        if self.is_participle:
+            return self.participle_kind
+        return None
 
 
 class TextLexeme(Lexeme):  # Text
