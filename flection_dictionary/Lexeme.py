@@ -183,7 +183,8 @@ class PronounLexeme(Lexeme):  # Zaimek
 class AdverbLexeme(Lexeme):  # Przysłówek
     def __init__(self, regular, filter_structure, multi_segments=None):
         super().__init__(regular, multi_segments)
-        self.my_grade = Adverb.Positive_Form
+        self.grades = dict()
+        self.grades[Adverb.Positive_Form] = self.basic_form
         if filter_structure:
             if filter_structure.filter_kind == Filters.AdverbComparison:
                 self.is_gradable = True
