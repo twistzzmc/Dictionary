@@ -148,9 +148,11 @@ class AdjectiveLexeme(Lexeme):  # Przymiotnik
                 self.is_gradable = True
                 self.my_grade = my_grade
             else:
+                my_participle = Lexeme.get_key(filter_structure.forms, (self.basic_form, self.flectional_label))
                 self.flection[Verb.Infinitive] = filter_structure.forms[Verb.Infinitive][0]
                 self.is_participle = True
                 self.verb_data = filter_structure.forms[Verb.Infinitive]
+                self.participle_kind = my_participle
 
     def get_grades(self):
         if self.is_gradable:
@@ -160,6 +162,11 @@ class AdjectiveLexeme(Lexeme):  # Przymiotnik
     def get_verb_data(self):
         if self.is_participle:
             return self.verb_data
+        return None
+
+    def get_participle_kind(self):
+        if self.is_participle:
+            return self.participle_kind
         return None
 
 
