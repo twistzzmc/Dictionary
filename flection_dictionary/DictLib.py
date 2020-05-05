@@ -235,6 +235,7 @@ class DictLib:
         string = self.binary_trie.get(word)
         string = WordNode.unpack_from_string(string)
         lines = self.get_lines(string)
+        regular = None
         for line in lines[0]:
             if line[1] == flectional_label:
                 regular = line

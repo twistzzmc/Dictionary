@@ -65,6 +65,14 @@ class Lexeme:
                 lexeme += f"\t{str(multi_segment)}"
         return lexeme
 
+    def __eq__(self, other):
+        if not isinstance(other, Lexeme):
+            return False
+        if not (other.basic_form == self.basic_form and other.label == self.label and other.flectional_label == self.flectional_label):
+            return False
+        return True
+
+
     @staticmethod
     def get_key(my_dict, val):
         for key, value in my_dict.items():
