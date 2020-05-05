@@ -2,110 +2,57 @@ from enum import Enum
 
 
 class Labels(Enum):
-    RZECZOWNIK = "A"
-    CZASOWNIK = "B"
-    PRZYMIOTNIK = "C"
-    LICZEBNIK = "D"
-    ZAIMEK = "E"
-    PRZYSLOWEK = "F"
-    NIEODMIENNY = "G"
-    TEKST = "H"
-    SKROT = "I"
+    NOUN = "A"
+    VERB = "B"
+    ADJECTIVE = "C"
+    NUMERAL = "D"
+    PRONOUN = "E"
+    ADVERB = "F"
+    UNINFLECTED = "G"
+    TEXT = "H"
+    ACRONYM = "I"
 
     def __str__(self):
         switcherToName = {
-            self.RZECZOWNIK: "Rzeczownik",
-            self.CZASOWNIK: "Czasownik",
-            self.PRZYMIOTNIK: "Przymiotnik",
-            self.LICZEBNIK: "Liczebnik",
-            self.ZAIMEK: "Zaimek",
-            self.PRZYSLOWEK: "Przysłówek",
-            self.NIEODMIENNY: "Nieodmienny",
-            self.TEKST: "Tekst",
-            self.SKROT: "Skrótowiec"
+            self.NOUN: "Rzeczownik",
+            self.VERB: "Czasownik",
+            self.ADJECTIVE: "Przymiotnik",
+            self.NUMERAL: "Liczebnik",
+            self.PRONOUN: "Zaimek",
+            self.ADVERB: "Przysłówek",
+            self.UNINFLECTED: "Nieodmienny",
+            self.TEXT: "Tekst",
+            self.ACRONYM: "Skrótowiec"
         }
         return switcherToName.get(self)
 
     @staticmethod
     def get_label_from_flectional_label(flectional_label):
         label_string = flectional_label.strip()
-        label_string = flectional_label.strip('*')[0]
+        label_string = label_string.strip('*')[0]
         if label_string not in set('ABCDEFGHI'):
             return None
         return Labels(label_string)
 
-    def get_enum(self, index):
+    def get_enum_list(self):
         switch_to_word_type = {
-            self.RZECZOWNIK: list(Rzeczownik),
-            self.CZASOWNIK: list(Czasownik),
-            self.PRZYMIOTNIK: list(Przymiotnik),
-            self.LICZEBNIK: list(Liczebnik),
-            self.ZAIMEK: list(Zaimek),
-            self.PRZYSLOWEK: list(Przyslowek)
+            self.NOUN: list(Noun),
+            self.VERB: list(Verb),
+            self.ADJECTIVE: list(Adjective),
+            self.NUMERAL: list(Numeral),
+            self.PRONOUN: list(Pronoun),
+            self.ADVERB: list(Adverb),
+            self.UNINFLECTED: [self.UNINFLECTED],
+            self.TEXT: [self.TEXT],
+            self.ACRONYM: [self.ACRONYM]
         }
+        return switch_to_word_type.get(self)
 
-        return switch_to_word_type.get(self)[index]
-
-
-class Forms:
-    def rzeczownik(self):
-        return list(Rzeczownik)
-
-    def czasownik(self):
-        return list(Czasownik)
-
-    def przymiotnik(self):
-        return list(Przymiotnik)
-
-    def liczebnik(self):
-        return list(Liczebnik)
-
-    def zaimek(self):
-        return list(Zaimek)
-
-    def przyslowek(self):
-        return list(Przyslowek)
-
-    def count_indexes(self, regular_list, checked_word):
-        indexes = []
-        for index, word in enumerate(regular_list):
-            if word == checked_word:
-                indexes.append(index)
-        if 0 in indexes:
-            indexes.remove(0)
-        return indexes
-
-    def get_forms_values(self, regular_list, word):
-        indexes = self.count_indexes(regular_list, word)
-        label = Labels._get_label_from_flectional_label(regular_list[1])
-        forms = []
-        for index in indexes:
-            forms.append(str(self.get_form_value(index, label)))
-        return str(label) + ":\n\t" + "\n\t".join(forms)
-
-    def get_form_label_from_index(self, index, label):
-        method_name = label.name.lower()
-        # if label in {Labels.NIEODMIENNY, Labels.TEKST, Labels.SKROT}:
-        #     return ""
-        method = getattr(self, method_name, lambda: "Invalid label")
-        label_list = method()
-        return label_list[index]
-
-    def get_form_value(self, index, label):
-        form_label = self.get_form_label_from_index(index, label)
-        return str(form_label.value)
+    def get_enum(self, index):
+        return self.get_enum_list()[index]
 
 
-    @staticmethod
-    def _get_index_of_label(label, searched_label):
-        method_name = label.name.lower()
-        method = getattr(method_name, lambda: "Invalid label")
-        label_list = method()
-        for index, label_iterator in enumerate(label_list):
-            if label_iterator == searched_label:
-                return index
-
-class Rzeczownik(Enum):
+class Noun(Enum):
     Singular_Nominative = "Liczba pojedyncza, Mianownik"
     Singular_Genitive = "Liczba pojedyncza, Dopełniacz"
     Singular_Dative = "Liczba pojedyncza, Celownik"
@@ -124,7 +71,8 @@ class Rzeczownik(Enum):
     def __str__(self):
         return self.value
 
-class Czasownik(Enum):
+
+class Verb(Enum):
     Infinitive = "Bezokolicznik"
     Present_1_Singular = "Czas teraźniejszy, 1 osoba liczby pojedynczej"
     Present_2_Singular = "Czas teraźniejszy, 2 osoba liczby pojedynczej"
@@ -176,7 +124,8 @@ class Czasownik(Enum):
     def __str__(self):
         return self.value
 
-class Przymiotnik(Enum):
+
+class Adjective(Enum):
     Singular_Nominative_Masculine_Personal_Animate = "Liczba pojedyncza, Mianownik, rodzaj męski osobowy i męski żywotny"
     Singular_Genitive_Masculine_Personal_Animate = "Liczba pojedyncza, Dopełniacz, rodzaj męski osobowy i męski żywotny"
     Singular_Dative_Masculine_Personal_Animate = "Liczba pojedyncza, Celownik, rodzaj męski osobowy i męski żywotny"
@@ -227,7 +176,8 @@ class Przymiotnik(Enum):
     def __str__(self):
         return self.value
 
-class Liczebnik(Enum):
+
+class Numeral(Enum):
     Singular_Nominative_Masculine_Personal = "Liczba pojedyncza, Mianownik, rodzaj męski osobowy"
     Singular_Genitive_Masculine_Personal = "Liczba pojedyncza, Dopełniacz, rodzaj męski osobowy"
     Singular_Dative_Masculine_Personal = "Liczba pojedyncza, Celownik, rodzaj męski osobowy"
@@ -281,7 +231,8 @@ class Liczebnik(Enum):
     def __str__(self):
         return self.value
 
-class Zaimek(Enum):
+
+class Pronoun(Enum):
     Singular_Nominative = "Liczba pojedyncza, Mianownik"
     Singular_Genitive = "Liczba pojedyncza, Dopełniacz"
     Singular_Dative = "Liczba pojedyncza, Celownik"
@@ -300,7 +251,8 @@ class Zaimek(Enum):
     def __str__(self):
         return self.value
 
-class Przyslowek(Enum):
+
+class Adverb(Enum):
     Positive_Form = "Stopień równy"
     Comparative_Form = "Stopień wyższy"
     Superlative_Form = "Stopień najwyższy"

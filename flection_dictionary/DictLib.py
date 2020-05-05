@@ -2,7 +2,7 @@ import marisa_trie as mt
 
 from flection_dictionary.Filters import FilterStructure, Filters
 from flection_dictionary.Parser import *
-from flection_dictionary.Labels import Forms, Labels, Przyslowek
+from flection_dictionary.Labels import Labels, Adverb
 from flection_dictionary.Lexeme import Lexeme, NounLexeme, VerbLexeme, AdjectiveLexeme, NumeralLexeme, PronounLexeme, AdverbLexeme
 from flection_dictionary.Lexeme import UninflectedLexeme, TextLexeme, AcronymLexeme
 import os
@@ -123,29 +123,9 @@ class DictLib:
         # print(len(bt.items()))  # checking how many words are in the trie
 
     def print_word(self, word):
-        string = self.binary_trie.get(word)
-        if string is None:
-            print("Word \"" + word + "\" not found!")
-            return
-
-        string = WordNode.unpack_from_string(string)
-        lines = self.get_lines(string)
-        forms = Forms()
-        for i, l in enumerate(lines):
-            if i == 0:
-                print("Regulars:")
-                for line in l:
-                    # print(forms.get_forms_values(line, word))
-                    print("Forma podstawowa:", line[0])
-                    print(line)
-            else:
-                if i == 1:
-                    print("\nFilters:")
-                else:
-                    print("\nMulti segments:")
-                for line in l:
-                    print("Forma podstawowa:", line[0])
-                    print(line)
+        lexemes = self.find(word)
+        for lexem in lexemes:
+            print(lexem)
 
     @staticmethod
     def _parse_regulars(regulars, words_map):
@@ -234,13 +214,13 @@ class DictLib:
         lines = self.get_lines(string)
         lexemes = []
         for l in lines[0]:
-            lexemes.append(self.get_lexem((l[0], l[1])))
+            lexemes.append(self.get_lexeme((l[0], l[1])))
 
         if len(lines[1]) != 0:
             filter_structures = FilterStructure.get_filter_structures(lines[1])
             structure = self.get_filter_structure_of_kind(Filters.AdverbComparison, filter_structures)
             if structure:  # szukanie dla wyższych form przysłówka
-                positive_adverb, f_label = structure.forms[Przyslowek.Positive_Form]
+                positive_adverb, f_label = structure.forms[Adverb.Positive_Form]
                 if positive_adverb != word:
                     regular = [positive_adverb, f_label, positive_adverb]
                     lexemes.append(AdverbLexeme(regular, structure, lines[2]))
@@ -250,8 +230,8 @@ class DictLib:
 
         return lexemes
 
-    def get_lexem(self, lexem_data):
-        word, flectional_label = lexem_data
+    def get_lexeme(self, lexeme_data):
+        word, flectional_label = lexeme_data
         string = self.binary_trie.get(word)
         string = WordNode.unpack_from_string(string)
         lines = self.get_lines(string)
@@ -267,29 +247,29 @@ class DictLib:
                     filters.append(filter)
         filter_structures = FilterStructure.get_filter_structures(filters)
         label = Labels.get_label_from_flectional_label(flectional_label)
-        if label == Labels.RZECZOWNIK:
+        if label == Labels.NOUN:
             structure = self.get_filter_structure_of_kind(Filters.ParticiplesAndGerundive, filter_structures)
             return NounLexeme(regular, structure, multi_segments)
-        elif label == Labels.CZASOWNIK:
+        elif label == Labels.VERB:
             structure = self.get_filter_structure_of_kind(Filters.ParticiplesAndGerundive, filter_structures)
             if not structure:  # brak filtra z gerundivem
                 structure = self.get_filter_structure_of_kind(Filters.Participles, filter_structures)
             return VerbLexeme(regular, structure, multi_segments)
-        elif label == Labels.PRZYMIOTNIK:
+        elif label == Labels.ADJECTIVE:
             structure = self.get_filter_structure_of_kind(Filters.AdjectionComparison, filter_structures)  # stopniowalny
             if not structure:  # imiesłów przymiotnikowy
                 structure = self.get_filter_structure_of_kind(Filters.ParticiplesAndGerundive, filter_structures)
                 if not structure:
                     structure = self.get_filter_structure_of_kind(Filters.Participles, filter_structures)
             return AdjectiveLexeme(regular, structure, multi_segments)
-        elif label == Labels.LICZEBNIK:
+        elif label == Labels.NUMERAL:
             return NumeralLexeme(regular, None, multi_segments)
-        elif label == Labels.ZAIMEK:
+        elif label == Labels.PRONOUN:
             return PronounLexeme(regular, None, multi_segments)
-        elif label == Labels.PRZYSLOWEK:
+        elif label == Labels.ADVERB:
             structure = self.get_filter_structure_of_kind(Filters.AdverbComparison, filter_structures)
             return AdverbLexeme(regular, structure, multi_segments)
-        elif label == Labels.NIEODMIENNY:
+        elif label == Labels.UNINFLECTED:
             structure = self.get_filter_structure_of_kind(Filters.ParticiplesAndGerundive, filter_structures)
             if not structure:
                 structure = self.get_filter_structure_of_kind(Filters.Participles, filter_structures)
