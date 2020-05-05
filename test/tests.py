@@ -11,6 +11,10 @@ class TestDictLib(unittest.TestCase):
         file_types = [0, 1, 2, 1, 1]
         self.bt = DictLib(files, file_types)
 
+    def test_if_find_zlego_return_2_lexemes(self):
+        lexemes = self.bt.find("złego")
+        self.assertEqual(len(lexemes), 2)
+
     def test_find_czasownik_in_jedzac(self):
         lexem = self.bt.get_lexeme(("jedząc", "G"))
         result = lexem.find_flection(Verb.Infinitive)
@@ -36,4 +40,61 @@ class TestDictLib(unittest.TestCase):
         lexem = self.bt.get_lexeme(("zły", "*ABC"))
         result = lexem.find_flection(Noun.Singular_Accusative)
         expected = "złego"
+        self.assertEqual(result, expected)
+
+    def test_get_verb_data_grzmienie_returns_grzmiec_lexeme_data(self):
+        lexeme = self.bt.get_lexeme(("grzmienie", "ABCA"))
+        result = self.bt.get_lexeme(lexeme.get_verb_data())
+        expected = self.bt.get_lexeme(("grzmieć", "BBBB"))
+        self.assertEqual(result, expected)
+
+    def test_get_gerundive_data_bielic_returns_bielenie_lexeme_data(self):
+        lexeme = self.bt.get_lexeme(("bielić", "BBCA"))
+        result = self.bt.get_lexeme(lexeme.get_gerundive_data())
+        expected = self.bt.get_lexeme(("bielenie", "ABCA"))
+        self.assertEqual(result, expected)
+
+    def test_get_gerundive_data_wolno_returns_none(self):
+        lexeme = self.bt.get_lexeme(("wolno", "BFBA"))
+        result = lexeme.get_gerundive_data()
+        self.assertEqual(result, None)
+
+    def test_get_grades_for_lepszy(self):
+        lexeme = self.bt.get_lexeme(("większy", "*CAB"))
+        result = lexeme.get_grades()
+        expected = {Adjective.Positive_Form: ("duży", "*CAB"), Adjective.Superlative_Form: ("największy", "*CAB")}
+        self.assertEqual(result, expected)
+
+    def test_get_participle_kind_for_zjedzony(self):
+        lexeme = self.bt.get_lexeme(("zjedzony", "CAB"))
+        result = lexeme.get_participle_kind()
+        expected = Verb.Passive_Adjectival_Participle
+        self.assertEqual(result, expected)
+
+    def test_is_participle_for_zjedzony_true(self):
+        lexeme = self.bt.get_lexeme(("zjedzony", "CAB"))
+        result = lexeme.is_participle
+        self.assertEqual(result, True)
+
+    def test_is_gradable_for_zjedzony_false(self):
+        lexeme = self.bt.get_lexeme(("zjedzony", "CAB"))
+        result = lexeme.is_gradable
+        self.assertEqual(result, False)
+
+    def test_get_verb_data_for_zjedzony_is_zjesc(self):
+        lexeme = self.bt.get_lexeme(("zjedzony", "CAB"))
+        result = lexeme.get_verb_data()
+        expected = ("zjeść", "BDD")
+        self.assertEqual(result, expected)
+
+    def test_get_participle_kind_for_zjadlszy(self):
+        lexeme = self.bt.get_lexeme(("zjadłszy", "G"))
+        result = lexeme.get_participle_kind()
+        expected = Verb.Perfect_Adverbial_Participle
+        self.assertEqual(result, expected)
+
+    def test_get_verb_data_for_zjadlszy_is_zjesc(self):
+        lexeme = self.bt.get_lexeme(("zjadłszy", "G"))
+        result = lexeme.get_verb_data()
+        expected = ("zjeść", "BDD")
         self.assertEqual(result, expected)
