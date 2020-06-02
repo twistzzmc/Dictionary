@@ -1,4 +1,4 @@
-# Foobar
+# Flection Dictinary
 
 Library allows quick and convenient flection finding.
 
